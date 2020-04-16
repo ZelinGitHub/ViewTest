@@ -1,0 +1,28 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="vegetableDefStyle">@style/vegetableStyle2</item>
+        <item name="title">黑木耳</item>
+        <item name="back">@color/blackff323232</item>
+    </style>
+
+    <style name="vegetableStyle">
+        <item name="title">黄瓜</item>
+        <item name="back">@color/colorPrimary</item>
+    </style>
+
+    <style name="vegetableStyle2">
+        <item name="title">胡萝卜</item>
+        <item name="back">@color/orangeFFFF9933</item>
+    </style>
+
+    <style name="vegetableStyle3">
+        <item name="title">辣椒</item>
+        <item name="back">@color/redffff534BPrimary</item>
+    </style>
+
+</resources>
