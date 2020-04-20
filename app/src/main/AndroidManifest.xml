@@ -24,6 +24,8 @@
         <activity android:name=".taskt.FourAty" />
         <activity android:name=".rv.KamiAty" />
         <activity android:name=".vp.VpAty" />
+        <activity android:name=".anim.AnimAty" />
+        <activity android:name=".win.WinAty" />
     </application>
 
 </manifest>
