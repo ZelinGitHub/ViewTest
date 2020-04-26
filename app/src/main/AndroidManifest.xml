@@ -26,6 +26,8 @@
         <activity android:name=".vp.VpAty" />
         <activity android:name=".anim.AnimAty" />
         <activity android:name=".win.WinAty" />
+
+        <service android:name=".serv.MyService" />
     </application>
 
 </manifest>
