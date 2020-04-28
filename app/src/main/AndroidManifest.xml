@@ -26,9 +26,10 @@
         <activity android:name=".vp.VpAty" />
         <activity android:name=".anim.AnimAty" />
         <activity android:name=".win.WinAty" />
-        <activity android:name=".serv.ServAty" />
+        <activity android:name=".serv.client.ServAty" />
 
-        <service android:name=".serv.MyService" />
+        <service android:name=".serv.server.MyService" />
+        <service android:name=".serv.server.MyIntentService" />
     </application>
 
 </manifest>
