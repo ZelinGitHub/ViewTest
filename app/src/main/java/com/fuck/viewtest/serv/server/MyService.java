@@ -9,31 +9,32 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        System.out.println("MyService生命周期 onCreate");
+        System.out.println("MyService生命周期：onCreate");
     }
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        System.out.println("MyService生命周期 onStartCommand");
-        return super.onStartCommand(intent, flags, startId);
+        System.out.println("MyService生命周期：onStartCommand"+" Intent："+intent.getStringExtra("data")+" startId："+startId);
+        return Service.START_STICKY;
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-        System.out.println("MyService生命周期 onBind");
+        System.out.println("MyService生命周期：onBind");
         return new MyBinder();
     }
 
 
     @Override
     public boolean onUnbind(Intent intent) {
-        System.out.println("MyService生命周期 onUnbind");
+        System.out.println("MyService生命周期：onUnbind");
         return super.onUnbind(intent);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.println("MyService生命周期 onDestroy");
+        System.out.println("MyService生命周期：onDestroy");
     }
 }

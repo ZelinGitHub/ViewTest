@@ -27,6 +27,13 @@
         <activity android:name=".anim.AnimAty" />
         <activity android:name=".win.WinAty" />
         <activity android:name=".serv.client.ServAty" />
+        <activity android:name=".conprovider.BroadcastTestAty" />
+
+        <provider
+            android:name=".conprovider.MyContentProvider"
+            android:authorities="com.fuck.viewtest.conprovider.MyContentProvider"
+            android:exported="false"
+            />
 
         <service android:name=".serv.server.MyService" />
         <service android:name=".serv.server.MyIntentService" />

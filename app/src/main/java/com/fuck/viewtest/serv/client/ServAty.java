@@ -10,13 +10,17 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
+import com.fuck.viewtest.serv.server.MyIntentService;
 import com.fuck.viewtest.serv.server.MyService;
+
+import java.util.Date;
 
 public class ServAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_start_serv;
     private Button btn_stop_serv;
     private Button btn_bind_serv;
     private Button btn_unbind_serv;
+    private Button btn_start_intent_serv;
     private ServiceConnection mConnection = new MyConnection();
 
 
@@ -34,6 +38,7 @@ public class ServAty extends AppCompatActivity implements View.OnClickListener {
         btn_stop_serv = findViewById(R.id.btn_stop_serv);
         btn_bind_serv = findViewById(R.id.btn_bind_serv);
         btn_unbind_serv = findViewById(R.id.btn_unbind_serv);
+        btn_start_intent_serv = findViewById(R.id.btn_start_intent_serv);
     }
 
 
@@ -42,6 +47,7 @@ public class ServAty extends AppCompatActivity implements View.OnClickListener {
         btn_stop_serv.setOnClickListener(this);
         btn_bind_serv.setOnClickListener(this);
         btn_unbind_serv.setOnClickListener(this);
+        btn_start_intent_serv.setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +55,7 @@ public class ServAty extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_start_serv: {
                 Intent intent = new Intent(this, MyService.class);
+                intent.putExtra("data",new Date().toString());
                 startService(intent);
                 break;
             }
@@ -64,6 +71,12 @@ public class ServAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_unbind_serv: {
                 unbindService(mConnection);
+                break;
+            }
+            case R.id.btn_start_intent_serv: {
+                Intent intent = new Intent(this, MyIntentService.class);
+                intent.putExtra("data",new Date().toString());
+                startService(intent);
                 break;
             }
         }
