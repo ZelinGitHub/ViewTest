@@ -2,13 +2,13 @@ package com.fuck.viewtest;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.HandlerThread;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
+import com.fuck.viewtest.conprovider.BroadcastAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
@@ -18,6 +18,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_anim;
     private Button btn_win;
     private Button btn_serv;
+    private Button btn_broadcast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_anim = findViewById(R.id.btn_anim);
         btn_win = findViewById(R.id.btn_win);
         btn_serv = findViewById(R.id.btn_serv);
+        btn_broadcast = findViewById(R.id.btn_broadcast);
     }
 
 
@@ -41,9 +43,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_anim.setOnClickListener(this);
         btn_win.setOnClickListener(this);
         btn_serv.setOnClickListener(this);
+        btn_broadcast.setOnClickListener(this);
 
-        HandlerThread thread=new HandlerThread("thread0");
-        thread.start();
     }
 
     @Override
@@ -66,6 +67,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_serv: {
                 Intent intent = new Intent(this, ServAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_broadcast: {
+                Intent intent = new Intent(this, BroadcastAty.class);
                 startActivity(intent);
                 break;
             }

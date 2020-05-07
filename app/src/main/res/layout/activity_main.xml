@@ -8,26 +8,32 @@
     tools:context=".MainAty">
 
     <Button
-        android:text="open vp"
+        android:text="测试ViewPager"
         android:id="@+id/btn_vp"
         android:layout_marginTop="16dp"
         android:layout_width="200dp"
         android:layout_height="50dp" />
     <Button
-        android:text="open anim"
+        android:text="测试动画"
         android:id="@+id/btn_anim"
         android:layout_marginTop="16dp"
         android:layout_width="200dp"
         android:layout_height="50dp" />
     <Button
-        android:text="open win"
+        android:text="测试Window"
         android:id="@+id/btn_win"
         android:layout_marginTop="16dp"
         android:layout_width="200dp"
         android:layout_height="50dp" />
     <Button
-        android:text="open serv"
+        android:text="测试服务"
         android:id="@+id/btn_serv"
+        android:layout_marginTop="16dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp" />
+    <Button
+        android:text="测试广播"
+        android:id="@+id/btn_broadcast"
         android:layout_marginTop="16dp"
         android:layout_width="200dp"
         android:layout_height="50dp" />
