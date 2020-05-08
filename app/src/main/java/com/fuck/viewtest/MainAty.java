@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
-import com.fuck.viewtest.conprovider.BroadcastAty;
+import com.fuck.viewtest.broadcast.BroadcastAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;

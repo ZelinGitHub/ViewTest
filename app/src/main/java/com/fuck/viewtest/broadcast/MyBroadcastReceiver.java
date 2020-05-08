@@ -9,6 +9,5 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         System.out.println("MyBroadcastReceiver收到数据："+intent.getStringExtra("data"));
         System.out.println("MyBroadcastReceiver getResultData："+getResultData());
-
     }
 }

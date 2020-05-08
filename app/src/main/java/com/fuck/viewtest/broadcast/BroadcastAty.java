@@ -1,4 +1,4 @@
-package com.fuck.viewtest.conprovider;
+package com.fuck.viewtest.broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Intent;
@@ -10,9 +10,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.broadcast.MyBroadcastReceiver;
-import com.fuck.viewtest.broadcast.MyBroadcastReceiver2;
-import com.fuck.viewtest.broadcast.MyBroadcastReceiver3;
 
 public class BroadcastAty extends AppCompatActivity implements View.OnClickListener {
 
@@ -56,21 +53,21 @@ public class BroadcastAty extends AppCompatActivity implements View.OnClickListe
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.setPriority(3);
         intentFilter.addAction(BROADCAST_ACTION);
-        registerReceiver(mBroadcastReceiver, intentFilter,BROADCAST_PERMISSION,null);
+        registerReceiver(mBroadcastReceiver, intentFilter);
     }
 
     private void registerBroadcast2() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.setPriority(20);
         intentFilter.addAction(BROADCAST_ACTION);
-        registerReceiver(mBroadcastReceiver2, intentFilter,BROADCAST_PERMISSION,null);
+        registerReceiver(mBroadcastReceiver2, intentFilter);
     }
 
     private void registerBroadcast3() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.setPriority(100);
         intentFilter.addAction(BROADCAST_ACTION);
-        registerReceiver(mBroadcastReceiver3, intentFilter,BROADCAST_PERMISSION,null);
+        registerReceiver(mBroadcastReceiver3, intentFilter);
     }
 
     @Override
@@ -93,14 +90,14 @@ public class BroadcastAty extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent();
                 intent.setAction(BROADCAST_ACTION);
                 intent.putExtra("data","我是无序广播");
-                sendBroadcast(intent,BROADCAST_PERMISSION);
+                sendBroadcast(intent);
                 break;
             }
             case R.id.btn_send_order_broadcast: {
                 Intent intent = new Intent();
                 intent.setAction(BROADCAST_ACTION);
                 intent.putExtra("data","我是有序广播");
-                sendOrderedBroadcast(intent,BROADCAST_PERMISSION);
+                sendOrderedBroadcast(intent,null);
                 break;
             }
         }

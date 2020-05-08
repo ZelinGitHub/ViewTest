@@ -8,10 +8,10 @@ import androidx.annotation.Nullable;
 
 public class MySqlLiteOpenHelper extends SQLiteOpenHelper {
     public final static String DATABASE_NAME = "edu.db";
-    public final static String DATABASE_STUDENT_TABLE_NAME = "students";
+    public final static String TABLE_NAME_STUDENTS = "students";
     private final static int DATABASE_VERSION = 1;
     private final static String CREATE_STUDENT_TABLE = "CREATE TABLE IF NOT EXISTS "
-            + DATABASE_STUDENT_TABLE_NAME
+            + TABLE_NAME_STUDENTS
             + "("
             + "id INTEGER PRIMARY KEY,"
             + "name TEXT VARCHAR(20) NOT NULL,"
