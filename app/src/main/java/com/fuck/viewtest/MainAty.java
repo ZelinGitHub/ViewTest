@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+//ABC
 public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_vp;
     private Button btn_anim;
