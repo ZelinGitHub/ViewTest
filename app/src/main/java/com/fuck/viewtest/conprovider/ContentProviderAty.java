@@ -2,6 +2,7 @@ package com.fuck.viewtest.conprovider;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +26,9 @@ public class ContentProviderAty extends AppCompatActivity implements View.OnClic
                     + "/"
                     + PATH_STUDENTS
     );
+
+    private ContentObserver mContentObserver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +42,24 @@ public class ContentProviderAty extends AppCompatActivity implements View.OnClic
     }
 
     private void initUI() {
-
+        MyObserverHandler handler = new MyObserverHandler();
+        mContentObserver = new MyContentObserver(handler);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ContentResolver contentResolver = getContentResolver();
+        contentResolver.registerContentObserver(URI_STUDENTS, true, mContentObserver);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ContentResolver contentResolver = getContentResolver();
+        contentResolver.unregisterContentObserver(mContentObserver);
+    }
 
     @Override
     protected void onDestroy() {
@@ -55,6 +74,8 @@ public class ContentProviderAty extends AppCompatActivity implements View.OnClic
 
 
     private void insertValue() {
+        ContentResolver contentResolver = getContentResolver();
+
         ContentValues contentValues = new ContentValues();
         contentValues.put("id", 0);
         contentValues.put("name", "peter");
@@ -62,7 +83,6 @@ public class ContentProviderAty extends AppCompatActivity implements View.OnClic
         contentValues.put("number", "201804081705");
         contentValues.put("score", "100");
 
-        ContentResolver contentResolver = getContentResolver();
         contentResolver.insert(URI_STUDENTS, contentValues);
     }
 
