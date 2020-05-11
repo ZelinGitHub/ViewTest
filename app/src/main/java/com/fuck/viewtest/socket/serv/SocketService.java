@@ -1,4 +1,4 @@
-package com.fuck.viewtest.socket;
+package com.fuck.viewtest.socket.serv;
 
 import android.app.Service;
 import android.content.Intent;
@@ -17,17 +17,10 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerService extends Service {
+public class SocketService extends Service {
 
     private boolean mIsServiceDestroyed = false;
 
-    private String[] mDefinedMessages = new String[]{
-            "How are you"
-            , "What's your name?"
-            , "Fuck you"
-            , "Fuck me"
-            , "You will Die"
-    };
 
     @Override
     public void onCreate() {
@@ -66,29 +59,30 @@ public class ServerService extends Service {
 
     private void process(Socket pSocket) {
         try {
-
-
-
-
-
             OutputStream outputStream = pSocket.getOutputStream();
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-            PrintWriter printWriter = new PrintWriter(bufferedWriter);
-
-            printWriter.println("welcome");
+            PrintWriter printWriter = new PrintWriter(bufferedWriter,true);
+            printWriter.println("我是服务端");
 
             InputStream inputStream = pSocket.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-            while(!mIsServiceDestroyed){
-                String str=bufferedReader.readLine();
-                System.out.println("Message from client:"+str);
-                if(str==null){
+            while (!mIsServiceDestroyed) {
+                String str = bufferedReader.readLine();
+                System.out.println("服务端 收到客户度消息：" + str);
+                if (str == null) {
                     break;
                 }
+                printWriter.println("我是服务端的消息");
             }
+            System.out.println("服务端 客户端离开");
+            //关闭客户端连接服务端的Socket的输出流和输入流
+            printWriter.close();
+            bufferedReader.close();
+            //关闭客户端连接服务端的Socket
+            pSocket.close();
         } catch (IOException pE) {
             pE.printStackTrace();
         }
@@ -98,5 +92,11 @@ public class ServerService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mIsServiceDestroyed=true;
     }
 }

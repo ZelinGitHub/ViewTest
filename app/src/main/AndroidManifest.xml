@@ -30,6 +30,7 @@
         <activity android:name=".serv.client.ServAty" />
         <activity android:name=".broadcast.BroadcastAty" />
         <activity android:name=".conprovider.ContentProviderAty" />
+        <activity android:name=".socket.client.SocketAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
@@ -38,7 +39,7 @@
 
         <service android:name=".serv.server.MyService" />
         <service android:name=".serv.server.MyIntentService" />
-        <service android:name=".socket.ServerService" />
+        <service android:name=".socket.serv.SocketService" />
     </application>
 
 
