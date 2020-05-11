@@ -38,6 +38,7 @@
 
         <service android:name=".serv.server.MyService" />
         <service android:name=".serv.server.MyIntentService" />
+        <service android:name=".socket.ServerService" />
     </application>
 
 
