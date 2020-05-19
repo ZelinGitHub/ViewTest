@@ -3,38 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainAty">
 
     <Button
-        android:text="测试ViewPager"
         android:id="@+id/btn_vp"
-        android:layout_marginTop="16dp"
         android:layout_width="200dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试ViewPager" />
+
     <Button
-        android:text="测试动画"
         android:id="@+id/btn_anim"
-        android:layout_marginTop="16dp"
         android:layout_width="200dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试动画" />
+
     <Button
-        android:text="测试Window"
         android:id="@+id/btn_win"
-        android:layout_marginTop="16dp"
         android:layout_width="200dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试Window" />
+
     <Button
-        android:text="测试服务"
         android:id="@+id/btn_serv"
-        android:layout_marginTop="16dp"
         android:layout_width="200dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试服务" />
+
     <Button
-        android:text="测试广播"
         android:id="@+id/btn_broadcast"
-        android:layout_marginTop="16dp"
         android:layout_width="200dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试广播" />
+
+    <Button
+        android:id="@+id/btn_socket"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试Socket" />
+
+    <Button
+        android:id="@+id/btn_cusv"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试自定义View" />
 </LinearLayout>

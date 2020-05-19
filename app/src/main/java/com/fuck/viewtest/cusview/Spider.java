@@ -30,23 +30,20 @@ public class Spider extends View {
     //蛛网面积占当前控件的90%
     private static final double WEB_AREA_RATIO = 0.9;
     private static final int LATITUDE_WIDTH = 10;
-    public int[] mData=new int[LONGITUDE_NUM];
-    private static final int MAX_VALUE=6;
+    public int[] mData = new int[LONGITUDE_NUM];
+    private static final int MAX_VALUE = 6;
 
     public Spider(Context context) {
-        super(context);
-        init(context);
+        this(context, null);
     }
 
 
     public Spider(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs, 0);
     }
 
     public Spider(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(context);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     public Spider(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -64,12 +61,12 @@ public class Spider extends View {
         mContentPaint.setStyle(Paint.Style.FILL);
         mContentPaint.setAlpha(127);
 
-        mData[0]=1;
-        mData[1]=2;
-        mData[2]=3;
-        mData[3]=4;
-        mData[4]=5;
-        mData[5]=6;
+        mData[0] = 1;
+        mData[1] = 2;
+        mData[2] = 3;
+        mData[3] = 4;
+        mData[4] = 5;
+        mData[5] = 6;
     }
 
 
@@ -146,39 +143,38 @@ public class Spider extends View {
             float x = (float) (mCenterX + mRadius * Math.cos(angle));
             float y = (float) (mCenterX + mRadius * Math.sin(angle));
             //连接直线
-            mPath.lineTo(x,y);
-            pCanvas.drawPath(mPath,mWebPaint);
+            mPath.lineTo(x, y);
+            pCanvas.drawPath(mPath, mWebPaint);
         }
 
     }
 
 
     private void drawContent(Canvas pCanvas) {
-        for(int i=0;i<LONGITUDE_NUM;i++){
+        for (int i = 0; i < LONGITUDE_NUM; i++) {
             //数据值比例
-            double per=(double)mData[i]/MAX_VALUE;
+            double per = (double) mData[i] / MAX_VALUE;
             //经线角度
             double angle = angleToArc((double) 360 / LONGITUDE_NUM * i);
             //点在经线上的坐标
-            float x=(float)(mCenterX+mRadius*Math.cos(angle)*per);
-            float y=(float)(mCenterY+mRadius*Math.sin(angle)*per);
+            float x = (float) (mCenterX + mRadius * Math.cos(angle) * per);
+            float y = (float) (mCenterY + mRadius * Math.sin(angle) * per);
 
-            if(i==0){
+            if (i == 0) {
                 //为0时不绘制
                 //重置path起点
-                mPath.moveTo(x,mCenterY);
-            }else {
+                mPath.moveTo(x, mCenterY);
+            } else {
                 //连接直线
-                mPath.lineTo(x,y);
+                mPath.lineTo(x, y);
             }
             //绘制实心圆点
-            pCanvas.drawCircle(x,y,15,mContentPaint);
+            pCanvas.drawCircle(x, y, 15, mContentPaint);
         }
         mContentPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         //绘制实心path
-        pCanvas.drawPath(mPath,mContentPaint);
+        pCanvas.drawPath(mPath, mContentPaint);
     }
-
 
 
 }

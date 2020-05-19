@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fuck.viewtest">
-<!--    <permission android:name="BROADCAST_PERMISSION" />-->
-<!--    <uses-permission android:name="BROADCAST_PERMISSION" />-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
         <activity android:name=".MainAty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +33,7 @@
         <activity android:name=".broadcast.BroadcastAty" />
         <activity android:name=".conprovider.ContentProviderAty" />
         <activity android:name=".socket.client.SocketAty" />
+        <activity android:name=".cusv.CusvAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
@@ -41,6 +44,7 @@
         <service android:name=".serv.server.MyIntentService" />
         <service android:name=".socket.serv.SocketService" />
     </application>
+
 
 
 </manifest>

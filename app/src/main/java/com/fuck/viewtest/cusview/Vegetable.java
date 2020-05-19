@@ -18,15 +18,17 @@ public class Vegetable extends View {
     private Paint mPaint = new Paint();
 
     public Vegetable(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public Vegetable(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.vegetableDefStyle);
     }
+
     public Vegetable(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, R.style.vegetableStyle3);
     }
+
     public Vegetable(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         //解析AttributeSet

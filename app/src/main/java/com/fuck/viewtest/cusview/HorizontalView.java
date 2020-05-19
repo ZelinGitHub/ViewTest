@@ -38,13 +38,11 @@ public class HorizontalView extends ViewGroup {
 
 
     public HorizontalView(Context context) {
-        super(context);
-        init();
+        this(context,null);
     }
 
     public HorizontalView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs,0);
     }
 
     public HorizontalView(Context context, AttributeSet attrs, int defStyleAttr) {

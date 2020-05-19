@@ -16,7 +16,7 @@ import android.widget.Scroller;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class LargeImgView extends View {
+public class LargeImg extends View {
     //图片加载区域
     private  Rect mRect;
     //用来内存复用
@@ -36,21 +36,18 @@ public class LargeImgView extends View {
 
     private Matrix mMatrix=new Matrix();
 
-    public LargeImgView(Context context) {
-        super(context);
-        init(context);
+    public LargeImg(Context context) {
+        this(context,null);
     }
 
-    public LargeImgView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+    public LargeImg(Context context, AttributeSet attrs) {
+        this(context, attrs,0);
 
     }
 
-    public LargeImgView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LargeImg(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
-
     }
 
     @Override

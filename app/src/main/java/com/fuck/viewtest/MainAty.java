@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
+import com.fuck.viewtest.cusv.CusvAty;
 import com.fuck.viewtest.serv.client.ServAty;
+import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
 
@@ -20,6 +22,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_win;
     private Button btn_serv;
     private Button btn_broadcast;
+    private Button btn_socket;
+    private Button btn_cusv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_win = findViewById(R.id.btn_win);
         btn_serv = findViewById(R.id.btn_serv);
         btn_broadcast = findViewById(R.id.btn_broadcast);
+        btn_socket = findViewById(R.id.btn_socket);
+        btn_cusv = findViewById(R.id.btn_cusv);
     }
 
 
@@ -45,6 +51,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_win.setOnClickListener(this);
         btn_serv.setOnClickListener(this);
         btn_broadcast.setOnClickListener(this);
+        btn_socket.setOnClickListener(this);
+        btn_cusv.setOnClickListener(this);
 
     }
 
@@ -73,6 +81,16 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_broadcast: {
                 Intent intent = new Intent(this, BroadcastAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_socket: {
+                Intent intent = new Intent(this, SocketAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_cusv: {
+                Intent intent = new Intent(this, CusvAty.class);
                 startActivity(intent);
                 break;
             }

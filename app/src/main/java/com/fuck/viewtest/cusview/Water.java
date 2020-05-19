@@ -11,20 +11,16 @@ public class Water extends View {
     private Scroller mScroller;
 
     public Water(Context context) {
-        super(context);
-        init();
+        this(context, null);
     }
 
     public Water(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
-
+        this(context, attrs, 0);
     }
 
     public Water(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
-
     }
 
     private void init() {
@@ -35,7 +31,7 @@ public class Water extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                mScroller.startScroll(0, 0, 800, 0,1000);
+                mScroller.startScroll(0, 0, 800, 0, 1000);
                 invalidate();
                 return true;
         }

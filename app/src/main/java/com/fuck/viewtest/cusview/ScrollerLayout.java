@@ -28,13 +28,11 @@ public class ScrollerLayout extends ViewGroup {
     private int mTouchSlop;
 
     public ScrollerLayout(Context context) {
-        super(context);
-        init(context);
+        this(context,null);
     }
 
     public ScrollerLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs,0);
     }
 
     public ScrollerLayout(Context context, AttributeSet attrs, int defStyleAttr) {

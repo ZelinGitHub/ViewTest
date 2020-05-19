@@ -9,11 +9,11 @@ import android.view.View;
 public class Woman extends View {
     private Paint mPaint=new Paint();
     public Woman(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public Woman(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public Woman(Context context, AttributeSet attrs, int defStyleAttr) {

@@ -13,33 +13,33 @@ import android.view.View;
 
 import com.fuck.viewtest.R;
 
-public class ClipImgView extends View {
+public class ClipImg extends View {
     private Bitmap mBitmap;
     private int mClipWidth = 0;
     private int mImgWidth;
     private int mImgHeight;
     private static final int CLIP_HEIGHT = 30;
-    private Region mRegion= new Region();;
-    private Rect mRect1=new Rect();
-    private Rect mRect2=new Rect();
-    private Rect mRectA=new Rect();
-    private Paint mPaint=new Paint();
-    public ClipImgView(Context context) {
-        super(context);
-        init(context);
+    private Region mRegion = new Region();
+    ;
+    private Rect mRect1 = new Rect();
+    private Rect mRect2 = new Rect();
+    private Rect mRectA = new Rect();
+    private Paint mPaint = new Paint();
+
+    public ClipImg(Context context) {
+        this(context, null);
     }
 
-    public ClipImgView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+    public ClipImg(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public ClipImgView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ClipImg(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
 
-    public ClipImgView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ClipImg(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context);
     }
@@ -77,30 +77,30 @@ public class ClipImgView extends View {
             } else {
                 mRect2.set(
                         mImgWidth - mClipWidth
-                        , i*CLIP_HEIGHT
-                        ,mImgWidth
-                        ,(i+1)*CLIP_HEIGHT
-                        );
+                        , i * CLIP_HEIGHT
+                        , mImgWidth
+                        , (i + 1) * CLIP_HEIGHT
+                );
                 mRegion.union(mRect2);
 
             }
             i++;
         }
-        clipRegion(canvas,mRegion);
-        canvas.drawBitmap(mBitmap,0,0,mPaint);
-        if(mClipWidth>mImgWidth){
+        clipRegion(canvas, mRegion);
+        canvas.drawBitmap(mBitmap, 0, 0, mPaint);
+        if (mClipWidth > mImgWidth) {
             return;
         }
-        mClipWidth+=5;
+        mClipWidth += 5;
 //        invalidate();
     }
 
     //canvas.clipRegion方法已经废弃
-    private void clipRegion(Canvas pCanvas,Region pRegion){
+    private void clipRegion(Canvas pCanvas, Region pRegion) {
         //regionIterator用来迭代区域内的矩形
         RegionIterator regionIterator
-                =new RegionIterator(mRegion);
-        while(regionIterator.next(mRectA)){
+                = new RegionIterator(mRegion);
+        while (regionIterator.next(mRectA)) {
             //裁剪出矩形
             pCanvas.clipRect(mRectA);
         }

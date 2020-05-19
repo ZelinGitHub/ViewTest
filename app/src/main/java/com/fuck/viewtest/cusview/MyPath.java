@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+
 import com.fuck.viewtest.R;
 
 public class MyPath extends View {
@@ -15,16 +17,21 @@ public class MyPath extends View {
 
     private Path mPath=new Path();
     private Paint mPaint=new Paint();
+
     public MyPath(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public MyPath(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context,attrs,0);
     }
 
     public MyPath(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+        this(context, attrs, defStyleAttr,0);
+    }
+
+    public MyPath(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     @Override

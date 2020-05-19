@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 
 public class Tomato extends ViewGroup {
     public Tomato(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public Tomato(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public Tomato(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+        this(context, attrs, defStyleAttr,0);
     }
 
     public Tomato(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
