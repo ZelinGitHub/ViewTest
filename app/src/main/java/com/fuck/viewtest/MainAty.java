@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
 import com.fuck.viewtest.cusv.CusvAty;
+import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.vp.VpAty;
@@ -24,6 +25,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_broadcast;
     private Button btn_socket;
     private Button btn_cusv;
+    private Button btn_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_broadcast = findViewById(R.id.btn_broadcast);
         btn_socket = findViewById(R.id.btn_socket);
         btn_cusv = findViewById(R.id.btn_cusv);
+        btn_img = findViewById(R.id.btn_img);
     }
 
 
@@ -53,6 +56,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_broadcast.setOnClickListener(this);
         btn_socket.setOnClickListener(this);
         btn_cusv.setOnClickListener(this);
+        btn_img.setOnClickListener(this);
 
     }
 
@@ -91,6 +95,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_cusv: {
                 Intent intent = new Intent(this, CusvAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_img: {
+                Intent intent = new Intent(this, ImgAty.class);
                 startActivity(intent);
                 break;
             }
