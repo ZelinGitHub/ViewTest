@@ -34,6 +34,7 @@
         <activity android:name=".conprovider.ContentProviderAty" />
         <activity android:name=".socket.client.SocketAty" />
         <activity android:name=".cusv.CusvAty" />
+        <activity android:name=".img.ImgAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
