@@ -2,16 +2,18 @@ package com.fuck.viewtest.img;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ImgAty extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,7 +31,8 @@ public class ImgAty extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void initUI() {
-
+        ShapeDrawable shapeDrawable=new ShapeDrawable();
+        GradientDrawable gradientDrawable;
     }
 
     @Override
