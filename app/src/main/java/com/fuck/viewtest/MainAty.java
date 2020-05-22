@@ -1,11 +1,11 @@
 package com.fuck.viewtest;
 
 import android.content.Intent;
+import android.graphics.drawable.LayerDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
@@ -15,6 +15,8 @@ import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 //ABC
 public class MainAty extends AppCompatActivity implements View.OnClickListener {
@@ -58,6 +60,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_cusv.setOnClickListener(this);
         btn_img.setOnClickListener(this);
 
+        ShapeDrawable shapeDrawable;
+        LayerDrawable layerDrawable;
     }
 
     @Override
