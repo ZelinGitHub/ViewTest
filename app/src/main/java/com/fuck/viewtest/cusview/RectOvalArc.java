@@ -36,6 +36,18 @@ public class RectOvalArc extends View {
 
         mPaint.setColor(getContext().getResources().getColor(R.color.blueff0d79cdPrimary));
         canvas.drawArc(mRect,0,120,false,mPaint);
+
+        mPaint.setColor(getContext().getResources().getColor(R.color.orange_ringffff9434));
+        canvas.drawOval(mRect,mPaint);
+
+        canvas.drawCircle(0,0,100,mPaint);
+
+        canvas.drawPoint(0,0,mPaint);
+        canvas.drawLine(0,0,1,1,mPaint);
+
+        canvas.drawRGB(0,1,2);
+        canvas.drawARGB(0,1,2,3);
+        canvas.drawColor(0xFFFFFFFF);
     }
 
 }

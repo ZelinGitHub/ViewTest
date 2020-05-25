@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval"
-    android:innerRadius="300dp"
     >
     <corners
-        android:radius="5dp"
+        android:radius="1dp"
         />
-    <gradient
-        android:angle="45"/>
+
     <padding
         android:left="50dp"
         android:top="50dp"
@@ -21,7 +18,7 @@
     <solid
         android:color="@color/blackff323232"/>
     <stroke
-        android:width="10dp"
+        android:width="1dp"
         android:color="@color/blueff0d79cdPrimary"
         />
 </shape>
