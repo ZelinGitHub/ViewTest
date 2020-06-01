@@ -25,7 +25,7 @@
         <activity android:name=".taskt.SecondAty" />
         <activity android:name=".taskt.ThirdAty" />
         <activity android:name=".taskt.FourAty" />
-        <activity android:name=".rv.KamiAty" />
+        <activity android:name=".rv.RvAty" />
         <activity android:name=".vp.VpAty" />
         <activity android:name=".anim.AnimAty" />
         <activity android:name=".win.WinAty" />
@@ -35,6 +35,9 @@
         <activity android:name=".socket.client.SocketAty" />
         <activity android:name=".cusv.CusvAty" />
         <activity android:name=".img.ImgAty" />
+        <activity android:name=".rv.layoutmgr.StaggerAty" />
+        <activity android:name=".rv.itemdecor.RvFlagAty" />
+        <activity android:name=".rv.itemdecor.RvTimeAxisAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"

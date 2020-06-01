@@ -42,17 +42,10 @@ public class MyPath extends View {
         super.onDraw(canvas);
 
         mPaint.setAntiAlias(true);
-//        canvas.drawColor(getResources().getColor(R.color.colorPrimary));
         mPaint.setColor(getResources().getColor(R.color.colorAccent));
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(5);
-        mPath.moveTo(0, 0);
-//        mPath.lineTo(800,1500);
-//        mPath.lineTo(300,1600);
-//        mPath.close();
-//        mPath.setFillType(Path.FillType.INVERSE_EVEN_ODD);
-//        mPath.quadTo(60,1500,getWidth(),getHeight());
-//        mPath.addCircle(getWidth()/2F,getHeight()/2F,300, Path.Direction.CCW);
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        mPaint.setStrokeWidth(500);
+
         mRectF.left = 100;
         mRectF.top = 200;
         mRectF.right = 600;
@@ -63,22 +56,6 @@ public class MyPath extends View {
         mRectF2.right = 1100;
         mRectF2.bottom = 1200;
 
-
-//        mPath.addRect(mRectF2, Path.Direction.CCW);
-//        mPath.addCircle(getWidth()/2F,getHeight()/2F,300, Path.Direction.CCW);
-//        mPath.addOval(mRectF2, Path.Direction.CW);
-//        mPath.addArc(mRectF2,220,-120);
-//        mPath.addRoundRect(mRectF2, 10, 15, Path.Direction.CCW);
-        mPath.arcTo(mRectF, 90, 180);
-
-//        mPath.moveTo(200,200);
-//        mPath.lineTo(500, 1200);
-        mPath.lineTo(900, 1000);
-
-
-        mPath.close();
-        canvas.drawPath(mPath, mPaint);
-//        mPaint.setTextSize(50);
-//        canvas.drawTextOnPath("012345678910111213141516171819", mPath, 0, 0, mPaint);
+        canvas.drawArc(mRectF,0,225,false,mPaint);
     }
 }

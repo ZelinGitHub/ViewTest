@@ -1,22 +1,21 @@
 package com.fuck.viewtest;
 
 import android.content.Intent;
-import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
 import com.fuck.viewtest.cusv.CusvAty;
 import com.fuck.viewtest.img.ImgAty;
+import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 //ABC
 public class MainAty extends AppCompatActivity implements View.OnClickListener {
@@ -28,6 +27,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_socket;
     private Button btn_cusv;
     private Button btn_img;
+    private Button btn_rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_socket = findViewById(R.id.btn_socket);
         btn_cusv = findViewById(R.id.btn_cusv);
         btn_img = findViewById(R.id.btn_img);
+        btn_rv = findViewById(R.id.btn_rv);
     }
 
 
@@ -59,9 +60,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_socket.setOnClickListener(this);
         btn_cusv.setOnClickListener(this);
         btn_img.setOnClickListener(this);
+        btn_rv.setOnClickListener(this);
 
-        ShapeDrawable shapeDrawable;
-        LayerDrawable layerDrawable;
     }
 
     @Override
@@ -104,6 +104,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_img: {
                 Intent intent = new Intent(this, ImgAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_rv: {
+                Intent intent = new Intent(this, RvAty.class);
                 startActivity(intent);
                 break;
             }
