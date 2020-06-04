@@ -1,4 +1,4 @@
-package com.fuck.viewtest.cusv;
+package com.fuck.viewtest.cusview;
 
 import android.os.Bundle;
 import android.view.View;

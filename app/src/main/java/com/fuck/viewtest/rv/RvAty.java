@@ -1,9 +1,7 @@
 package com.fuck.viewtest.rv;
 
 import android.os.Bundle;
-import android.view.MotionEvent;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fuck.viewtest.R;
 import com.fuck.viewtest.rv.adapter.MyAdapter;
 import com.fuck.viewtest.rv.itemdecor.DividerDecoration;
+import com.fuck.viewtest.rv.touch.MyItemTouchListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,7 @@ public class RvAty extends AppCompatActivity {
         DividerDecoration dividerDecoration = new DividerDecoration();
         rv.addItemDecoration(dividerDecoration);
         rv.setAdapter(mAdapter);
-        RecyclerView.OnItemTouchListener onItemTouchListener=new MyItemTouchListener();
+        RecyclerView.OnItemTouchListener onItemTouchListener= new MyItemTouchListener();
         rv.addOnItemTouchListener(onItemTouchListener);
 
         rv.getParent();
@@ -55,24 +54,6 @@ public class RvAty extends AppCompatActivity {
             mItems.add(item);
         }
         mAdapter.notifyDataSetChanged();
-    }
-
-    class MyItemTouchListener implements RecyclerView.OnItemTouchListener{
-
-        @Override
-        public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-            return false;
-        }
-
-        @Override
-        public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-
-        }
-
-        @Override
-        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-        }
     }
 
 }

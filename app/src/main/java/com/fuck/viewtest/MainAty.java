@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
-import com.fuck.viewtest.cusv.CusvAty;
+import com.fuck.viewtest.cusview.CusvAty;
 import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.serv.client.ServAty;
