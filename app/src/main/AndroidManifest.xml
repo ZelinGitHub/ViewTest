@@ -38,6 +38,7 @@
         <activity android:name=".rv.layoutmgr.StaggerAty" />
         <activity android:name=".rv.itemdecor.RvFlagAty" />
         <activity android:name=".rv.itemdecor.RvTimeAxisAty" />
+        <activity android:name=".scroll.ScrollAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
