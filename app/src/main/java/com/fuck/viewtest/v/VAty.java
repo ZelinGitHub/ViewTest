@@ -2,6 +2,7 @@ package com.fuck.viewtest.v;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,14 +32,32 @@ public class VAty extends AppCompatActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        System.out.println("View坐标："+v.getLeft()+" "+v.getTop()+" "+v.getRight()+" "+v.getBottom());
-        System.out.println("View偏移后坐标："+v.getX()+" "+v.getY());
-        System.out.println("开始偏移");
+        moveView();
+    }
+
+    private void moveView() {
+        System.out.println("View原始坐标："+v.getLeft()+" "+v.getTop()+" "+v.getRight()+" "+v.getBottom());
+        System.out.println("View当前坐标："+v.getX()+" "+v.getY());
         v.setX(500);
         v.setY(500);
-        System.out.println("偏移结束");
-        System.out.println("View坐标："+v.getLeft()+" "+v.getTop()+" "+v.getRight()+" "+v.getBottom());
-        System.out.println("View偏移后坐标："+v.getX()+" "+v.getY());
+        System.out.println("View原始坐标："+v.getLeft()+" "+v.getTop()+" "+v.getRight()+" "+v.getBottom());
+        System.out.println("View当前坐标："+v.getX()+" "+v.getY());
+        v.setTranslationX(200);
+        v.setTranslationY(200);
+        System.out.println("View原始坐标："+v.getLeft()+" "+v.getTop());
+        System.out.println("View当前坐标："+v.getX()+" "+v.getY());
+        v.setTranslationX(200);
+        v.setTranslationY(1200);
+        System.out.println("View原始坐标："+v.getLeft()+" "+v.getTop());
+        System.out.println("View当前坐标："+v.getX()+" "+v.getY());
 
+        v.offsetLeftAndRight(300);
+        v.offsetTopAndBottom(300);
+        System.out.println("View原始坐标："+v.getLeft()+" "+v.getTop());
+        System.out.println("View当前坐标："+v.getX()+" "+v.getY());
+
+        int width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        int height=ViewGroup.LayoutParams.MATCH_PARENT;
+        ViewGroup.LayoutParams layoutParams=new ViewGroup.LayoutParams(width,height);
     }
 }

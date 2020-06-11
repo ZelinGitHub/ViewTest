@@ -33,12 +33,13 @@
         <activity android:name=".broadcast.BroadcastAty" />
         <activity android:name=".conprovider.ContentProviderAty" />
         <activity android:name=".socket.client.SocketAty" />
-        <activity android:name=".cusview.CusvAty" />
+        <activity android:name=".cusview.ui.CusvAty" />
         <activity android:name=".img.ImgAty" />
         <activity android:name=".rv.layoutmgr.StaggerAty" />
         <activity android:name=".rv.itemdecor.RvFlagAty" />
         <activity android:name=".rv.itemdecor.RvTimeAxisAty" />
         <activity android:name=".scroll.ScrollAty" />
+        <activity android:name=".v.VAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"

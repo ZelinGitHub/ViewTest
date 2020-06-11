@@ -9,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
-import com.fuck.viewtest.cusview.CusvAty;
+import com.fuck.viewtest.cusview.ui.CusvAty;
 import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.scroll.ScrollAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
+import com.fuck.viewtest.v.VAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
 
@@ -30,6 +31,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_img;
     private Button btn_rv;
     private Button btn_sv;
+    private Button btn_v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_img = findViewById(R.id.btn_img);
         btn_rv = findViewById(R.id.btn_rv);
         btn_sv = findViewById(R.id.btn_sv);
+        btn_v = findViewById(R.id.btn_v);
     }
 
 
@@ -65,6 +68,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_img.setOnClickListener(this);
         btn_rv.setOnClickListener(this);
         btn_sv.setOnClickListener(this);
+        btn_v.setOnClickListener(this);
 
     }
 
@@ -118,6 +122,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_sv: {
                 Intent intent = new Intent(this, ScrollAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_v: {
+                Intent intent = new Intent(this, VAty.class);
                 startActivity(intent);
                 break;
             }
