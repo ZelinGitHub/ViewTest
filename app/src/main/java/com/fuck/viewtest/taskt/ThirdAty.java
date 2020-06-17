@@ -23,7 +23,6 @@ public class ThirdAty extends BaseAty {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ThirdAty.this, FirstAty.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });

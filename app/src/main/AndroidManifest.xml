@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".taskt.FirstAty" />
-        <activity android:name=".taskt.SecondAty" />
+        <activity android:name=".taskt.SecondAty"
+            android:launchMode="singleInstance"
+            />
         <activity android:name=".taskt.ThirdAty" />
         <activity android:name=".taskt.FourAty" />
         <activity android:name=".rv.RvAty" />

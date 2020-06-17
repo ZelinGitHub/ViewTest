@@ -15,6 +15,7 @@ import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.scroll.ScrollAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
+import com.fuck.viewtest.taskt.FirstAty;
 import com.fuck.viewtest.v.VAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
@@ -32,6 +33,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_rv;
     private Button btn_sv;
     private Button btn_v;
+    private Button btn_task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_rv = findViewById(R.id.btn_rv);
         btn_sv = findViewById(R.id.btn_sv);
         btn_v = findViewById(R.id.btn_v);
+        btn_task = findViewById(R.id.btn_task);
     }
 
 
@@ -69,6 +72,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_rv.setOnClickListener(this);
         btn_sv.setOnClickListener(this);
         btn_v.setOnClickListener(this);
+        btn_task.setOnClickListener(this);
 
     }
 
@@ -127,6 +131,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_v: {
                 Intent intent = new Intent(this, VAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_task: {
+                Intent intent = new Intent(this, FirstAty.class);
                 startActivity(intent);
                 break;
             }

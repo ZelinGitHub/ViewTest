@@ -10,7 +10,7 @@ import com.fuck.viewtest.R;
 public class FirstAty extends BaseAty {
 
     private Button btn;
-    private Button btn2;
+
 
 
 
@@ -19,21 +19,14 @@ public class FirstAty extends BaseAty {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         btn = findViewById(R.id.btn);
-        btn2 = findViewById(R.id.btn2);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(FirstAty.this, SecondAty.class);
-                startActivityForResult(intent,0);
-            }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(FirstAty.this, FourAty.class);
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
