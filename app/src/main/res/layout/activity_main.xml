@@ -92,6 +92,24 @@
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:text="测试Task" />
+        <Button
+            android:id="@+id/btn_event_bus"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:text="测试EventBus" />
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:text="测试对话框" />
+        <Button
+            android:id="@+id/btn_anno"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:text="测试注解" />
     </LinearLayout>
 
 </ScrollView>

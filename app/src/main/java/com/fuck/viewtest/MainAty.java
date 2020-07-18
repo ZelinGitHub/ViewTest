@@ -8,8 +8,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
+import com.fuck.viewtest.anno.AnnoAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
 import com.fuck.viewtest.cusview.ui.CusvAty;
+import com.fuck.viewtest.dialog.DialogAty;
+import com.fuck.viewtest.eventbus.TomEventAty;
 import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.scroll.ScrollAty;
@@ -34,6 +37,9 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_sv;
     private Button btn_v;
     private Button btn_task;
+    private Button btn_event_bus;
+    private Button btn_dialog;
+    private Button btn_anno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +63,9 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_sv = findViewById(R.id.btn_sv);
         btn_v = findViewById(R.id.btn_v);
         btn_task = findViewById(R.id.btn_task);
+        btn_event_bus = findViewById(R.id.btn_event_bus);
+        btn_dialog = findViewById(R.id.btn_dialog);
+        btn_anno = findViewById(R.id.btn_anno);
     }
 
 
@@ -73,6 +82,9 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_sv.setOnClickListener(this);
         btn_v.setOnClickListener(this);
         btn_task.setOnClickListener(this);
+        btn_event_bus.setOnClickListener(this);
+        btn_dialog.setOnClickListener(this);
+        btn_anno.setOnClickListener(this);
 
     }
 
@@ -136,6 +148,21 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_task: {
                 Intent intent = new Intent(this, FirstAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_event_bus: {
+                Intent intent = new Intent(this, TomEventAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_dialog: {
+                Intent intent = new Intent(this, DialogAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_anno: {
+                Intent intent = new Intent(this, AnnoAty.class);
                 startActivity(intent);
                 break;
             }
