@@ -1,26 +1,18 @@
 package com.fuck.viewtest.rv;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.rv.adapter.MyAdapter;
-import com.fuck.viewtest.rv.itemdecor.DividerDecoration;
-import com.fuck.viewtest.rv.touch.MyItemTouchListener;
+import com.fuck.viewtest.rv.swiperv.SwipeRvAty;
 
-import java.util.ArrayList;
-import java.util.List;
+public class RvAty extends AppCompatActivity implements View.OnClickListener {
 
-public class RvAty extends AppCompatActivity {
-    private List<Item> mItems = new ArrayList<>();
-    private MyAdapter mAdapter = new MyAdapter(mItems);
-    private RecyclerView rv;
-
+    private Button open_swipe_rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,48 +22,23 @@ public class RvAty extends AppCompatActivity {
         initUI();
     }
 
-    private void initUI() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rv.setLayoutManager(linearLayoutManager);
-        DividerDecoration dividerDecoration = new DividerDecoration();
-        rv.addItemDecoration(dividerDecoration);
-        rv.setAdapter(mAdapter);
-        RecyclerView.OnItemTouchListener onItemTouchListener = new MyItemTouchListener();
-        rv.addOnItemTouchListener(onItemTouchListener);
-
-        rv.getParent();
-
-        rv.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN: {
-                        System.out.println(event.getX() + "//" + event.getY());
-
-                        View view = rv.findChildViewUnder(event.getX(), event.getY());
-                        view.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.blackFF000000));
-                    }
-
-                }
-                return false;
-            }
-        });
-        getData();
-    }
-
     private void initViews() {
-        rv = findViewById(R.id.rv);
+        open_swipe_rv=findViewById(R.id.btn_swipe_rv);
     }
 
-    private void getData() {
-        mItems.clear();
-        Item item;
-        for (int i = 0; i < 100; i++) {
-            item = new Item();
-            item.setName(String.valueOf(i));
-            mItems.add(item);
+    private void initUI() {
+        open_swipe_rv.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_swipe_rv:{
+                Intent intent = new Intent(this, SwipeRvAty.class);
+                startActivity(intent);
+                break;
+            }
         }
-        mAdapter.notifyDataSetChanged();
     }
-
 }

@@ -1,6 +1,5 @@
 package com.fuck.viewtest.anim;
 
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
@@ -41,19 +40,15 @@ public class AnimAty extends AppCompatActivity {
 
 
     private void initAnimator() {
-        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0F, 1F);
-        ValueAnimator valueAnimator1 = ValueAnimator.ofFloat(0F, 5F, 3F, 10F);
-        ValueAnimator valueAnimator2 = ValueAnimator.ofInt(0, 100);
-
-        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(
-                v
-                , "translationX"
-                , 0
-                , 800
-        );
-
-        AccelerateDecelerateInterpolator interpolator=new AccelerateDecelerateInterpolator();
-        valueAnimator.setInterpolator(interpolator);
-
+        ValueAnimator animator=ValueAnimator.ofInt(0,400);
+        animator.setDuration(1000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int curValue= (Integer) animation.getAnimatedValue();
+                v.layout(curValue,curValue,curValue+v.getWidth(),curValue+v.getHeight());
+            }
+        });
+        animator.start();
     }
 }
