@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fuck.viewtest.aac.AacAty;
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.anno.AnnoAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
@@ -40,6 +41,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_event_bus;
     private Button btn_dialog;
     private Button btn_anno;
+    private Button btn_aac;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_event_bus = findViewById(R.id.btn_event_bus);
         btn_dialog = findViewById(R.id.btn_dialog);
         btn_anno = findViewById(R.id.btn_anno);
+        btn_aac = findViewById(R.id.btn_aac);
     }
 
 
@@ -85,6 +88,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_event_bus.setOnClickListener(this);
         btn_dialog.setOnClickListener(this);
         btn_anno.setOnClickListener(this);
+        btn_aac.setOnClickListener(this);
 
     }
 
@@ -163,6 +167,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_anno: {
                 Intent intent = new Intent(this, AnnoAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_aac: {
+                Intent intent = new Intent(this, AacAty.class);
                 startActivity(intent);
                 break;
             }
