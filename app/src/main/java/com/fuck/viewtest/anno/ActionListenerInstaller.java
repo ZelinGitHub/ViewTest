@@ -55,7 +55,5 @@ public class ActionListenerInstaller {
         //调用View的setOnClickListener方法，为View设置OnClickListener
         //View在被点击时，内部会调用参数listener的onClick方法
         setOnClickListenerMethod.invoke(pSource, listener);
-
-
     }
 }

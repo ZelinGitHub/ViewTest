@@ -26,7 +26,7 @@ public class Create {
         Observer<Integer> observer = new MyObserver();
         observable.subscribe(observer);
 
-        Observable<Integer> observable1=observable.doOnSubscribe(new Consumer<Disposable>() {
+        Observable<Integer> observable1 = observable.doOnSubscribe(new Consumer<Disposable>() {
             @Override
             public void accept(Disposable pDisposable) throws Exception {
                 System.out.println();
@@ -63,7 +63,7 @@ public class Create {
         }
     }
 
-    public void testCreate2() {
+    public static void testCreate2() {
         //目标
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
@@ -80,13 +80,17 @@ public class Create {
                 .subscribe(
                         //观察者
                         new Observer<Integer>() {
+                            Disposable mDisposable = null;
+
                             @Override
                             public void onSubscribe(Disposable d) {
+                                mDisposable = d;
                             }
 
                             //响应事件
                             @Override
                             public void onNext(Integer integer) {
+                                mDisposable.dispose();
                             }
 
                             @Override
