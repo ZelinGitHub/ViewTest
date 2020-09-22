@@ -16,6 +16,7 @@ import com.fuck.viewtest.dialog.DialogAty;
 import com.fuck.viewtest.eventbus.TomEventAty;
 import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.rv.RvAty;
+import com.fuck.viewtest.rxjava2.observable.Create;
 import com.fuck.viewtest.scroll.ScrollAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
@@ -42,6 +43,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_dialog;
     private Button btn_anno;
     private Button btn_aac;
+    private Button btn_rxjava2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_dialog = findViewById(R.id.btn_dialog);
         btn_anno = findViewById(R.id.btn_anno);
         btn_aac = findViewById(R.id.btn_aac);
+        btn_rxjava2 = findViewById(R.id.btn_rxjava2);
     }
 
 
@@ -89,6 +92,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_dialog.setOnClickListener(this);
         btn_anno.setOnClickListener(this);
         btn_aac.setOnClickListener(this);
+        btn_rxjava2.setOnClickListener(this);
 
     }
 
@@ -173,6 +177,10 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             case R.id.btn_aac: {
                 Intent intent = new Intent(this, AacAty.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.btn_rxjava2: {
+                Create.ambTest();
                 break;
             }
         }
