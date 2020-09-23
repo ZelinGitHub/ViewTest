@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.fuck.viewtest.aac.AacAty;
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.anno.AnnoAty;
@@ -22,8 +24,6 @@ import com.fuck.viewtest.taskt.FirstAty;
 import com.fuck.viewtest.v.VAty;
 import com.fuck.viewtest.vp.VpAty;
 import com.fuck.viewtest.win.WinAty;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 //ABC
 public class MainAty extends AppCompatActivity implements View.OnClickListener {

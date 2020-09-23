@@ -68,37 +68,46 @@ public class Create {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                System.out.println("subscribe 线程" + Thread.currentThread().getName());
                 //发布事件
                 e.onNext(1);
                 e.onNext(2);
                 e.onNext(3);
                 e.onComplete();
+
             }
         })
                 .subscribeOn(Schedulers.io())
+//                .doOnSubscribe(new Consumer<Disposable>() {
+//                    @Override
+//                    public void accept(Disposable pDisposable) throws Exception {
+//                        System.out.println("doOnSubscribe 线程" + Thread.currentThread().getName());
+//                    }
+//                })
                 //订阅
                 .subscribe(
                         //观察者
                         new Observer<Integer>() {
-                            Disposable mDisposable = null;
 
                             @Override
                             public void onSubscribe(Disposable d) {
-                                mDisposable = d;
+                                System.out.println("onSubscribe 线程" + Thread.currentThread().getName());
                             }
 
                             //响应事件
                             @Override
                             public void onNext(Integer integer) {
-                                mDisposable.dispose();
+                                System.out.println("onNext 线程" + Thread.currentThread().getName());
                             }
 
                             @Override
                             public void onError(Throwable e) {
+                                System.out.println("onError 线程" + Thread.currentThread().getName());
                             }
 
                             @Override
                             public void onComplete() {
+                                System.out.println("onComplete 线程" + Thread.currentThread().getName());
                             }
                         });
 
@@ -114,46 +123,6 @@ public class Create {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
         integerObservable.subscribe(observer);
-
-    }
-
-
-    public static void testCreate3() {
-
-
-        //目标
-        Observable observable = Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-
-            }
-        });
-
-
-        //观察者
-        Observer observer = new Observer<Integer>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-
-            }
-
-            //响应事件
-            @Override
-            public void onNext(Integer integer) {
-            }
-
-            @Override
-            public void onError(Throwable e) {
-            }
-
-            @Override
-            public void onComplete() {
-            }
-        };
-
-        //订阅
-        observable.subscribe(observer);
-
 
     }
 
