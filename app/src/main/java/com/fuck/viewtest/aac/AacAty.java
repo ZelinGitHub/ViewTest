@@ -14,6 +14,7 @@ public class AacAty extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_name;
     private Button btn_name;
     private MyViewModel mViewModel;
+    private XViewModel mXViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,14 @@ public class AacAty extends AppCompatActivity implements View.OnClickListener {
     private void initUI() {
         btn_name.setOnClickListener(this);
         mViewModel = new MyViewModel();
+        mXViewModel=new XViewModel();
     }
 
     private void subscribe() {
         MyObserver myObserver = new MyObserver();
-        mViewModel.mLiveData.observe(this, myObserver);
+        mViewModel.mMutableLiveData.observe(this, myObserver);
+
+
     }
 
     @Override
@@ -49,6 +53,12 @@ public class AacAty extends AppCompatActivity implements View.OnClickListener {
     }
 
     class MyObserver implements Observer<String> {
+        @Override
+        public void onChanged(String pS) {
+            tv_name.setText(pS);
+        }
+    }
+    class XObserver implements Observer<String> {
         @Override
         public void onChanged(String pS) {
             tv_name.setText(pS);
