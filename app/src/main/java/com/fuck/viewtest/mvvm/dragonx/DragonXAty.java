@@ -1,4 +1,4 @@
-package com.fuck.viewtest.aac;
+package com.fuck.viewtest.mvvm.dragonx;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,19 +10,17 @@ import androidx.lifecycle.Observer;
 
 import com.fuck.viewtest.R;
 
-public class AacAty extends AppCompatActivity implements View.OnClickListener {
+public class DragonXAty extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_name;
     private Button btn_name;
-    private MyViewModel mViewModel;
-    private XViewModel mXViewModel;
+    private DragonXViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aac);
+        setContentView(R.layout.activity_dragon_x);
         initView();
         initUI();
-        subscribe();
     }
 
     private void initView() {
@@ -32,16 +30,12 @@ public class AacAty extends AppCompatActivity implements View.OnClickListener {
 
     private void initUI() {
         btn_name.setOnClickListener(this);
-        mViewModel = new MyViewModel();
-        mXViewModel=new XViewModel();
-    }
-
-    private void subscribe() {
+        mViewModel = new DragonXViewModel();
         MyObserver myObserver = new MyObserver();
         mViewModel.mMutableLiveData.observe(this, myObserver);
-
-
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -58,10 +52,5 @@ public class AacAty extends AppCompatActivity implements View.OnClickListener {
             tv_name.setText(pS);
         }
     }
-    class XObserver implements Observer<String> {
-        @Override
-        public void onChanged(String pS) {
-            tv_name.setText(pS);
-        }
-    }
+
 }

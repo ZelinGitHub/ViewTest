@@ -11,117 +11,169 @@
         android:orientation="vertical"
         tools:context=".MainAty">
 
-        <Button
-            android:id="@+id/btn_vp"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试ViewPager" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_anim"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试动画" />
+            <Button
+                android:id="@+id/btn_vp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试ViewPager" />
 
-        <Button
-            android:id="@+id/btn_win"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试Window" />
+            <Button
+                android:id="@+id/btn_anim"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试动画" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_serv"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试服务" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_broadcast"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试广播" />
+            <Button
+                android:id="@+id/btn_win"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试Window" />
 
-        <Button
-            android:id="@+id/btn_socket"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试Socket" />
+            <Button
+                android:id="@+id/btn_serv"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试服务" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_cusv"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试自定义View" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_img"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试图片" />
+            <Button
+                android:id="@+id/btn_broadcast"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试广播" />
 
-        <Button
-            android:id="@+id/btn_rv"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试RecyclerView" />
+            <Button
+                android:id="@+id/btn_socket"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试Socket" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_sv"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试ScrollView" />
-        <Button
-            android:id="@+id/btn_v"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试View" />
-        <Button
-            android:id="@+id/btn_task"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试Task" />
-        <Button
-            android:id="@+id/btn_event_bus"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试EventBus" />
-        <Button
-            android:id="@+id/btn_dialog"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试对话框" />
-        <Button
-            android:id="@+id/btn_anno"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试注解" />
-        <Button
-            android:id="@+id/btn_aac"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试AAC" />
-        <Button
-            android:id="@+id/btn_rxjava2"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:text="测试RxJava2" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_cusv"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试自定义View" />
+
+            <Button
+                android:id="@+id/btn_img"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试图片" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_rv"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试RecyclerView" />
+
+            <Button
+                android:id="@+id/btn_sv"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试ScrollView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_v"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试View" />
+
+            <Button
+                android:id="@+id/btn_task"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试Task" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_event_bus"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试EventBus" />
+
+            <Button
+                android:id="@+id/btn_dialog"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试对话框" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_anno"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试注解" />
+
+            <Button
+                android:id="@+id/btn_aac"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试MVVM" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_rxjava2"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试RxJava2" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

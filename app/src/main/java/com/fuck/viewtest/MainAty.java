@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.fuck.viewtest.aac.AacAty;
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.anno.AnnoAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
@@ -15,6 +14,7 @@ import com.fuck.viewtest.cusview.ui.CusvAty;
 import com.fuck.viewtest.dialog.DialogAty;
 import com.fuck.viewtest.eventbus.TomEventAty;
 import com.fuck.viewtest.img.ImgAty;
+import com.fuck.viewtest.mvvm.MvvmAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.rxjava2.observable.Create;
 import com.fuck.viewtest.scroll.ScrollAty;
@@ -175,7 +175,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_aac: {
-                Intent intent = new Intent(this, AacAty.class);
+                Intent intent = new Intent(this, MvvmAty.class);
                 startActivity(intent);
                 break;
             }

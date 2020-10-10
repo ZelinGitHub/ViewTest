@@ -47,7 +47,10 @@
         <activity android:name=".dialog.DialogAty" />
         <activity android:name=".anno.AnnoAty" />
         <activity android:name=".rv.swiperv.SwipeRvAty" />
-        <activity android:name=".aac.AacAty" />
+        <activity android:name=".mvvm.dragonx.DragonXAty" />
+        <activity android:name=".mvvm.MvvmAty" />
+        <activity android:name=".mvvm.geng.GenGAty" />
+        <activity android:name=".mvvm.rng.RngAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
