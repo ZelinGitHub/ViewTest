@@ -3,12 +3,11 @@ package com.fuck.viewtest.rxjava2.dispose;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fuck.viewtest.R;
 import com.uber.autodispose.AutoDispose;
 import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
+import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -48,14 +47,11 @@ public class DisposeTestAty extends AppCompatActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .as(AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(this)))
                 .subscribe(
-                        //观察者
                         new Observer<Integer>() {
-
                             @Override
                             public void onSubscribe(Disposable d) {
                             }
 
-                            //响应事件
                             @Override
                             public void onNext(Integer integer) {
                                 Toast.makeText(DisposeTestAty.this, integer.toString(), Toast.LENGTH_SHORT).show();
