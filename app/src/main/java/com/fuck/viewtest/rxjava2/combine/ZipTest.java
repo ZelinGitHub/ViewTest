@@ -9,7 +9,7 @@ import io.reactivex.functions.Function;
 
 import java.util.concurrent.TimeUnit;
 
-public class Zip {
+public class ZipTest {
     public static void testZip() {
 
         Observable observableA =    //observable

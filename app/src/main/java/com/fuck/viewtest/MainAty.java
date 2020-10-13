@@ -16,7 +16,7 @@ import com.fuck.viewtest.eventbus.TomEventAty;
 import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.mvvm.MvvmAty;
 import com.fuck.viewtest.rv.RvAty;
-import com.fuck.viewtest.rxjava2.observable.Create;
+import com.fuck.viewtest.rxjava2.dispose.DisposeTestAty;
 import com.fuck.viewtest.scroll.ScrollAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
@@ -180,7 +180,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_rxjava2: {
-                Create.testCreate2();
+                Intent intent = new Intent(this, DisposeTestAty.class);
+                startActivity(intent);
                 break;
             }
         }

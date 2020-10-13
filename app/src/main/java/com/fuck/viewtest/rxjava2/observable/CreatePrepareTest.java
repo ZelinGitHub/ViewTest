@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
-public class CreatePrepare {
+public class CreatePrepareTest {
     public static void testMoreNext() {
 
         //创建目标并发送next事件

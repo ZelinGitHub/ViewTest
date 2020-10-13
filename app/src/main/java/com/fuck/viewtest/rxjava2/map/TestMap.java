@@ -1,7 +1,5 @@
 package com.fuck.viewtest.rxjava2.map;
 
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 
 import com.fuck.viewtest.rxjava2.bean.Person;
@@ -24,21 +22,6 @@ public class TestMap {
                         return "I'm " + integer;
                     }
                 });
-
-        Handler handler=new Handler();
-        handler.sendEmptyMessage(0);
-        Message message=new Message();
-        handler.sendMessage(message);
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-
-
-            }
-        });
-        handler.sendMessage(null);
-
-
 
     }
 

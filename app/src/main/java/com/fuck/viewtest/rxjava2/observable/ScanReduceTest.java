@@ -5,7 +5,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 
-public class ScanReduce {
+public class ScanReduceTest {
     public static void testScan(){
         Observable.just(1, 2, 3, 4, 5)
                 .scan(new BiFunction< Integer, Integer, Integer >() {

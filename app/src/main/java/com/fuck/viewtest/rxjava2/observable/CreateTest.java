@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class Create {
+public class CreateTest {
     // i 要定义为成员变量
     private Integer i = 100;
 
@@ -78,12 +78,6 @@ public class Create {
             }
         })
                 .subscribeOn(Schedulers.io())
-//                .doOnSubscribe(new Consumer<Disposable>() {
-//                    @Override
-//                    public void accept(Disposable pDisposable) throws Exception {
-//                        System.out.println("doOnSubscribe 线程" + Thread.currentThread().getName());
-//                    }
-//                })
                 //订阅
                 .subscribe(
                         //观察者
