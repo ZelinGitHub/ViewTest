@@ -1,11 +1,11 @@
 package com.fuck.viewtest.rxjava2.observable;
 
-import io.reactivex.Observable;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
+
+import io.reactivex.Observable;
 
 public class CreatePrepareTest {
     public static void testMoreNext() {
@@ -23,6 +23,9 @@ public class CreatePrepareTest {
         list.add(3);
         Observable observable3 = Observable.fromIterable(list);
 
+        Observable observable4=Observable.range(2, 5);
+
+        Observable observable5=Observable.rangeLong(2, 5);
     }
 
     public static void testFromCallable() {
