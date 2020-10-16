@@ -173,6 +173,13 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
                 android:text="测试RxJava2" />
+
+            <Button
+                android:id="@+id/btn_leak"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试内存泄露" />
         </LinearLayout>
     </LinearLayout>
 

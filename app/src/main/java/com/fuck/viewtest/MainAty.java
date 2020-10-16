@@ -14,6 +14,7 @@ import com.fuck.viewtest.cusview.ui.CusvAty;
 import com.fuck.viewtest.dialog.DialogAty;
 import com.fuck.viewtest.eventbus.TomEventAty;
 import com.fuck.viewtest.img.ImgAty;
+import com.fuck.viewtest.leak.LeakTestAty;
 import com.fuck.viewtest.mvvm.MvvmAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.rxjava2.dispose.DisposeTestAty;
@@ -44,6 +45,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_anno;
     private Button btn_aac;
     private Button btn_rxjava2;
+    private Button btn_leak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_anno = findViewById(R.id.btn_anno);
         btn_aac = findViewById(R.id.btn_aac);
         btn_rxjava2 = findViewById(R.id.btn_rxjava2);
+        btn_leak = findViewById(R.id.btn_leak);
     }
 
 
@@ -93,6 +96,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_anno.setOnClickListener(this);
         btn_aac.setOnClickListener(this);
         btn_rxjava2.setOnClickListener(this);
+        btn_leak.setOnClickListener(this);
 
     }
 
@@ -181,6 +185,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_rxjava2: {
                 Intent intent = new Intent(this, DisposeTestAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_leak: {
+                Intent intent = new Intent(this, LeakTestAty.class);
                 startActivity(intent);
                 break;
             }

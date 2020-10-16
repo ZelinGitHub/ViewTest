@@ -53,6 +53,7 @@
         <activity android:name=".mvvm.geng.GenGAty" />
         <activity android:name=".mvvm.rng.RngAty" />
         <activity android:name=".rxjava2.dispose.DisposeTestAty" />
+        <activity android:name=".leak.LeakTestAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
