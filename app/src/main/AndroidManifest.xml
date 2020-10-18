@@ -54,6 +54,9 @@
         <activity android:name=".mvvm.rng.RngAty" />
         <activity android:name=".rxjava2.dispose.DisposeTestAty" />
         <activity android:name=".leak.LeakTestAty" />
+        <activity android:name=".leak.HandlerCtxAty" />
+        <activity android:name=".leak.StaticCtxAty" />
+        <activity android:name=".leak.ThreadCtxAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"

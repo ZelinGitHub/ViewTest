@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_static_ctx"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试静态Context" />
+
+    <Button
+        android:id="@+id/btn_static_view"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试静态View" />
+
+    <Button
+        android:id="@+id/btn_handler_ctx"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试handler Context" />
+
+    <Button
+        android:id="@+id/btn_thread_ctx"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试thread Context" />
+
+    <Button
+        android:id="@+id/btn_collection_not_empty"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试集合未置空" />
+
+
+    <Button
+        android:id="@+id/btn_static_bmp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试静态位图" />
+
+    <Button
+        android:id="@+id/btn_bmp_map"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="测试位图变换" />
+</LinearLayout>
