@@ -10,11 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.anno.AnnoAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
+import com.fuck.viewtest.coroutine.CoroutineAty;
 import com.fuck.viewtest.cusview.ui.CusvAty;
 import com.fuck.viewtest.dialog.DialogAty;
 import com.fuck.viewtest.eventbus.TomEventAty;
 import com.fuck.viewtest.img.ImgAty;
 import com.fuck.viewtest.leak.LeakTestAty;
+import com.fuck.viewtest.mvp.MvpAty;
 import com.fuck.viewtest.mvvm.MvvmAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.rxjava2.dispose.DisposeTestAty;
@@ -46,6 +48,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_aac;
     private Button btn_rxjava2;
     private Button btn_leak;
+    private Button btn_coroutine;
+    private Button btn_mvp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_aac = findViewById(R.id.btn_aac);
         btn_rxjava2 = findViewById(R.id.btn_rxjava2);
         btn_leak = findViewById(R.id.btn_leak);
+        btn_coroutine = findViewById(R.id.btn_coroutine);
+        btn_mvp = findViewById(R.id.btn_mvp);
     }
 
 
@@ -97,6 +103,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_aac.setOnClickListener(this);
         btn_rxjava2.setOnClickListener(this);
         btn_leak.setOnClickListener(this);
+        btn_coroutine.setOnClickListener(this);
+        btn_mvp.setOnClickListener(this);
 
     }
 
@@ -190,6 +198,16 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_leak: {
                 Intent intent = new Intent(this, LeakTestAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_coroutine: {
+                Intent intent = new Intent(this, CoroutineAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_mvp: {
+                Intent intent = new Intent(this, MvpAty.class);
                 startActivity(intent);
                 break;
             }
