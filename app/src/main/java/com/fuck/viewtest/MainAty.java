@@ -21,6 +21,7 @@ import com.fuck.viewtest.mvvm.MvvmAty;
 import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.rxjava2.dispose.DisposeTestAty;
 import com.fuck.viewtest.scroll.ScrollAty;
+import com.fuck.viewtest.scrollview.ScrollViewAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.taskt.FirstAty;
@@ -50,6 +51,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_leak;
     private Button btn_coroutine;
     private Button btn_mvp;
+    private Button btn_scroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +83,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_leak = findViewById(R.id.btn_leak);
         btn_coroutine = findViewById(R.id.btn_coroutine);
         btn_mvp = findViewById(R.id.btn_mvp);
+        btn_scroll = findViewById(R.id.btn_scroll);
     }
 
 
@@ -105,6 +108,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_leak.setOnClickListener(this);
         btn_coroutine.setOnClickListener(this);
         btn_mvp.setOnClickListener(this);
+        btn_scroll.setOnClickListener(this);
 
     }
 
@@ -157,7 +161,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_sv: {
-                Intent intent = new Intent(this, ScrollAty.class);
+                Intent intent = new Intent(this, ScrollViewAty.class);
                 startActivity(intent);
                 break;
             }
@@ -208,6 +212,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_mvp: {
                 Intent intent = new Intent(this, MvpAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_scroll: {
+                Intent intent = new Intent(this, ScrollAty.class);
                 startActivity(intent);
                 break;
             }

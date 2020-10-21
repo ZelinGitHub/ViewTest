@@ -200,6 +200,25 @@
                 android:layout_marginTop="16dp"
                 android:text="测试MVP" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_scroll"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试滚动" />
+
+            <Button
+                android:id="@+id/btn_"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
