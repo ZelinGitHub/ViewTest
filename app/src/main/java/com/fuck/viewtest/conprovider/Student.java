@@ -1,4 +1,4 @@
-package com.fuck.viewtest.Bean;
+package com.fuck.viewtest.conprovider;
 
 public class Student {
     private final static String TAG = "Student";

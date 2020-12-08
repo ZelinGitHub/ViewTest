@@ -1,4 +1,4 @@
-package com.fuck.viewtest.Bean;
+package com.fuck.viewtest.vp;
 
 public class Person {
     private int Id;

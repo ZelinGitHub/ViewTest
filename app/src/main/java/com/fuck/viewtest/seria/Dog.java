@@ -1,4 +1,4 @@
-package com.fuck.viewtest.Bean;
+package com.fuck.viewtest.seria;
 
 import android.os.Parcel;
 import android.os.Parcelable;

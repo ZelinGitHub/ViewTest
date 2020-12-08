@@ -213,11 +213,11 @@
                 android:text="测试滚动" />
 
             <Button
-                android:id="@+id/btn_"
+                android:id="@+id/btn_serial"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试" />
+                android:text="测试序列化" />
         </LinearLayout>
     </LinearLayout>
 

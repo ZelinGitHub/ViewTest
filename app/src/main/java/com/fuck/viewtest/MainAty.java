@@ -22,6 +22,7 @@ import com.fuck.viewtest.rv.RvAty;
 import com.fuck.viewtest.rxjava2.dispose.DisposeTestAty;
 import com.fuck.viewtest.scroll.ScrollAty;
 import com.fuck.viewtest.scrollview.ScrollViewAty;
+import com.fuck.viewtest.seria.SerialAty;
 import com.fuck.viewtest.serv.client.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.taskt.FirstAty;
@@ -52,6 +53,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_coroutine;
     private Button btn_mvp;
     private Button btn_scroll;
+    private Button btn_serial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_coroutine = findViewById(R.id.btn_coroutine);
         btn_mvp = findViewById(R.id.btn_mvp);
         btn_scroll = findViewById(R.id.btn_scroll);
+        btn_serial = findViewById(R.id.btn_serial);
     }
 
 
@@ -109,6 +112,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_coroutine.setOnClickListener(this);
         btn_mvp.setOnClickListener(this);
         btn_scroll.setOnClickListener(this);
+        btn_serial.setOnClickListener(this);
 
     }
 
@@ -217,6 +221,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_scroll: {
                 Intent intent = new Intent(this, ScrollAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_serial: {
+                Intent intent = new Intent(this, SerialAty.class);
                 startActivity(intent);
                 break;
             }

@@ -10,7 +10,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.fuck.viewtest.Bean.Student;
 import com.fuck.viewtest.R;
 
 import static com.fuck.viewtest.help.Util.MY_CONTENT_PROVIDER_AUTHORITY;

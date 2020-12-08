@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.fuck.viewtest.Bean.Person;
 import com.fuck.viewtest.R;
 
 import java.util.ArrayList;

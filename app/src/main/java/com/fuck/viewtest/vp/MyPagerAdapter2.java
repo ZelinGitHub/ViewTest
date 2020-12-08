@@ -7,8 +7,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.fuck.viewtest.Bean.Person;
-
 import java.util.List;
 
 public class MyPagerAdapter2 extends PagerAdapter {

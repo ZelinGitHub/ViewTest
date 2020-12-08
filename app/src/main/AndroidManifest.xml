@@ -60,6 +60,7 @@
         <activity android:name=".coroutine.CoroutineAty" />
         <activity android:name=".mvp.MvpAty" />
         <activity android:name=".scroll.ScrollAty" />
+        <activity android:name=".seria.SerialAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
