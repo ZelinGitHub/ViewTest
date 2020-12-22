@@ -6,9 +6,14 @@
 
     <attr name="back" format="color" />
     <attr name="title" format="string" />
+
     <declare-styleable name="Vegetable">
         <attr name="back" />
         <attr name="title" />
     </declare-styleable>
 
+    <declare-styleable name="Glue">
+        <attr name="android:layout_width" />
+        <attr name="android:layout_height" />
+    </declare-styleable>
 </resources>
