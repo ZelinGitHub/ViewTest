@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fuck.viewtest">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
+        android:name=".BaseApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".BaseApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -23,9 +25,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".taskt.FirstAty" />
-        <activity android:name=".taskt.SecondAty"
-            android:launchMode="singleInstance"
-            />
+        <activity
+            android:name=".taskt.SecondAty"
+            android:launchMode="singleInstance" />
         <activity android:name=".taskt.ThirdAty" />
         <activity android:name=".taskt.FourAty" />
         <activity android:name=".rv.RvAty" />
@@ -61,6 +63,7 @@
         <activity android:name=".mvp.MvpAty" />
         <activity android:name=".scroll.ScrollAty" />
         <activity android:name=".seria.SerialAty" />
+        <activity android:name=".aty.AtyAty" />
 
         <provider
             android:name=".conprovider.MyContentProvider"
@@ -71,7 +74,6 @@
         <service android:name=".serv.server.MyIntentService" />
         <service android:name=".socket.serv.SocketService" />
     </application>
-
 
 
 </manifest>

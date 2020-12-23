@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.anim.AnimAty;
 import com.fuck.viewtest.anno.AnnoAty;
+import com.fuck.viewtest.aty.AtyAty;
 import com.fuck.viewtest.broadcast.BroadcastAty;
 import com.fuck.viewtest.coroutine.CoroutineAty;
 import com.fuck.viewtest.cusview.ui.CusvAty;
@@ -54,6 +55,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_mvp;
     private Button btn_scroll;
     private Button btn_serial;
+    private Button btn_aty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +89,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_mvp = findViewById(R.id.btn_mvp);
         btn_scroll = findViewById(R.id.btn_scroll);
         btn_serial = findViewById(R.id.btn_serial);
+        btn_aty = findViewById(R.id.btn_aty);
     }
 
 
@@ -113,6 +116,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_mvp.setOnClickListener(this);
         btn_scroll.setOnClickListener(this);
         btn_serial.setOnClickListener(this);
+        btn_aty.setOnClickListener(this);
 
     }
 
@@ -226,6 +230,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_serial: {
                 Intent intent = new Intent(this, SerialAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_aty: {
+                Intent intent = new Intent(this, AtyAty.class);
                 startActivity(intent);
                 break;
             }
