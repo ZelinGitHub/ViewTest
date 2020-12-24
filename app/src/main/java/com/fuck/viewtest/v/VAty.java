@@ -2,7 +2,7 @@ package com.fuck.viewtest.v;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +27,55 @@ public class VAty extends AppCompatActivity {
 
     private void initUI() {
 
+        viewPost();
+
+
+        viewTreeObserver();
+
+
+        getSize();
+
+
+        getSite();
+
+        layout();
+
+
+        offset();
+
+    }
+
+    private void offset() {
+        v.offsetLeftAndRight(200);
+        v.offsetTopAndBottom(300);
+    }
+
+    private void layout() {
+        int offsetX = 100;
+        int offsetY = 200;
+
+        v.layout(
+                v.getLeft() + offsetX
+                , v.getTop() + offsetY
+                , v.getRight() + offsetX
+                , v.getBottom() + offsetY
+        );
+
+    }
+
+
+    private void getSite() {
+        int left = v.getLeft();
+        int top = v.getTop();
+        int right = v.getRight();
+        int bottom = v.getBottom();
+    }
+
+    private void getSize() {
+        int width = v.getRight() - v.getLeft();
+        int height = v.getBottom() - v.getTop();
+        int width2 = v.getWidth();
+        int height2 = v.getHeight();
     }
 
     @Override
@@ -55,9 +104,33 @@ public class VAty extends AppCompatActivity {
         v.offsetTopAndBottom(300);
         System.out.println("View原始坐标：" + v.getLeft() + " " + v.getTop());
         System.out.println("View当前坐标：" + v.getX() + " " + v.getY());
-
     }
 
 
+    private void viewPost() {
+        v.post(new Runnable() {
+            @Override
+            public void run() {
+                int measureWidth = v.getMeasuredWidth();
+                int measureHeight = v.getMeasuredHeight();
+                int width = v.getWidth();
+                int height = v.getHeight();
+            }
+        });
+    }
+
+    private void viewTreeObserver() {
+        ViewTreeObserver observer = v.getViewTreeObserver();
+        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                v.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                int measureWidth = v.getMeasuredWidth();
+                int measureHeight = v.getMeasuredHeight();
+                int width = v.getWidth();
+                int height = v.getHeight();
+            }
+        });
+    }
 
 }
