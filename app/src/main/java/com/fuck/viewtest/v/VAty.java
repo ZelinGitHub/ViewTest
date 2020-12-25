@@ -78,6 +78,17 @@ public class VAty extends AppCompatActivity {
         int height2 = v.getHeight();
     }
 
+    private void getPadding() {
+        int paddingStart = v.getPaddingStart();
+        int paddingLeft = v.getPaddingLeft();
+
+        int paddingEnd = v.getPaddingEnd();
+        int paddingRight = v.getPaddingRight();
+
+        int paddingTop = v.getPaddingTop();
+        int paddingBottom = v.getPaddingBottom();
+    }
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
