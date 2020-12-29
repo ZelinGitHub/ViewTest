@@ -1,25 +1,55 @@
-package com.fuck.viewtest.cusview;
+package com.fuck.viewtest.cusview.myviewgroup;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class VerticalViewGroup extends ViewGroup {
-    public VerticalViewGroup(Context context) {
+import com.fuck.viewtest.R;
+
+public class ChildMarginViewGroup extends ViewGroup {
+    public ChildMarginViewGroup(Context context) {
         this(context, null);
     }
 
-    public VerticalViewGroup(Context context, AttributeSet attrs) {
+    public ChildMarginViewGroup(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public VerticalViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ChildMarginViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
     }
 
-    public VerticalViewGroup(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ChildMarginViewGroup(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+
+        addChildViews(context);
+    }
+
+    private void addChildViews(Context pContext) {
+        View view1 = new View(pContext);
+        View view2 = new View(pContext);
+        view1.setBackgroundColor(getResources().getColor(R.color.redffff534BPrimary));
+        view2.setBackgroundColor(getResources().getColor(R.color.orange_ringffff9434));
+
+//        MarginLayoutParams marginLayoutParams=new MarginLayoutParams(400, 200);
+//        marginLayoutParams.topMargin=80;
+//        marginLayoutParams.leftMargin=40;
+//        addView(view1, marginLayoutParams);
+//        addView(view2, marginLayoutParams);
+
+//        addView(view1, 400, 200);
+//        addView(view2, 400, 200);
+
+//        addView(view1);
+//        addView(view2);
+
+//        LayoutParams layoutParams = new LayoutParams(400, 200);
+//        addView(view1, layoutParams);
+//        addView(view2, layoutParams);
+
+        addView(view1, null);
+        addView(view2, null);
     }
 
     //重写onMeasure方法
@@ -83,7 +113,7 @@ public class VerticalViewGroup extends ViewGroup {
     //
     @Override
     protected LayoutParams generateLayoutParams(LayoutParams p) {
-        return new MarginLayoutParams(p);
+        return new MarginLayoutParams(200,400);
     }
 
     //重写generateLayoutParams(AttributeSet attrs)

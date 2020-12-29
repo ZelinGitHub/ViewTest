@@ -1,4 +1,4 @@
-package com.fuck.viewtest.cusview;
+package com.fuck.viewtest.cusview.myviewgroup;
 
 import android.content.Context;
 import android.util.AttributeSet;

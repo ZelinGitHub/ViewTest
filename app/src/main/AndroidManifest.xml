@@ -39,6 +39,9 @@
         <activity android:name=".conprovider.ContentProviderAty" />
         <activity android:name=".socket.client.SocketAty" />
         <activity android:name=".cusview.ui.CusvAty" />
+        <activity android:name=".cusview.ui.ChildMarginViewGroupAty" />
+        <activity android:name=".cusview.ui.MyViewGroupAty" />
+        <activity android:name=".cusview.ui.PaddingViewGroupAty" />
         <activity android:name=".img.ImgAty" />
         <activity android:name=".rv.layoutmgr.StaggerAty" />
         <activity android:name=".rv.itemdecor.RvFlagAty" />
