@@ -22,8 +22,6 @@ public class ChildMarginViewGroup extends ViewGroup {
 
     public ChildMarginViewGroup(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-
-        addChildViews(context);
     }
 
     private void addChildViews(Context pContext) {
@@ -32,24 +30,40 @@ public class ChildMarginViewGroup extends ViewGroup {
         view1.setBackgroundColor(getResources().getColor(R.color.redffff534BPrimary));
         view2.setBackgroundColor(getResources().getColor(R.color.orange_ringffff9434));
 
-//        MarginLayoutParams marginLayoutParams=new MarginLayoutParams(400, 200);
-//        marginLayoutParams.topMargin=80;
-//        marginLayoutParams.leftMargin=40;
-//        addView(view1, marginLayoutParams);
-//        addView(view2, marginLayoutParams);
+        MarginLayoutParams marginLayoutParams = new MarginLayoutParams(400, 200);
+        marginLayoutParams.topMargin = 80;
+        marginLayoutParams.leftMargin = 40;
+        addView(view1, marginLayoutParams);
+        addView(view2, marginLayoutParams);
+    }
 
-//        addView(view1, 400, 200);
-//        addView(view2, 400, 200);
+    private void addChildViews2(Context pContext) {
+        View view1 = new View(pContext);
+        View view2 = new View(pContext);
+        view1.setBackgroundColor(getResources().getColor(R.color.redffff534BPrimary));
+        view2.setBackgroundColor(getResources().getColor(R.color.orange_ringffff9434));
+        addView(view1, 400, 200);
+        addView(view2, 400, 200);
+    }
 
-//        addView(view1);
-//        addView(view2);
+    private void addChildViews3(Context pContext) {
+        View view1 = new View(pContext);
+        View view2 = new View(pContext);
+        view1.setBackgroundColor(getResources().getColor(R.color.redffff534BPrimary));
+        view2.setBackgroundColor(getResources().getColor(R.color.orange_ringffff9434));
+        addView(view1);
+        addView(view2);
+    }
 
-//        LayoutParams layoutParams = new LayoutParams(400, 200);
-//        addView(view1, layoutParams);
-//        addView(view2, layoutParams);
+    private void addChildViews4(Context pContext) {
+        View view1 = new View(pContext);
+        View view2 = new View(pContext);
+        view1.setBackgroundColor(getResources().getColor(R.color.redffff534BPrimary));
+        view2.setBackgroundColor(getResources().getColor(R.color.orange_ringffff9434));
 
-        addView(view1, null);
-        addView(view2, null);
+        LayoutParams layoutParams = new LayoutParams(400, 200);
+        addView(view1, layoutParams);
+        addView(view2, layoutParams);
     }
 
     //重写onMeasure方法
@@ -108,25 +122,24 @@ public class ChildMarginViewGroup extends ViewGroup {
         }
     }
 
-    //重写generateLayoutParams(LayoutParams p)
-    //创建MarginLayoutParams
-    //
     @Override
-    protected LayoutParams generateLayoutParams(LayoutParams p) {
-        return new MarginLayoutParams(200,400);
+    protected boolean checkLayoutParams(LayoutParams p) {
+        return p instanceof MarginLayoutParams;
     }
 
-    //重写generateLayoutParams(AttributeSet attrs)
-    //创建MarginLayoutParams
-    //LayoutInflater在创建控件时，会调用这个方法，为子控件生成布局参数
+
+    @Override
+    protected LayoutParams generateLayoutParams(LayoutParams p) {
+        return new MarginLayoutParams(p);
+    }
+
+
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);
     }
 
-    //重写generateDefaultLayoutParams
-    //创建MarginLayoutParams
-    //在添加子控件时，如果子控件没有设置布局参数，会调用这个方法，为子控件生成默认的布局参数
+
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
         return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);

@@ -71,13 +71,13 @@ public class PaddingViewGroup extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        int paddingLeft = getPaddingLeft();
+        int left = getPaddingLeft();
         int top = getPaddingTop();
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
-            int right = paddingLeft+child.getMeasuredWidth();
+            int right = left+child.getMeasuredWidth();
             int bottom = top + child.getMeasuredHeight();
-            child.layout(paddingLeft, top, right, bottom);
+            child.layout(left, top, right, bottom);
             top = bottom;
         }
     }

@@ -5,69 +5,67 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <com.fuck.viewtest.cusview.myviewgroup.ChildMarginViewGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <!--    <com.fuck.viewtest.cusview.myviewgroup.ChildMarginViewGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        android:layout_height="wrap_content">
 
-            <View
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/redffff534BPrimary" />
+        <View
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/redffff534BPrimary" />
 
-            <View
-                android:layout_width="200dp"
+        <View
+            android:layout_width="200dp"
 
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
 
-                android:background="@color/orange_ringffff9434" />
+            android:background="@color/orange_ringffff9434" />
 
-            <View
-                android:layout_width="200dp"
+        <View
+            android:layout_width="200dp"
 
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/yellowffffff00" />
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/yellowffffff00" />
 
-            <View
-                android:layout_width="200dp"
+        <View
+            android:layout_width="200dp"
 
 
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/green_ringff95e11c" />
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/green_ringff95e11c" />
 
-            <View
-                android:layout_width="200dp"
+        <View
+            android:layout_width="200dp"
 
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/blueff0d79cdPrimary" />
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/blueff0d79cdPrimary" />
 
 
-            <View
-                android:layout_width="200dp"
+        <View
+            android:layout_width="200dp"
 
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/blue_ringff0bd9f1" />
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/blue_ringff0bd9f1" />
 
-            <View
-                android:layout_width="200dp"
+        <View
+            android:layout_width="200dp"
 
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/purple_ff9932CD" />
-        </com.fuck.viewtest.cusview.myviewgroup.ChildMarginViewGroup>-->
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_ff9932CD" />
+    </com.fuck.viewtest.cusview.myviewgroup.ChildMarginViewGroup>
 </LinearLayout>

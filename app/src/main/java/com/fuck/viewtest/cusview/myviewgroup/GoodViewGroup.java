@@ -22,9 +22,7 @@ public class GoodViewGroup extends ViewGroup {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    //重写onMeasure方法
-    //测量子控件
-    //设置当前控件的测量尺寸，考虑子控件的外边距和当前控件的内边距
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -37,7 +35,12 @@ public class GoodViewGroup extends ViewGroup {
 
         int measureWidth = 0;
         int measureHeight = 0;
-        //子控件的测量宽度、测量高度和外边距是分开的
+
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int paddingTop = getPaddingTop();
+        int paddingBottom = getPaddingBottom();
+
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             measureChild(child, widthMeasureSpec, heightMeasureSpec);
@@ -47,6 +50,12 @@ public class GoodViewGroup extends ViewGroup {
             }
             measureHeight += child.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
         }
+
+        measureWidth += paddingLeft;
+        measureWidth += paddingRight;
+
+        measureHeight += paddingTop;
+        measureHeight += paddingBottom;
 
         if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(measureWidth, measureHeight);
@@ -59,44 +68,44 @@ public class GoodViewGroup extends ViewGroup {
         }
     }
 
-    //重写onLayout方法
-    //布局子控件，考虑子控件的外边距和当前控件的内边距
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        int paddingLeft = getPaddingLeft();
+        int paddingTop = getPaddingTop();
         int top = 0;
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
-            int left = lp.leftMargin;
+            int left = paddingLeft + lp.leftMargin;
             if (top == 0) {
-                top = lp.topMargin;
+                top = paddingTop + lp.topMargin;
             }
-            int right = child.getMeasuredWidth();
+            int right = left + child.getMeasuredWidth();
             int bottom = top + child.getMeasuredHeight();
             child.layout(left, top, right, bottom);
             top = bottom + lp.bottomMargin + lp.topMargin;
         }
     }
 
-    //重写generateLayoutParams(LayoutParams p)
-    //创建MarginLayoutParams
-    //
+    @Override
+    protected boolean checkLayoutParams(LayoutParams p) {
+        return p instanceof MarginLayoutParams;
+    }
+
+
     @Override
     protected LayoutParams generateLayoutParams(LayoutParams p) {
         return new MarginLayoutParams(p);
     }
 
-    //重写generateLayoutParams(AttributeSet attrs)
-    //创建MarginLayoutParams
-    //LayoutInflater在创建控件时，会调用这个方法，为子控件生成布局参数
+
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);
     }
 
-    //重写generateDefaultLayoutParams
-    //创建MarginLayoutParams
-    //在添加子控件时，如果子控件没有设置布局参数，会调用这个方法，为子控件生成默认的布局参数
+
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
         return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
