@@ -2,6 +2,8 @@ package com.fuck.viewtest.dialog;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
+import com.fuck.viewtest.help.Util;
 
 public class DialogAty extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,7 +42,7 @@ public class DialogAty extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onResume() {
         super.onResume();
-        Toast toast=Toast.makeText(this,"abc",Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, "abc", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -54,20 +57,42 @@ public class DialogAty extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_open_dialog: {
-                Dialog dialog = new Dialog(this);
-                TextView textView = new TextView(this);
-                textView.setText("ABC");
-                dialog.setContentView(textView);
-                dialog.show();
+                showDlg(this);
                 break;
             }
             case R.id.btn_open_alert: {
-                Dialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("ABC")
-                        .create();
-                dialog.show();
+                showAlert(this);
             }
-
         }
+    }
+
+    private void showDlg(Context pContext) {
+        Dialog dialog = new Dialog(pContext);
+        TextView textView = new TextView(pContext);
+        textView.setText("ABC");
+        dialog.setContentView(textView);
+        dialog.show();
+    }
+
+    private void showAlert(Context pContext) {
+        Dialog dialog = new AlertDialog.Builder(pContext)
+                .setTitle("Fuck u?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Util.toast(pContext, "Hot fuck");
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Util.toast(pContext, "Go die");
+                    }
+                })
+                .create();
+        dialog.show();
     }
 }

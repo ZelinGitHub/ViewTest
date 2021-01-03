@@ -1,5 +1,8 @@
 package com.fuck.viewtest.help;
 
+import android.content.Context;
+import android.widget.Toast;
+
 public class Util {
     //Android中ContentProvider的Schema固定为content://
     public static final String MY_CONTENT_PROVIDER_SCHEMA = "content://";
@@ -15,5 +18,9 @@ public class Util {
 
     public static double arcToAngle(double deg) {
         return deg * 180 / Math.PI;
+    }
+
+    public static void toast(Context pContext, String pStr) {
+        Toast.makeText(pContext, pStr, Toast.LENGTH_SHORT).show();
     }
 }
