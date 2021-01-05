@@ -54,31 +54,55 @@ public class ServAty extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_start_serv: {
-                Intent intent = new Intent(this, MyService.class);
-                intent.putExtra("data",new Date().toString());
-                startService(intent);
+                startServ(this);
                 break;
             }
             case R.id.btn_stop_serv: {
-                Intent intent = new Intent(this, MyService.class);
-                stopService(intent);
+                stopServ(this);
                 break;
             }
             case R.id.btn_bind_serv: {
-                Intent intent = new Intent(this, MyService.class);
-                bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+                bindServ(this);
                 break;
             }
             case R.id.btn_unbind_serv: {
-                unbindService(mConnection);
+                unbindServ();
                 break;
             }
             case R.id.btn_start_intent_serv: {
-                Intent intent = new Intent(this, MyIntentService.class);
-                intent.putExtra("data",new Date().toString());
-                startService(intent);
+                startIntentServ(this);
                 break;
             }
         }
+    }
+
+    private void startServ(Context pContext) {
+        Intent intent = new Intent(pContext, MyService.class);
+        intent.putExtra("data", new Date().toString());
+        startService(intent);
+    }
+
+
+    private void stopServ(Context pContext) {
+        Intent intent = new Intent(pContext, MyService.class);
+        stopService(intent);
+    }
+
+
+    private void bindServ(Context pContext) {
+        Intent intent = new Intent(pContext, MyService.class);
+        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+    }
+
+
+    private void unbindServ() {
+        unbindService(mConnection);
+    }
+
+
+    private void startIntentServ(Context pContext) {
+        Intent intent = new Intent(pContext, MyIntentService.class);
+        intent.putExtra("data", new Date().toString());
+        startService(intent);
     }
 }

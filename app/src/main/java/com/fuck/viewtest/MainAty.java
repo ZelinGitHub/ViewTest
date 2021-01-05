@@ -61,12 +61,12 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
+        initViews();
         initUI();
     }
 
 
-    private void initView() {
+    private void initViews() {
         btn_vp = findViewById(R.id.btn_vp);
         btn_anim = findViewById(R.id.btn_anim);
         btn_win = findViewById(R.id.btn_win);

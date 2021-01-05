@@ -31,13 +31,19 @@ public class VpAty extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vp);
+        initViews();
+        initUI();
+    }
 
+    private void initViews() {
         vp = findViewById(R.id.vp);
         btn_add = findViewById(R.id.btn_add);
         btn_update = findViewById(R.id.btn_update);
         btn_reduce = findViewById(R.id.btn_reduce);
+    }
 
-//        mAdapter = new MyPagerAdapter();
+    private void initUI() {
+        //        mAdapter = new MyPagerAdapter();
         mAdapter2 = new MyPagerAdapter2(mPeople);
         vp.setAdapter(mAdapter2);
 

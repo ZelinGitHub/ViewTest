@@ -34,6 +34,8 @@
         <activity android:name=".vp.VpAty" />
         <activity android:name=".anim.AnimAty" />
         <activity android:name=".win.WinAty" />
+        <activity android:name=".win.WindowAty" />
+        <activity android:name=".win.PopupWindowAty" />
         <activity android:name=".serv.client.ServAty" />
         <activity android:name=".broadcast.BroadcastAty" />
         <activity android:name=".conprovider.ContentProviderAty" />

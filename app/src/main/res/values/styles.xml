@@ -26,5 +26,13 @@
     </style>
 
 
+    <style name="windowBottomToUp" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_btm_to_up</item>
+        <item name="android:windowExitAnimation">@anim/window_up_back_btm</item>
+    </style>
 
+    <style name="windowRightToLeft" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_right_to_left</item>
+        <item name="android:windowExitAnimation">@anim/window_left_back_right</item>
+    </style>
 </resources>
