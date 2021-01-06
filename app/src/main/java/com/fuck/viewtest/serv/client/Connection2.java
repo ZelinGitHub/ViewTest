@@ -6,15 +6,17 @@ import android.os.IBinder;
 
 import com.fuck.viewtest.serv.server.MyBinder;
 
-public class MyConnection implements ServiceConnection {
+public class Connection2 implements ServiceConnection {
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
+        System.out.println("Connection2 onServiceConnected");
         MyBinder myBinder = (MyBinder) service;
+        System.out.println("Connection2 获得Binder " + myBinder.hashCode());
         myBinder.fuckInServer();
     }
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
-
+        System.out.println("Connection2 onServiceDisconnected");
     }
 }

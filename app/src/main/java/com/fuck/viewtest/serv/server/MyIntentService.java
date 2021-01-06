@@ -12,12 +12,12 @@ public class MyIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        System.out.println("MyIntentService生命周期：onHandleIntent"+" Intent："+intent.getStringExtra("data"));
+        System.out.println("MyIntentService：onHandleIntent"+" Intent："+intent.getStringExtra("data"));
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.println("MyIntentService生命周期：onDestroy");
+        System.out.println("MyIntentService：onDestroy");
     }
 }

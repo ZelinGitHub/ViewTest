@@ -36,7 +36,10 @@
         <activity android:name=".win.WinAty" />
         <activity android:name=".win.WindowAty" />
         <activity android:name=".win.PopupWindowAty" />
-        <activity android:name=".serv.client.ServAty" />
+        <activity android:name=".serv.client.MyClientAty" />
+        <activity android:name=".serv.client.Client1Aty" />
+        <activity android:name=".serv.client.Client2Aty" />
+        <activity android:name=".serv.ServAty" />
         <activity android:name=".broadcast.BroadcastAty" />
         <activity android:name=".conprovider.ContentProviderAty" />
         <activity android:name=".socket.client.SocketAty" />

@@ -24,7 +24,7 @@ import com.fuck.viewtest.rxjava2.dispose.DisposeTestAty;
 import com.fuck.viewtest.scroll.ScrollAty;
 import com.fuck.viewtest.scrollview.ScrollViewAty;
 import com.fuck.viewtest.seria.SerialAty;
-import com.fuck.viewtest.serv.client.ServAty;
+import com.fuck.viewtest.serv.ServAty;
 import com.fuck.viewtest.socket.client.SocketAty;
 import com.fuck.viewtest.taskt.FirstAty;
 import com.fuck.viewtest.v.VAty;
