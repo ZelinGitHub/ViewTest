@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
 
-    <com.fuck.viewtest.cusview.myviewgroup.ChildMarginViewGroup
+    <com.fuck.viewtest.menu.cusview.myviewgroup.ChildMarginViewGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -67,5 +67,5 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:background="@color/purple_ff9932CD" />
-    </com.fuck.viewtest.cusview.myviewgroup.ChildMarginViewGroup>
+    </com.fuck.viewtest.menu.cusview.myviewgroup.ChildMarginViewGroup>
 </LinearLayout>
