@@ -13,24 +13,24 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:text="连接BinderPoolServer" />
+        android:text="连接到服务端" />
 
     <Button
-        android:id="@+id/btn_encrypt"
+        android:id="@+id/btn_encrypt_on_server"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:text="远程加密数据" />
 
     <Button
-        android:id="@+id/btn_decipher"
+        android:id="@+id/btn_decipher_on_server"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:text="远程解密数据" />
 
     <Button
-        android:id="@+id/btn_plus"
+        android:id="@+id/btn_plus_on_server"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -40,7 +40,8 @@
         android:id="@+id/btn_unbind_pool_server"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:textSize="12sp"
         android:layout_marginTop="16dp"
-        android:text="断开和BinderPoolServer的连接" />
+        android:text="断开和服务端的连接" />
 
 </LinearLayout>

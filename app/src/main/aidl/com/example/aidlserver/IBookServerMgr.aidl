@@ -9,5 +9,5 @@ interface IBookServerMgr {
 void addBook(in Book book);
 Book removeBook();
 boolean isHaveBook(String name);
-void addClientBinder(IBookClientMgr clientBinder);
+void setClientBinder(IBookClientMgr clientBinder);
 }

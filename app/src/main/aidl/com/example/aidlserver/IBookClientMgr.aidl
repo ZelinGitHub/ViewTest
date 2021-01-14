@@ -5,5 +5,6 @@ package com.example.aidlserver;
 import com.example.aidlserver.bean.Book;
 
 interface IBookClientMgr {
-void kill();
+int getLevel();
+void setLevel(int level);
 }
