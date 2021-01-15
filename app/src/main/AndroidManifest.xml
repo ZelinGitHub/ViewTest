@@ -4,6 +4,7 @@
     package="com.fuck.viewtest">
     <uses-permission android:name="com.example.aidlserver.serv.BookService"/>
     <uses-permission android:name="com.example.aidlserver.serv.PoolService"/>
+    <uses-permission android:name="com.example.aidlserver.serv.MessengerService"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -76,6 +77,7 @@
         <activity android:name=".menu.aty.AtyAty" />
         <activity android:name=".menu.aidl.BookClientAty" />
         <activity android:name=".menu.aidl.PoolClientAty" />
+        <activity android:name=".menu.aidl.MessengerClientAty" />
         <activity android:name=".menu.aidl.AIDLAty" />
 
         <provider

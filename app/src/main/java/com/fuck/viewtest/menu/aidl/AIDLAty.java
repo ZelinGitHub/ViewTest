@@ -12,6 +12,7 @@ import com.fuck.viewtest.R;
 public class AIDLAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_book_client;
     private Button btn_pool_client;
+    private Button btn_messenger_client;
 
 
     @Override
@@ -25,11 +26,13 @@ public class AIDLAty extends AppCompatActivity implements View.OnClickListener {
     private void initViews() {
         btn_book_client = findViewById(R.id.btn_book_client);
         btn_pool_client = findViewById(R.id.btn_pool_client);
+        btn_messenger_client = findViewById(R.id.btn_messenger_client);
     }
 
     private void initUI() {
         btn_book_client.setOnClickListener(this);
         btn_pool_client.setOnClickListener(this);
+        btn_messenger_client.setOnClickListener(this);
 
     }
 
@@ -43,6 +46,11 @@ public class AIDLAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_pool_client: {
                 Intent intent = new Intent(this, PoolClientAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_messenger_client: {
+                Intent intent = new Intent(this, MessengerClientAty.class);
                 startActivity(intent);
                 break;
             }
