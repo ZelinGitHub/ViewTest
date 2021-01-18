@@ -13,7 +13,6 @@ public class SecondAty extends BaseAty {
 
     private Button btn;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
