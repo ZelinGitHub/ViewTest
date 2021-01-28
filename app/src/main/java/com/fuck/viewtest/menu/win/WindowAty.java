@@ -1,6 +1,6 @@
 package com.fuck.viewtest.menu.win;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -31,8 +31,8 @@ public class WindowAty extends AppCompatActivity {
         addWindow(this);
     }
 
-    private void addWindow(Context pContext) {
-        View view = new View(pContext);
+    private void addWindow(Activity pActivity) {
+        View view = new View(pActivity);
         view.setBackgroundColor(getResources().getColor(R.color.blueff0d79cdPrimary));
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         layoutParams.format = PixelFormat.TRANSPARENT;
@@ -41,6 +41,6 @@ public class WindowAty extends AppCompatActivity {
         layoutParams.x = 0;
         layoutParams.y = 0;
         layoutParams.gravity = Gravity.START | Gravity.TOP;
-        getWindowManager().addView(view, layoutParams);
+        pActivity.getWindowManager().addView(view, layoutParams);
     }
 }
