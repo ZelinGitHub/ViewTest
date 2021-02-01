@@ -5,6 +5,7 @@ import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,10 +29,11 @@ public class WindowAty extends AppCompatActivity {
     }
 
     private void initUI() {
-        addWindow(this);
+        addWindow1(this);
+        addWindow2(this);
     }
 
-    private void addWindow(Activity pActivity) {
+    private void addWindow1(Activity pActivity) {
         View view = new View(pActivity);
         view.setBackgroundColor(getResources().getColor(R.color.blueff0d79cdPrimary));
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
@@ -42,5 +44,28 @@ public class WindowAty extends AppCompatActivity {
         layoutParams.y = 0;
         layoutParams.gravity = Gravity.START | Gravity.TOP;
         pActivity.getWindowManager().addView(view, layoutParams);
+    }
+
+    private void addWindow2(Activity pActivity) {
+        View view = new View(pActivity);
+        view.setBackgroundColor(getResources().getColor(R.color.redffff534BPrimary));
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.format = PixelFormat.TRANSPARENT;
+        layoutParams.width = 400;
+        layoutParams.height = 800;
+        layoutParams.x = 0;
+        layoutParams.y = 0;
+        layoutParams.gravity = Gravity.END | Gravity.BOTTOM;
+        pActivity.getWindowManager().addView(view, layoutParams);
+    }
+
+    private void setWindowType() {
+        Window window = getWindow();
+        window.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);
+    }
+
+    private void setWindowAnimation() {
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.windowBottomToUp);
     }
 }
