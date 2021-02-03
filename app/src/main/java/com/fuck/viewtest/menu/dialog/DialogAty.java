@@ -6,9 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,8 +43,6 @@ public class DialogAty extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onResume() {
         super.onResume();
-        Toast toast = Toast.makeText(this, "abc", Toast.LENGTH_SHORT);
-        toast.show();
     }
 
     @Override
@@ -71,7 +70,30 @@ public class DialogAty extends AppCompatActivity implements View.OnClickListener
         TextView textView = new TextView(pContext);
         textView.setText("ABC");
         dialog.setContentView(textView);
+        dialog.setCanceledOnTouchOutside(false);
+        setWindowAnim(dialog);
         dialog.show();
+    }
+
+    private void setWindowAnim(Dialog pDialog) {
+        Window window = pDialog.getWindow();
+        if (window != null) {
+            window.setWindowAnimations(R.style.windowRightToLeft);
+        }
+    }
+
+    private void setWindowSize(Dialog pDialog) {
+        Window window = pDialog.getWindow();
+        if (window != null) {
+            int screenWidth = pDialog.getContext().getResources().getDisplayMetrics().widthPixels;
+            int screenHeight = pDialog.getContext().getResources().getDisplayMetrics().heightPixels;
+
+            WindowManager.LayoutParams layoutParams = window.getAttributes();
+            layoutParams.width = screenWidth;
+            layoutParams.height = screenHeight;
+
+
+        }
     }
 
     private void showAlert(Context pContext) {
