@@ -5,7 +5,6 @@ import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,13 +58,4 @@ public class WindowAty extends AppCompatActivity {
         pActivity.getWindowManager().addView(view, layoutParams);
     }
 
-    private void setWindowType() {
-        Window window = getWindow();
-        window.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);
-    }
-
-    private void setWindowAnimation() {
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.windowBottomToUp);
-    }
 }
