@@ -238,6 +238,26 @@
                 android:layout_marginTop="16dp"
                 android:text="测试AIDL" />
         </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_surfaceview"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试Activity" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

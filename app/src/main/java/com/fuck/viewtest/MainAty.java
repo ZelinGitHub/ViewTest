@@ -58,6 +58,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_serial;
     private Button btn_aty;
     private Button btn_aidl;
+    private Button btn_surfaceview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_serial = findViewById(R.id.btn_serial);
         btn_aty = findViewById(R.id.btn_aty);
         btn_aidl = findViewById(R.id.btn_aidl);
+        btn_surfaceview = findViewById(R.id.btn_surfaceview);
     }
 
 
@@ -121,6 +123,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_serial.setOnClickListener(this);
         btn_aty.setOnClickListener(this);
         btn_aidl.setOnClickListener(this);
+        btn_surfaceview.setOnClickListener(this);
 
     }
 
@@ -243,6 +246,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_aidl: {
+                Intent intent = new Intent(this, AIDLAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_surfaceview: {
                 Intent intent = new Intent(this, AIDLAty.class);
                 startActivity(intent);
                 break;

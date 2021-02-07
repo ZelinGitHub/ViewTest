@@ -79,6 +79,7 @@
         <activity android:name=".menu.aidl.PoolClientAty" />
         <activity android:name=".menu.aidl.MessengerClientAty" />
         <activity android:name=".menu.aidl.AIDLAty" />
+        <activity android:name=".menu.surfaceview.SurfaceViewAty" />
 
         <provider
             android:name=".menu.conprovider.MyContentProvider"
