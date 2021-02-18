@@ -30,6 +30,10 @@ public class GenGAty extends AppCompatActivity implements View.OnClickListener {
 
     private void initUI() {
         btn_name.setOnClickListener(this);
+        initViewModel();
+    }
+
+    private void initViewModel() {
         mViewModel = new GenGViewModel();
         MyObserver myObserver = new MyObserver();
         mViewModel.mMediatorLiveData.observe(this, myObserver);

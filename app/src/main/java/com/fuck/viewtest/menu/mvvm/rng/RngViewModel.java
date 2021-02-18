@@ -9,13 +9,13 @@ public class RngViewModel extends ViewModel {
     public MutableLiveData<String> mMutableLiveData = new MutableLiveData<>();
     public MediatorLiveData<Integer> mMediatorLiveData = new MediatorLiveData<>();
 
-    public MutableLiveData<Integer> mMutableLiveData2 = new MutableLiveData<>();
 
 
     RngViewModel() {
         mMediatorLiveData.setValue(0);
-        mMutableLiveData2.setValue(0);
         mMediatorLiveData.addSource(mMutableLiveData, new Observer<String>() {
+            //得到文本大小
+            //使用MediatorLiveData发送数据
             @Override
             public void onChanged(String pS) {
                 if (pS != null) {
@@ -25,7 +25,7 @@ public class RngViewModel extends ViewModel {
             }
         });
     }
-
+    //使用MutableLiveData发送数据
     public void postValue(String pValue) {
         mMutableLiveData.postValue(pValue);
     }

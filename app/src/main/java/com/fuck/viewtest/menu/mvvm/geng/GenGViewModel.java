@@ -18,14 +18,16 @@ public class GenGViewModel extends ViewModel {
         mMediatorLiveData.addSource(mMutableLiveData3, sourceObserver);
     }
 
+    //源LiveData发送数据
     public void getData() {
         mMutableLiveData.postValue("ABC");
         mMutableLiveData2.postValue("BBC");
         mMutableLiveData3.postValue("CBC");
     }
 
+    //用户设置的源LiveData的观察者
     class SourceObserver implements Observer<String> {
-
+        //使用MediatorLiveData发送数据
         @Override
         public void onChanged(String pS) {
             mMediatorLiveData.setValue("Value：" + pS);

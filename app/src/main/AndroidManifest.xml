@@ -65,6 +65,7 @@
         <activity android:name=".menu.mvvm.MvvmAty" />
         <activity android:name=".menu.mvvm.geng.GenGAty" />
         <activity android:name=".menu.mvvm.rng.RngAty" />
+        <activity android:name=".menu.mvvm.rng2.Rng2Aty" />
         <activity android:name=".menu.rxjava2.dispose.DisposeTestAty" />
         <activity android:name=".menu.leak.LeakTestAty" />
         <activity android:name=".menu.leak.HandlerCtxAty" />
