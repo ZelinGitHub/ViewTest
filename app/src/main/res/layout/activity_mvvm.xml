@@ -19,6 +19,12 @@
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:text="进入GenGAty" />
+    <Button
+        android:id="@+id/btn_to_gen_g2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="进入GenG2Aty" />
 
     <Button
         android:id="@+id/btn_to_rng"

@@ -1,23 +1,22 @@
-package com.fuck.viewtest.menu.mvvm.geng;
+package com.fuck.viewtest.menu.mvvm.geng2;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.fuck.viewtest.R;
 
-public class GenGAty extends AppCompatActivity implements View.OnClickListener {
+public class GenG2Aty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_name;
-    private GenGViewModel mViewModel;
+    private GenG2ViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gen_g);
+        setContentView(R.layout.activity_gen_g2);
         initView();
         initUI();
     }
@@ -32,9 +31,13 @@ public class GenGAty extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void initViewModel() {
-        mViewModel = new GenGViewModel();
-        MyObserver myObserver = new MyObserver();
-        mViewModel.mMediatorLiveData.observe(this, myObserver);
+        mViewModel = new GenG2ViewModel();
+        mViewModel.mMutableLiveData4.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String pS) {
+                System.out.println(pS);
+            }
+        });
     }
 
     @Override
@@ -45,12 +48,4 @@ public class GenGAty extends AppCompatActivity implements View.OnClickListener {
             }
         }
     }
-
-    class MyObserver implements Observer<String> {
-        @Override
-        public void onChanged(String pS) {
-            System.out.println(pS);
-        }
-    }
-
 }

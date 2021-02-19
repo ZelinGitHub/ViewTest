@@ -1,6 +1,7 @@
 package com.fuck.viewtest.menu.mvvm.rng2;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
 public class Rng2ViewModel extends ViewModel {
@@ -9,6 +10,15 @@ public class Rng2ViewModel extends ViewModel {
 
     Rng2ViewModel() {
         mMutableLiveData2.setValue(0);
+        mMutableLiveData.observeForever(new Observer<String>() {
+            @Override
+            public void onChanged(String pS) {
+                if (pS != null) {
+                    int count = pS.length();
+                    mMutableLiveData2.setValue(count);
+                }
+            }
+        });
     }
     //使用MutableLiveData发送数据
     public void postValue(String pValue) {

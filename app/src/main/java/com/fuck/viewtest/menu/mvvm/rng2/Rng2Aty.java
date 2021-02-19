@@ -45,15 +45,7 @@ public class Rng2Aty extends AppCompatActivity {
             }
         });
         mViewModel = new Rng2ViewModel();
-        mViewModel.mMutableLiveData.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String pS) {
-                if (pS != null) {
-                    int count = pS.length();
-                    mViewModel.mMutableLiveData2.setValue(count);
-                }
-            }
-        });
+
         mViewModel.mMutableLiveData2.observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer pInteger) {
@@ -61,6 +53,5 @@ public class Rng2Aty extends AppCompatActivity {
             }
         });
     }
-
 
 }
