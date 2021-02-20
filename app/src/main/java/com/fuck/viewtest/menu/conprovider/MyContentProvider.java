@@ -16,14 +16,17 @@ import static com.fuck.viewtest.cons.Const.MY_CONTENT_PROVIDER_AUTHORITY;
 
 public class MyContentProvider extends ContentProvider {
 
+    //定义数据源表格Code
     public static final int CODE_STUDENTS = 0;
 
     private SQLiteDatabase mDatabase;
-    private UriMatcher mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+    //创建UriMatcher
+    private final UriMatcher mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
 
-    //运行在主线程，不能做耗时操作
-    //创建ContentProvider时调用
+    //（1）创建数据库
+    //（2）为UriMatcher增加Uri，参数是authority、path、表格code
+    //（3）返回true
     @Override
     public boolean onCreate() {
         mDatabase = new MySqlLiteOpenHelper(getContext())
@@ -36,16 +39,17 @@ public class MyContentProvider extends ContentProvider {
         return true;
     }
 
-    //获得数据的mime类型
-    //运行在Binder线程池
+
+    //不关心MIME类型，返回null
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
         return null;
     }
 
-    //查询数据
-    //运行在Binder线程池
+
+    //（1）通过参数Uri分辨出要操作的表格
+    //（2）执行数据库的查询语句，返回查询结果
     @Nullable
     @Override
     public Cursor query(
@@ -56,7 +60,6 @@ public class MyContentProvider extends ContentProvider {
             , @Nullable String sortOrder
     ) {
         Cursor cursor = null;
-        //通过Uri分辨出要查询的数据表
         int code = mUriMatcher.match(uri);
         switch (code) {
             case CODE_STUDENTS: {
@@ -77,8 +80,9 @@ public class MyContentProvider extends ContentProvider {
     }
 
 
-    //插入数据
-    //运行在Binder线程池
+    //（1）通过参数Uri分辨出要操作的表格
+    //（2）执行数据库的插入语句，得到插入行数
+    //（3）如果插入行数大于-1，通知ContentResolver数据更新，要监听这个更新，需要使用ContentObserver
     @Nullable
     @Override
     public Uri insert(
@@ -104,8 +108,9 @@ public class MyContentProvider extends ContentProvider {
     }
 
 
-    //删除数据
-    //运行在Binder线程池
+    //（1）通过参数Uri分辨出要操作的表格
+    //（2）执行数据库的删除语句，得到删除行数
+    //（3）如果删除行数大于0，通知ContentResolver数据更新，要监听这个更新，需要使用ContentObserver
     @Override
     public int delete(
             @NonNull Uri uri
@@ -131,8 +136,10 @@ public class MyContentProvider extends ContentProvider {
         return rowDelete;
     }
 
-    //更新数据
-    //运行在Binder线程池
+
+    //（1）通过参数Uri分辨出要操作的表格
+    //（2）执行数据库的更新语句，得到更新行数
+    //（3）如果更新行数大于0，通知ContentResolver数据更新，要监听这个更新，需要使用ContentObserver
     @Override
     public int update(
             @NonNull Uri uri
@@ -159,6 +166,8 @@ public class MyContentProvider extends ContentProvider {
         return rowUpdate;
     }
 
+    //通知ContentResolver数据更新
+    //要监听这个更新，需要使用ContentObserver
     private void notifyChange(@NonNull Uri uri) {
         Context context = getContext();
         if (context != null) {

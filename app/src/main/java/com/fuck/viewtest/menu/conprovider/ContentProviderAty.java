@@ -2,6 +2,7 @@ package com.fuck.viewtest.menu.conprovider;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
@@ -12,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
 
-import static com.fuck.viewtest.cons.Const.*;
+import static com.fuck.viewtest.cons.Const.MY_CONTENT_PROVIDER_AUTHORITY;
+import static com.fuck.viewtest.cons.Const.MY_CONTENT_PROVIDER_SCHEMA;
+import static com.fuck.viewtest.cons.Const.PATH_STUDENTS;
 
 
 public class ContentProviderAty extends AppCompatActivity implements View.OnClickListener {
@@ -71,16 +74,18 @@ public class ContentProviderAty extends AppCompatActivity implements View.OnClic
     }
 
 
-    private void insertValue() {
-        ContentResolver contentResolver = getContentResolver();
-
+    //得到ContentResolver
+    //创建ContentValues
+    //设置ContentValues
+    //调用ContentResolver的insert方法，传入表格URI和ContentValues
+    private void insertValue(Context pContext) {
+        ContentResolver contentResolver = pContext.getContentResolver();
         ContentValues contentValues = new ContentValues();
         contentValues.put("id", 0);
         contentValues.put("name", "peter");
         contentValues.put("gender", 0);
         contentValues.put("number", "201804081705");
         contentValues.put("score", "100");
-
         contentResolver.insert(URI_STUDENTS, contentValues);
     }
 
@@ -108,7 +113,6 @@ public class ContentProviderAty extends AppCompatActivity implements View.OnClic
         contentValues.put("gender", 1);
         contentValues.put("number", "201804111048");
         contentValues.put("score", "90");
-
         ContentResolver contentResolver = getContentResolver();
         contentResolver.update(URI_STUDENTS, contentValues, "id = ?", new String[]{"0"});
     }

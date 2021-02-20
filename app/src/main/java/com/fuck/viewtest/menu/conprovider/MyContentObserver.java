@@ -11,7 +11,7 @@ import android.os.Handler;
  * 使用Handler通知主线程更新UI
  */
 public class MyContentObserver extends ContentObserver {
-    private Handler mHandler;
+    private final Handler mHandler;
     /**
      * Creates a content observer.
      *
