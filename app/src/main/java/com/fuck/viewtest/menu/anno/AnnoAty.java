@@ -34,13 +34,12 @@ public class AnnoAty extends AppCompatActivity {
     }
 
     private void initUI() {
-        ActionListenerInstaller.processAnnotations(this);
+        ActionListenerInstaller2.processAnnotations(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 
     @Override

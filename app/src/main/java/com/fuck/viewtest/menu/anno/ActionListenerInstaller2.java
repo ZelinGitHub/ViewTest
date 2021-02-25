@@ -3,12 +3,10 @@ package com.fuck.viewtest.menu.anno;
 import android.view.View;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
-public class ActionListenerInstaller {
+public class ActionListenerInstaller2 {
 
     //得到被注解的方法，和注解中传入的控件
     public static void processAnnotations(Object obj) {
@@ -46,29 +44,25 @@ public class ActionListenerInstaller {
     //为控件设置点击监听
     public static void addListener(Object pSource, final Object pParam, final Method pMethod) {
         try {
-            //实现InvocationHandler
-            InvocationHandler invocationHandler = new InvocationHandler() {
-                //调用参数传入的pMethod方法
+            //创建OnClickListener实现类的实例
+            View.OnClickListener listener = new View.OnClickListener() {
                 @Override
-                public Object invoke(Object proxy, Method m, Object[] args) throws Throwable {
-                    return pMethod.invoke(pParam);
+                public void onClick(View v) {
+                    try {
+                        pMethod.invoke(pParam);
+                    } catch (IllegalAccessException | InvocationTargetException pE) {
+                        pE.printStackTrace();
+                    }
                 }
             };
-            //创建代理
-            //代理接口是OnClickListener
-            //代理实例是OnClickListener实现类的实例
-            Object listener = Proxy.newProxyInstance(
-                    null
-                    , new Class[]{View.OnClickListener.class}
-                    , invocationHandler
-            );
             //得到View的Class
             Class<?> sourceCls = pSource.getClass();
             //得到View的setOnClickListener方法的Method
-            Method setOnClickListenerMethod = sourceCls.getMethod("setOnClickListener", View.OnClickListener.class);
+            Method setOnClickListenerMethod = null;
+            setOnClickListenerMethod = sourceCls.getMethod("setOnClickListener", View.OnClickListener.class);
             //调用View的setOnClickListener方法，为View设置OnClickListener
-            setOnClickListenerMethod.invoke(pSource, (View.OnClickListener) listener);
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException pE) {
+            setOnClickListenerMethod.invoke(pSource, listener);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException pE) {
             pE.printStackTrace();
         }
     }
