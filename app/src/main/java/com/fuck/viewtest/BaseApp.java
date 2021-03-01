@@ -3,6 +3,9 @@ package com.fuck.viewtest;
 import android.app.Application;
 import android.util.Log;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
+
 import io.reactivex.functions.Consumer;
 import io.reactivex.plugins.RxJavaPlugins;
 
@@ -20,5 +23,13 @@ public class BaseApp extends Application {
                 }
             }
         });
+        initFresco();
+    }
+
+    private void initFresco() {
+        ImagePipelineConfig config= ImagePipelineConfig.newBuilder(this)
+                .setDownsampleEnabled(true)
+                .build();
+        Fresco.initialize(this,config);
     }
 }
