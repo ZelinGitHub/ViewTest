@@ -1,54 +1,53 @@
 package com.fuck.viewtest.menu.anim;
 
-import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.TranslateAnimation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
+import com.fuck.viewtest.menu.anim.animation.AnimationAty;
+import com.fuck.viewtest.menu.anim.animator.AnimatorActivity;
 
-public class AnimAty extends AppCompatActivity {
+public class AnimAty extends AppCompatActivity implements View.OnClickListener {
 
-    private View v;
+    private View btn_animation;
+    private View btn_animator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anim);
-        v = findViewById(R.id.v);
-        initAnimation();
-        initAnimator();
+        initViews();
+        initUI();
     }
 
 
-    private void initAnimation() {
-        TranslateAnimation animation = new TranslateAnimation(
-                0
-                , 800
-                , 0
-                , 1000
-        );
-
-        animation.setDuration(2000);
-        AccelerateDecelerateInterpolator interpolator=new AccelerateDecelerateInterpolator();
-        animation.setInterpolator(interpolator);
-        v.startAnimation(animation);
+    private void initViews() {
+        btn_animation = findViewById(R.id.btn_animation);
+        btn_animator = findViewById(R.id.btn_animator);
     }
 
 
-    private void initAnimator() {
-        ValueAnimator animator=ValueAnimator.ofInt(0,400);
-        animator.setDuration(1000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                int curValue= (Integer) animation.getAnimatedValue();
-                v.layout(curValue,curValue,curValue+v.getWidth(),curValue+v.getHeight());
+    private void initUI() {
+        btn_animation.setOnClickListener(this);
+        btn_animator.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_animation: {
+                Intent intent = new Intent(this, AnimationAty.class);
+                startActivity(intent);
+                break;
             }
-        });
-        animator.start();
+            case R.id.btn_animator: {
+                Intent intent = new Intent(this, AnimatorActivity.class);
+                startActivity(intent);
+                break;
+            }
+        }
     }
 }

@@ -60,6 +60,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_aidl;
     private Button btn_surfaceview;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

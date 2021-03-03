@@ -3,26 +3,34 @@ package com.fuck.viewtest.menu.coroutine
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.fuck.viewtest.R
-import kotlinx.android.synthetic.main.activity_coroutine.*
 import kotlinx.coroutines.*
 import kotlin.coroutines.coroutineContext
 
 class CoroutineAty : AppCompatActivity() {
     var mCoroutineScope: CoroutineScope? = null
+    var btn_start_coroutine_global: Button? = null
+    var btn_start_coroutine_global2: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
+        initViews()
         initUI()
+    }
+
+    private fun initViews() {
+        btn_start_coroutine_global = findViewById<Button>(R.id.btn_start_coroutine_global)
+        btn_start_coroutine_global2 = findViewById<Button>(R.id.btn_start_coroutine_global2)
     }
 
 
     private fun initUI() {
-        btn_start_coroutine_global.setOnClickListener {
+        btn_start_coroutine_global?.setOnClickListener {
             startGlobalScopeCoroutine()
         }
-        btn_start_coroutine_global2.setOnClickListener {
+        btn_start_coroutine_global2?.setOnClickListener {
             startGlobalScopeCoroutine2()
         }
 
@@ -105,7 +113,6 @@ class CoroutineAty : AppCompatActivity() {
     }
 
 
-
     private fun startScopeCoroutine2() {
         runBlocking {
             sick()
@@ -123,7 +130,7 @@ class CoroutineAty : AppCompatActivity() {
 
     private fun startScopeCoroutine3() {
         runBlocking {
-            mCoroutineScope=this
+            mCoroutineScope = this
             sick2()
         }
     }
@@ -135,6 +142,7 @@ class CoroutineAty : AppCompatActivity() {
         }
         println("Hello,")
     }
+
     private fun startScopeCoroutine4() {
         runBlocking {
             sick3()
@@ -142,7 +150,7 @@ class CoroutineAty : AppCompatActivity() {
     }
 
     private suspend fun sick3() {
-        val coroutineScope= CoroutineScope(coroutineContext)
+        val coroutineScope = CoroutineScope(coroutineContext)
         coroutineScope.launch { // 在 runBlocking 作用域中启动一个新协程
             delay(1000L)
             println("World!")
