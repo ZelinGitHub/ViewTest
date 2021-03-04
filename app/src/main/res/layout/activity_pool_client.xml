@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/btn_bind_pool_server"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="连接到服务端" />
+
+    <Button
+        android:id="@+id/btn_encrypt_on_server"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="远程加密数据" />
+
+    <Button
+        android:id="@+id/btn_decipher_on_server"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="远程解密数据" />
+
+    <Button
+        android:id="@+id/btn_plus_on_server"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="远程加法运算" />
+
+    <Button
+        android:id="@+id/btn_unbind_pool_server"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:text="断开和服务端的连接" />
+
+</LinearLayout>

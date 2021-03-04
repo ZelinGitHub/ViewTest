@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fuck.viewtest">
+    <uses-permission android:name="com.example.aidlserver.serv.BookService"/>
+    <uses-permission android:name="com.example.aidlserver.serv.PoolService"/>
+    <uses-permission android:name="com.example.aidlserver.serv.MessengerService"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -24,58 +27,70 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".taskt.FirstAty" />
+        <activity android:name=".menu.taskt.FirstAty" />
         <activity
-            android:name=".taskt.SecondAty"
+            android:name=".menu.taskt.SecondAty"
             android:launchMode="singleInstance" />
-        <activity android:name=".taskt.ThirdAty" />
-        <activity android:name=".taskt.FourAty" />
-        <activity android:name=".rv.RvAty" />
-        <activity android:name=".vp.VpAty" />
-        <activity android:name=".anim.AnimAty" />
-        <activity android:name=".win.WinAty" />
-        <activity android:name=".serv.client.ServAty" />
-        <activity android:name=".broadcast.BroadcastAty" />
-        <activity android:name=".conprovider.ContentProviderAty" />
-        <activity android:name=".socket.client.SocketAty" />
-        <activity android:name=".cusview.ui.CusvAty" />
-        <activity android:name=".cusview.ui.ChildMarginViewGroupAty" />
-        <activity android:name=".cusview.ui.MyViewGroupAty" />
-        <activity android:name=".cusview.ui.PaddingViewGroupAty" />
-        <activity android:name=".img.ImgAty" />
-        <activity android:name=".rv.layoutmgr.StaggerAty" />
-        <activity android:name=".rv.itemdecor.RvFlagAty" />
-        <activity android:name=".rv.itemdecor.RvTimeAxisAty" />
-        <activity android:name=".scrollview.ScrollViewAty" />
-        <activity android:name=".v.VAty" />
-        <activity android:name=".eventbus.TomEventAty" />
-        <activity android:name=".eventbus.JerryEventAty" />
-        <activity android:name=".dialog.DialogAty" />
-        <activity android:name=".anno.AnnoAty" />
-        <activity android:name=".rv.swiperv.SwipeRvAty" />
-        <activity android:name=".mvvm.dragonx.DragonXAty" />
-        <activity android:name=".mvvm.MvvmAty" />
-        <activity android:name=".mvvm.geng.GenGAty" />
-        <activity android:name=".mvvm.rng.RngAty" />
-        <activity android:name=".rxjava2.dispose.DisposeTestAty" />
-        <activity android:name=".leak.LeakTestAty" />
-        <activity android:name=".leak.HandlerCtxAty" />
-        <activity android:name=".leak.StaticCtxAty" />
-        <activity android:name=".leak.ThreadCtxAty" />
-        <activity android:name=".coroutine.CoroutineAty" />
-        <activity android:name=".mvp.MvpAty" />
-        <activity android:name=".scroll.ScrollAty" />
-        <activity android:name=".seria.SerialAty" />
-        <activity android:name=".aty.AtyAty" />
+        <activity android:name=".menu.taskt.ThirdAty" />
+        <activity android:name=".menu.taskt.FourAty" />
+        <activity android:name=".menu.rv.RvAty" />
+        <activity android:name=".menu.vp.VpAty" />
+        <activity android:name=".menu.anim.AnimAty" />
+        <activity android:name=".menu.win.WinAty" />
+        <activity android:name=".menu.win.WindowAty" />
+        <activity android:name=".menu.win.PopupWindowAty" />
+        <activity android:name=".menu.serv.client.MyClientAty" />
+        <activity android:name=".menu.serv.client.Client1Aty" />
+        <activity android:name=".menu.serv.client.Client2Aty" />
+        <activity android:name=".menu.serv.ServAty" />
+        <activity android:name=".menu.broadcast.BroadcastAty" />
+        <activity android:name=".menu.conprovider.ContentProviderAty" />
+        <activity android:name=".menu.socket.client.SocketAty" />
+        <activity android:name=".menu.cusview.ui.CusvAty" />
+        <activity android:name=".menu.cusview.ui.ChildMarginViewGroupAty" />
+        <activity android:name=".menu.cusview.ui.MyViewGroupAty" />
+        <activity android:name=".menu.cusview.ui.PaddingViewGroupAty" />
+        <activity android:name=".menu.img.ImgAty" />
+        <activity android:name=".menu.rv.layoutmgr.StaggerAty" />
+        <activity android:name=".menu.rv.itemdecor.RvFlagAty" />
+        <activity android:name=".menu.rv.itemdecor.RvTimeAxisAty" />
+        <activity android:name=".menu.scrollview.ScrollViewAty" />
+        <activity android:name=".menu.v.VAty" />
+        <activity android:name=".menu.eventbus.TomEventAty" />
+        <activity android:name=".menu.eventbus.JerryEventAty" />
+        <activity android:name=".menu.dialog.DialogAty" />
+        <activity android:name=".menu.anno.AnnoAty" />
+        <activity android:name=".menu.rv.swiperv.SwipeRvAty" />
+        <activity android:name=".menu.mvvm.dragonx.DragonXAty" />
+        <activity android:name=".menu.mvvm.MvvmAty" />
+        <activity android:name=".menu.mvvm.geng.GenGAty" />
+        <activity android:name=".menu.mvvm.geng2.GenG2Aty" />
+        <activity android:name=".menu.mvvm.rng.RngAty" />
+        <activity android:name=".menu.mvvm.rng2.Rng2Aty" />
+        <activity android:name=".menu.rxjava2.dispose.DisposeTestAty" />
+        <activity android:name=".menu.leak.LeakTestAty" />
+        <activity android:name=".menu.leak.HandlerCtxAty" />
+        <activity android:name=".menu.leak.StaticCtxAty" />
+        <activity android:name=".menu.leak.ThreadCtxAty" />
+        <activity android:name=".menu.coroutine.CoroutineAty" />
+        <activity android:name=".menu.mvp.MvpAty" />
+        <activity android:name=".menu.scroll.ScrollAty" />
+        <activity android:name=".menu.seria.SerialAty" />
+        <activity android:name=".menu.aty.AtyAty" />
+        <activity android:name=".menu.aidl.BookClientAty" />
+        <activity android:name=".menu.aidl.PoolClientAty" />
+        <activity android:name=".menu.aidl.MessengerClientAty" />
+        <activity android:name=".menu.aidl.AIDLAty" />
+        <activity android:name=".menu.surfaceview.SurfaceViewAty" />
 
         <provider
-            android:name=".conprovider.MyContentProvider"
-            android:authorities="com.fuck.viewtest.conprovider.MyContentProvider"
+            android:name=".menu.conprovider.MyContentProvider"
+            android:authorities="com.fuck.viewtest.menu.conprovider.MyContentProvider"
             android:exported="false" />
 
-        <service android:name=".serv.server.MyService" />
-        <service android:name=".serv.server.MyIntentService" />
-        <service android:name=".socket.serv.SocketService" />
+        <service android:name=".menu.serv.server.MyService" />
+        <service android:name=".menu.serv.server.MyIntentService" />
+        <service android:name=".menu.socket.serv.SocketService" />
     </application>
 
 

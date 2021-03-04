@@ -4,42 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".MainAty">
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_start_serv"
+        android:id="@+id/btn_my_client"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:text="启动服务" />
+        android:text="打开MyClientAty" />
 
     <Button
-        android:id="@+id/btn_stop_serv"
+        android:id="@+id/btn_client1"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:text="停止服务" />
+        android:text="打开Client1Aty" />
 
     <Button
-        android:id="@+id/btn_bind_serv"
+        android:id="@+id/btn_client2"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:text="绑定服务" />
-
-    <Button
-        android:id="@+id/btn_unbind_serv"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:text="解绑服务" />
+        android:text="打开Client2Aty" />
 
 
-    <Button
-        android:id="@+id/btn_start_intent_serv"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:text="启动IntentService" />
 </LinearLayout>
