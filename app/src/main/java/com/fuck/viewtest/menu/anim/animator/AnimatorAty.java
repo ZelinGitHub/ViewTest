@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.TypeEvaluator;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +14,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
+import com.fuck.viewtest.menu.anim.animator.evaluator.ColorEvaluator;
 
 public class AnimatorAty extends AppCompatActivity {
 
     TextView tv_hello;
     Button btn_start_anim;
+    PointView pv;
 
 
     @Override
@@ -33,6 +36,7 @@ public class AnimatorAty extends AppCompatActivity {
     private void initViews() {
         tv_hello = findViewById(R.id.tv_hello);
         btn_start_anim = findViewById(R.id.btn_start_anim);
+        pv = findViewById(R.id.pv);
     }
 
     private void initUI() {
@@ -52,7 +56,7 @@ public class AnimatorAty extends AppCompatActivity {
 
 
     //在5秒中内从常规变换成全透明，再从全透明变换成常规
-    public void startViewAlpha() {
+    public void startViewObjectAnimatorAlpha() {
         Animator animator = ObjectAnimator.ofFloat(tv_hello, "alpha", 1f, 0f, 1f);
         animator.setDuration(5000);
         animator.addListener(new Animator.AnimatorListener() {
@@ -82,7 +86,7 @@ public class AnimatorAty extends AppCompatActivity {
     }
 
     //先向左移出屏幕，然后再移动回来
-    public void startViewTranslation() {
+    public void startViewObjectAnimatorTranslation() {
         float beginX = tv_hello.getTranslationX();
         Animator animator = ObjectAnimator.ofFloat(tv_hello, "translationX", beginX, -500f, beginX);
         animator.setDuration(5000);
@@ -90,7 +94,7 @@ public class AnimatorAty extends AppCompatActivity {
     }
 
     //进行一次360度的旋转
-    public void startViewRotate() {
+    public void startViewObjectAnimatorRotate() {
         Animator animator = ObjectAnimator.ofFloat(tv_hello, "rotation", 0f, 360f);
         animator.setDuration(5000);
         animator.start();
@@ -98,7 +102,7 @@ public class AnimatorAty extends AppCompatActivity {
 
 
     //在垂直方向上放大3倍再还原
-    public void startViewScale() {
+    public void startViewObjectAnimatorScale() {
         Animator animator = ObjectAnimator.ofFloat(tv_hello, "scaleY", 1f, 3f, 1f);
         animator.setDuration(5000);
         animator.start();
@@ -108,7 +112,6 @@ public class AnimatorAty extends AppCompatActivity {
     public void startViewAnimatorSet() {
         //动画 平移
         Animator moveIn = ObjectAnimator.ofFloat(tv_hello, "translationX", -500f, 0f);
-        ;
         //动画 旋转
         Animator rotate = ObjectAnimator.ofFloat(tv_hello, "rotation", 0f, 360f);
         //动画 透明度改变
@@ -120,5 +123,19 @@ public class AnimatorAty extends AppCompatActivity {
         animatorSet.setDuration(5000);
         animatorSet.start();
 
+    }
+
+    public void startViewPropertyAnimatorAlpha() {
+        tv_hello.animate().alpha(0f);
+    }
+
+    public void startPointViewObjectAnimatorColor() {
+        TypeEvaluator<String> typeEvaluator = new ColorEvaluator();
+        Animator anim = ObjectAnimator.ofObject(
+                pv, "color", typeEvaluator,
+                "#0000FF", "#FF0000"
+        );
+        anim.setDuration(5000);
+        anim.start();
     }
 }

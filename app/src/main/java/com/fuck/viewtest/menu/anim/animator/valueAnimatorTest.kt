@@ -1,8 +1,7 @@
 package com.fuck.viewtest.menu.anim.animator
 
 import android.animation.ValueAnimator
-import com.fuck.viewtest.menu.anim.animator.Point
-import com.fuck.viewtest.menu.anim.animator.PointEvaluator
+import com.fuck.viewtest.menu.anim.animator.evaluator.PointEvaluator
 
 
 /**
@@ -48,8 +47,8 @@ fun valueAnimatorIntTest(){
 }
 
 fun valueAnimatorObjectTest(){
-    val point1 = Point(0f, 0f)
-    val point2 = Point(300f, 300f)
+    val point1 = MyPoint(0f, 0f)
+    val point2 = MyPoint(300f, 300f)
     //调用ValueAnimator的ofObject()方法来构建ValueAnimator的实例
     //ofObject()方法要求多传入一个TypeEvaluator参数
     val valueAnimator = ValueAnimator.ofObject(PointEvaluator(), point1, point2)

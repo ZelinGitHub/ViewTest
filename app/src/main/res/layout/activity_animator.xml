@@ -22,8 +22,8 @@
             android:text="Hello World!" />
     </RelativeLayout>
 
-    <com.fuck.viewtest.menu.anim.animator.MyAnimView
-        android:id="@+id/mav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<com.fuck.viewtest.menu.anim.animator.PointView
+    android:id="@+id/pv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
 import com.fuck.viewtest.menu.anim.animation.AnimationAty;
-import com.fuck.viewtest.menu.anim.animator.AnimatorActivity;
+import com.fuck.viewtest.menu.anim.animator.AnimatorAty;
 
 public class AnimAty extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +44,7 @@ public class AnimAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_animator: {
-                Intent intent = new Intent(this, AnimatorActivity.class);
+                Intent intent = new Intent(this, AnimatorAty.class);
                 startActivity(intent);
                 break;
             }

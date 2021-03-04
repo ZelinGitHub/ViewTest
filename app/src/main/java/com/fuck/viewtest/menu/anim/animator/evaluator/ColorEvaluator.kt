@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.anim.animator
+package com.fuck.viewtest.menu.anim.animator.evaluator
 
 import android.animation.TypeEvaluator
 
