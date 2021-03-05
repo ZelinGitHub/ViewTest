@@ -20,6 +20,7 @@ import com.fuck.viewtest.menu.img.ImgAty;
 import com.fuck.viewtest.menu.leak.LeakTestAty;
 import com.fuck.viewtest.menu.mvp.MvpAty;
 import com.fuck.viewtest.menu.mvvm.MvvmAty;
+import com.fuck.viewtest.menu.res.ResAty;
 import com.fuck.viewtest.menu.rv.RvAty;
 import com.fuck.viewtest.menu.rxjava2.dispose.DisposeTestAty;
 import com.fuck.viewtest.menu.scroll.ScrollAty;
@@ -27,6 +28,7 @@ import com.fuck.viewtest.menu.scrollview.ScrollViewAty;
 import com.fuck.viewtest.menu.seria.SerialAty;
 import com.fuck.viewtest.menu.serv.ServAty;
 import com.fuck.viewtest.menu.socket.client.SocketAty;
+import com.fuck.viewtest.menu.surfaceview.SurfaceViewAty;
 import com.fuck.viewtest.menu.taskt.FirstAty;
 import com.fuck.viewtest.menu.v.VAty;
 import com.fuck.viewtest.menu.vp.VpAty;
@@ -59,6 +61,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_aty;
     private Button btn_aidl;
     private Button btn_surfaceview;
+    private Button btn_res;
 
 
     @Override
@@ -96,6 +99,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_aty = findViewById(R.id.btn_aty);
         btn_aidl = findViewById(R.id.btn_aidl);
         btn_surfaceview = findViewById(R.id.btn_surfaceview);
+        btn_res = findViewById(R.id.btn_res);
     }
 
 
@@ -125,6 +129,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_aty.setOnClickListener(this);
         btn_aidl.setOnClickListener(this);
         btn_surfaceview.setOnClickListener(this);
+        btn_res.setOnClickListener(this);
 
     }
 
@@ -252,7 +257,12 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_surfaceview: {
-                Intent intent = new Intent(this, AIDLAty.class);
+                Intent intent = new Intent(this, SurfaceViewAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_res: {
+                Intent intent = new Intent(this, ResAty.class);
                 startActivity(intent);
                 break;
             }

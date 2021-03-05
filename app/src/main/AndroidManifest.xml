@@ -76,6 +76,7 @@
         <activity android:name=".menu.mvp.MvpAty" />
         <activity android:name=".menu.scroll.ScrollAty" />
         <activity android:name=".menu.seria.SerialAty" />
+        <activity android:name=".menu.res.ResAty" />
         <activity android:name=".menu.aty.AtyAty" />
         <activity android:name=".menu.aidl.BookClientAty" />
         <activity android:name=".menu.aidl.PoolClientAty" />
