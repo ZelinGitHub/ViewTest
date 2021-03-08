@@ -14,7 +14,7 @@ import com.fuck.viewtest.menu.rv.adapter.StaggerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaggerAty extends AppCompatActivity {
+public class GridAty extends AppCompatActivity {
 
 
     private final List<Item> mItems = new ArrayList<>();

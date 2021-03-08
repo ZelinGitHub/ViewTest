@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fuck.viewtest.R;
 import com.fuck.viewtest.menu.rv.Item;
-import com.fuck.viewtest.menu.rv.MyHolder;
+import com.fuck.viewtest.menu.rv.holder.MyHolder;
 
 import java.util.ArrayList;
 import java.util.List;

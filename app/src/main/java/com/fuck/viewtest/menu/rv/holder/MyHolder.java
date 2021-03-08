@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.rv;
+package com.fuck.viewtest.menu.rv.holder;
 
 import android.view.View;
 import android.widget.TextView;
