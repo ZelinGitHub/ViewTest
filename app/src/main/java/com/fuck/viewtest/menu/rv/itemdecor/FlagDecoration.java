@@ -14,7 +14,7 @@ import com.fuck.viewtest.R;
 public class FlagDecoration extends RecyclerView.ItemDecoration {
 
 
-    private Paint mPaint = new Paint();
+    private final Paint mPaint = new Paint();
 
     private static final float FLAG_LEFT = 200;
 

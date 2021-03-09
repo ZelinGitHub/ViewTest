@@ -13,10 +13,10 @@ import com.fuck.viewtest.menu.rv.holder.MyHolder;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
+public class HorizontalListAdapter extends RecyclerView.Adapter<MyHolder> {
     private final List<Item> mItems;
 
-    public MyAdapter(List<Item> pItems) {
+    public HorizontalListAdapter(List<Item> pItems) {
         mItems = pItems;
     }
 
@@ -24,7 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.item,parent,false);
+        View view=inflater.inflate(R.layout.item_vertical,parent,false);
         return new MyHolder(view);
     }
 

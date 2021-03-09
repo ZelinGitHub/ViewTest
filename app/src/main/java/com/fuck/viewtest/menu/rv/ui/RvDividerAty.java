@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.rv.itemdecor;
+package com.fuck.viewtest.menu.rv.ui;
 
 import android.os.Bundle;
 
@@ -7,32 +7,29 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.menu.rv.Item;
 import com.fuck.viewtest.menu.rv.adapter.MyAdapter;
+import com.fuck.viewtest.menu.rv.bean.Item;
+import com.fuck.viewtest.menu.rv.itemdecor.DividerDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RvFlagAty extends AppCompatActivity {
+public class RvDividerAty extends AppCompatActivity {
 
 
-    private List<Item> mItems = new ArrayList<>();
-    private MyAdapter mAdapter = new MyAdapter(mItems);
-
-    private RecyclerView rv;
+    private final List<Item> mItems = new ArrayList<>();
+    private final MyAdapter mAdapter = new MyAdapter(mItems);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rv_flag);
-        rv = findViewById(R.id.rv);
+        setContentView(R.layout.activity_rv_divider);
+        final RecyclerView rv = findViewById(R.id.rv);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(linearLayoutManager);
-
-
-        FlagDecoration flagDecoration = new FlagDecoration();
-        rv.addItemDecoration(flagDecoration);
+        DividerDecoration decoration = new DividerDecoration();
+        rv.addItemDecoration(decoration);
         rv.setAdapter(mAdapter);
         getData();
     }
