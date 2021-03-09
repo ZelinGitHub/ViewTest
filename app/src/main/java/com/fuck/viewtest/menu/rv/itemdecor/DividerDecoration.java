@@ -12,10 +12,28 @@ import com.fuck.viewtest.R;
 
 public class DividerDecoration extends RecyclerView.ItemDecoration {
 
-    private int mDividerHeight = 20;
-    private Paint mPaint = new Paint();
+    private final int mDividerHeight = 20;
+    private final Paint mPaint = new Paint();
 
 
+    //设置Item的偏移，也就是设置分隔线占据的空间
+    //分隔线占据的空间的高度，就是分隔线的高度
+    @Override
+    public void getItemOffsets(
+            @NonNull Rect outRect
+            , @NonNull View view
+            , @NonNull RecyclerView parent
+            , @NonNull RecyclerView.State state
+    ) {
+        super.getItemOffsets(outRect, view, parent, state);
+        //第一个ItemView不需要绘制分隔线
+        if (parent.getChildAdapterPosition(view) != 0) {
+            outRect.top = mDividerHeight;
+        }
+    }
+
+    //为每一个Item绘制一个矩形作为分隔线
+    //通过分隔线的高度和Item控件的坐标，可以得到矩形的坐标
     @Override
     public void onDraw(
             @NonNull Canvas c
@@ -40,7 +58,7 @@ public class DividerDecoration extends RecyclerView.ItemDecoration {
                 //分隔线右下角Y坐标
                 float dividerBottom = view.getTop();
                 //绘制矩形作为分隔线
-                c.drawRect(dividerLeft,dividerTop,dividerRight,dividerBottom,mPaint);
+                c.drawRect(dividerLeft, dividerTop, dividerRight, dividerBottom, mPaint);
             }
         }
     }
@@ -54,17 +72,5 @@ public class DividerDecoration extends RecyclerView.ItemDecoration {
         super.onDrawOver(c, parent, state);
     }
 
-    @Override
-    public void getItemOffsets(
-            @NonNull Rect outRect
-            , @NonNull View view
-            , @NonNull RecyclerView parent
-            , @NonNull RecyclerView.State state
-    ) {
-        super.getItemOffsets(outRect, view, parent, state);
-        //第一个ItemView不需要绘制分隔线
-        if (parent.getChildAdapterPosition(view) != 0) {
-            outRect.top = mDividerHeight;
-        }
-    }
+
 }

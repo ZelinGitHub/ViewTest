@@ -1,36 +1,39 @@
-package com.fuck.viewtest.menu.rv.itemdecor;
+package com.fuck.viewtest.menu.rv.ui;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.menu.rv.Item;
 import com.fuck.viewtest.menu.rv.adapter.MyAdapter;
+import com.fuck.viewtest.menu.rv.bean.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RvTimeAxisAty extends AppCompatActivity {
+public class RvGridAty extends AppCompatActivity {
 
 
-    private List<Item> mItems = new ArrayList<>();
-    private MyAdapter mAdapter = new MyAdapter(mItems);
+    private final List<Item> mItems = new ArrayList<>();
 
-    private RecyclerView rv;
-
+    private final MyAdapter mAdapter = new MyAdapter(mItems);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rv_time_axis);
-        rv = findViewById(R.id.rv);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        setContentView(R.layout.activity_rv_grid);
+        final RecyclerView rv = findViewById(R.id.rv);
+
+        //创建GridLayoutManager
+        //这个网格有3列（Y方向）
+        GridLayoutManager linearLayoutManager = new GridLayoutManager(
+                this
+                , 3
+
+        );
         rv.setLayoutManager(linearLayoutManager);
-        TimeAxisDecoration timeAxisDecoration=new TimeAxisDecoration();
-        rv.addItemDecoration(timeAxisDecoration);
         rv.setAdapter(mAdapter);
         getData();
     }
@@ -45,4 +48,6 @@ public class RvTimeAxisAty extends AppCompatActivity {
         }
         mAdapter.notifyDataSetChanged();
     }
+
+
 }

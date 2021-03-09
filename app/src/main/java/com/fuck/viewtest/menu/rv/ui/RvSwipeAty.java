@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.rv.swiperv;
+package com.fuck.viewtest.menu.rv.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.menu.rv.Item;
 import com.fuck.viewtest.menu.rv.adapter.MyAdapter;
+import com.fuck.viewtest.menu.rv.bean.Item;
 import com.yanzhenjie.recyclerview.SwipeMenu;
 import com.yanzhenjie.recyclerview.SwipeMenuBridge;
 import com.yanzhenjie.recyclerview.SwipeMenuCreator;
@@ -18,13 +18,13 @@ import com.yanzhenjie.recyclerview.SwipeRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SwipeRvAty extends AppCompatActivity {
+public class RvSwipeAty extends AppCompatActivity {
 
     private SwipeRecyclerView srv;
     private SwipeMenuCreator mSwipeMenuCreator;
     private MyOnItemMenuClickListener mOnItemMenuClickListener;
 
-    private List<Item> mItems = new ArrayList<>();
+    private final List<Item> mItems = new ArrayList<>();
 
     private MyAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;

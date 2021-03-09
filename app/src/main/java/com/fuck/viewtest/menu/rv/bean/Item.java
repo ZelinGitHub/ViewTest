@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.rv;
+package com.fuck.viewtest.menu.rv.bean;
 
 public class Item {
     private String name;

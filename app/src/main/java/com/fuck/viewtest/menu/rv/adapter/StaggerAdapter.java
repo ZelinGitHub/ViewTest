@@ -8,22 +8,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.menu.rv.Item;
+import com.fuck.viewtest.menu.rv.bean.Item;
 import com.fuck.viewtest.menu.rv.holder.MyHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StaggerAdapter extends RecyclerView.Adapter<MyHolder> {
-    private List<Item> mItems;
+    private final List<Item> mItems;
 
     //随机高度的集合
-    private List<Integer> mHeights = new ArrayList<>();
+    private final List<Integer> mHeights = new ArrayList<>();
 
     public StaggerAdapter(List<Item> pItems) {
         mItems = pItems;
     }
-
 
     @NonNull
     @Override
@@ -35,19 +34,17 @@ public class StaggerAdapter extends RecyclerView.Adapter<MyHolder> {
 
 
     /*
-    在onBindViewHolder中，动态设置瀑布流Item的高度
-    应该提前得到随机高度，并保存到与Item数据列表配套的随机高度列表中
-    不要直接在onBindViewHolder中得到随机高度
-    否则会出现，Item高度随着RecyclerView的滚动一直改变的问题
+    动态设置瀑布流Item的高度
      */
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         Item item = mItems.get(position);
         holder.tv.setText(item.getName());
-
-
+        //得到控件的布局参数
         ViewGroup.LayoutParams params = holder.v_back.getLayoutParams();
+        //设置控件的高度
         params.height = mHeights.get(position);
+        //为控件设置布局参数
         holder.v_back.setLayoutParams(params);
     }
 
@@ -56,6 +53,12 @@ public class StaggerAdapter extends RecyclerView.Adapter<MyHolder> {
         return mItems.size();
     }
 
+    /*
+    这个方法应该在为Adapter设置Item数据后调用
+    不要直接在Adapter的onBindViewHolder中得到随机高度
+    应该提前得到随机高度，并保存到与Item数据列表配套的随机高度列表中
+    否则会出现Item高度随着RecyclerView的滚动改变的现象
+     */
     public void initHeights() {
         mHeights.clear();
         for (int i = 0; i < mItems.size(); i++) {

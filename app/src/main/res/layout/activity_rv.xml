@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_swipe_rv"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvSwipeAty" />
+
+    <Button
+        android:id="@+id/btn_stagger"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvStaggerAty" />
+
+    <Button
+        android:id="@+id/btn_horizontal_list"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textSize="11sp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvHorizontalListAty" />
+
+    <Button
+        android:id="@+id/btn_grid"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvGridAty" />
+
+    <Button
+        android:id="@+id/btn_divider"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvDividerAty" />
+
+    <Button
+        android:id="@+id/btn_flag"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvFlagAty" />
+
+    <Button
+        android:id="@+id/btn_time_axis"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvTimeAxisAty" />
+    <Button
+        android:id="@+id/btn_slide_delete"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvSlideDeleteAty" />
+    <Button
+        android:id="@+id/btn_drag_exchange"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="打开RvDragExchangeAty" />
+
+</LinearLayout>

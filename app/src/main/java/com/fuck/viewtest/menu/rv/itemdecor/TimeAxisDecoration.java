@@ -12,13 +12,15 @@ import com.fuck.viewtest.R;
 
 public class TimeAxisDecoration extends RecyclerView.ItemDecoration {
 
-    private Paint mPaint = new Paint();
+    private final Paint mPaint = new Paint();
 
     //时间轴结点的半径
     private static final float RADIUS = 40;
     private static final int AXIS_WIDTH = 100;
 
 
+    //设置Item的偏移为时光轴绘制区域宽度、
+    //为绘制时光轴留出位置
     @Override
     public void getItemOffsets(
             @NonNull Rect outRect

@@ -13,29 +13,36 @@ import com.fuck.viewtest.menu.rv.holder.MyHolder;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
+public class SlideDeleteAdapter extends RecyclerView.Adapter<MyHolder> {
     private final List<Item> mItems;
 
-    public MyAdapter(List<Item> pItems) {
+    public SlideDeleteAdapter(List<Item> pItems) {
         mItems = pItems;
     }
 
     @NonNull
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.item,parent,false);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.item, parent, false);
         return new MyHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-        Item item=mItems.get(position);
+        Item item = mItems.get(position);
         holder.tv.setText(item.getName());
     }
 
     @Override
     public int getItemCount() {
         return mItems.size();
+    }
+
+    //移除数据
+    //调用notifyItemRemoved方法
+    public void onDataDelete(int pPosition) {
+        mItems.remove(pPosition);
+        notifyItemRemoved(pPosition);
     }
 }
