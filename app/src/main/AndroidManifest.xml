@@ -88,6 +88,7 @@
         <activity android:name=".menu.aidl.MessengerClientAty" />
         <activity android:name=".menu.aidl.AIDLAty" />
         <activity android:name=".menu.surfaceview.SurfaceViewAty" />
+        <activity android:name=".menu.web.WebAty" />
 
         <provider
             android:name=".menu.conprovider.MyContentProvider"

@@ -258,6 +258,23 @@
                 android:layout_marginTop="16dp"
                 android:text="测试资源" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_webview"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="测试WebView" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                 />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

@@ -62,6 +62,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_aidl;
     private Button btn_surfaceview;
     private Button btn_res;
+    private Button btn_webview;
 
 
     @Override
@@ -100,6 +101,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_aidl = findViewById(R.id.btn_aidl);
         btn_surfaceview = findViewById(R.id.btn_surfaceview);
         btn_res = findViewById(R.id.btn_res);
+        btn_webview = findViewById(R.id.btn_webview);
     }
 
 
@@ -130,6 +132,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_aidl.setOnClickListener(this);
         btn_surfaceview.setOnClickListener(this);
         btn_res.setOnClickListener(this);
+        btn_webview.setOnClickListener(this);
 
     }
 
@@ -262,6 +265,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_res: {
+                Intent intent = new Intent(this, ResAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_webview: {
                 Intent intent = new Intent(this, ResAty.class);
                 startActivity(intent);
                 break;
