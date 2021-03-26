@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fuck.viewtest.menu.cusview.myviewgroup.GoodViewGroup
+    <com.fuck.viewtest.menu.view_.cusview.myviewgroup.GoodViewGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="50dp"
@@ -68,5 +68,5 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:background="@color/purple_ff9932CD" />
-    </com.fuck.viewtest.menu.cusview.myviewgroup.GoodViewGroup>
+    </com.fuck.viewtest.menu.view_.cusview.myviewgroup.GoodViewGroup>
 </LinearLayout>

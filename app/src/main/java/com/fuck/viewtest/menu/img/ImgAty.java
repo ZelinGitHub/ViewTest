@@ -1,22 +1,25 @@
 package com.fuck.viewtest.menu.img;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
+import com.fuck.viewtest.menu.img.bitmap.BitmapAty;
+import com.fuck.viewtest.menu.img.drawable.DrawableAty;
+import com.fuck.viewtest.menu.img.fresco.FrescoAty;
+import com.fuck.viewtest.menu.img.glide.GlideAty;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+public class ImgAty extends AppCompatActivity {
 
-public class ImgAty extends AppCompatActivity implements View.OnClickListener {
-
-    private ImageView iv;
+    private Button btn_bitmap_factory;
+    private Button btn_drawable;
+    private Button btn_glide;
+    private Button btn_fresco;
 
 
     @Override
@@ -28,12 +31,39 @@ public class ImgAty extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void initViews() {
-        iv = findViewById(R.id.iv);
+        btn_bitmap_factory = findViewById(R.id.btn_bitmap_factory);
+        btn_drawable = findViewById(R.id.btn_drawable);
+        btn_glide = findViewById(R.id.btn_glide);
+        btn_fresco = findViewById(R.id.btn_fresco);
     }
 
     private void initUI() {
-        loadFromResources();
+        btn_bitmap_factory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toBitmapFactoryAty();
+            }
+        });
+        btn_drawable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDrawableAty();
+            }
+        });
+        btn_glide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toGlideAty();
+            }
+        });
+        btn_fresco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toFrescoAty();
+            }
+        });
     }
+
 
     @Override
     protected void onResume() {
@@ -48,69 +78,27 @@ public class ImgAty extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    @Override
-    public void onClick(View v) {
-
+    private void toBitmapFactoryAty() {
+        Intent intent = new Intent(this, BitmapAty.class);
+        startActivity(intent);
     }
 
-    private void decodeSample() {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(getResources(), R.mipmap.united_kingdom, options);
-        int width = options.outWidth;
-        int height = options.outHeight;
 
-        int halfWidth = width / 2;
-        int halfHeight = height / 2;
-        int inSampleSize = 1;
-
-        options.inSampleSize = 2;
-        options.inJustDecodeBounds = false;
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.united_kingdom, options);
-
+    private void toDrawableAty() {
+        Intent intent = new Intent(this, DrawableAty.class);
+        startActivity(intent);
     }
 
-    private void loadFromResources() {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.united_kingdom);
-        iv.setImageBitmap(bitmap);
+
+    private void toGlideAty() {
+        Intent intent = new Intent(this, GlideAty.class);
+        startActivity(intent);
     }
 
-    private void loadFromBytes() {
-        byte[] myBytes = new byte[]{0, 1, 0, 1};
-        Bitmap bm = BitmapFactory.decodeByteArray(myBytes, 0, myBytes.length);
+
+    private void toFrescoAty() {
+        Intent intent = new Intent(this, FrescoAty.class);
+        startActivity(intent);
     }
 
-    private void loadFromFile() {
-
-        String path = "/sdcard/Download/sample.png";
-        Bitmap bitmap = BitmapFactory.decodeFile(path);
-    }
-
-    private void loadFromStream() {
-        try {
-            FileInputStream in = new FileInputStream("/sdcard/Download/sample.png");
-            Bitmap bitmap = BitmapFactory.decodeStream(in);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static int calculateInSampleSize(
-            BitmapFactory.Options pOptions
-            , int reqWidth
-            , int reqHeight
-    ) {
-        int height = pOptions.outHeight;
-        int width = pOptions.outWidth;
-        int inSampleSize = 1;
-        if (height > reqHeight || width > reqWidth) {
-            int halfHeight = height / 2;
-            int halfWidth = width / 2;
-            while ((halfHeight / inSampleSize) >= reqHeight && (halfWidth / inSampleSize) >= reqWidth) {
-                inSampleSize *= 2;
-            }
-        }
-        return inSampleSize;
-    }
 }
