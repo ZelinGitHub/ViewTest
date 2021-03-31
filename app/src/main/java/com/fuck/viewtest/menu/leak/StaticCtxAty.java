@@ -11,6 +11,7 @@ import com.fuck.viewtest.R;
 //ABC
 public class StaticCtxAty extends AppCompatActivity implements View.OnClickListener {
 
+    //Context发生内存泄露
     private static Context mContext;
 
     @Override
