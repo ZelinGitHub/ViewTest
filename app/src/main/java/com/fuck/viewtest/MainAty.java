@@ -30,6 +30,7 @@ import com.fuck.viewtest.menu.service.ServAty;
 import com.fuck.viewtest.menu.net.socket.client.SocketAty;
 import com.fuck.viewtest.menu.view_.surfaceview.SurfaceViewAty;
 import com.fuck.viewtest.menu.display.taskt.FirstAty;
+import com.fuck.viewtest.menu.view_.textview.TextAty;
 import com.fuck.viewtest.menu.view_.viewviewgroup.VAty;
 import com.fuck.viewtest.menu.view_.vp.VpAty;
 import com.fuck.viewtest.menu.window.WinAty;
@@ -63,6 +64,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_surfaceview;
     private Button btn_res;
     private Button btn_webview;
+    private Button btn_textview;
 
 
     @Override
@@ -102,6 +104,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_surfaceview = findViewById(R.id.btn_surfaceview);
         btn_res = findViewById(R.id.btn_res);
         btn_webview = findViewById(R.id.btn_webview);
+        btn_textview = findViewById(R.id.btn_textview);
     }
 
 
@@ -133,6 +136,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_surfaceview.setOnClickListener(this);
         btn_res.setOnClickListener(this);
         btn_webview.setOnClickListener(this);
+        btn_textview.setOnClickListener(this);
 
     }
 
@@ -271,6 +275,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_webview: {
                 Intent intent = new Intent(this, ResAty.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_textview: {
+                Intent intent = new Intent(this, TextAty.class);
                 startActivity(intent);
                 break;
             }

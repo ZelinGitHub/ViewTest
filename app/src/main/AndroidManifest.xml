@@ -94,6 +94,7 @@
         <activity android:name=".menu.img.drawable.DrawableAty" />
         <activity android:name=".menu.img.glide.GlideAty" />
         <activity android:name=".menu.img.fresco.FrescoAty" />
+        <activity android:name=".menu.view_.textview.TextAty" />
 
         <provider
             android:name=".menu.datafile.conprovider.MyContentProvider"
