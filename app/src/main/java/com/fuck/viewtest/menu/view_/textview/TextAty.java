@@ -2,7 +2,7 @@ package com.fuck.viewtest.menu.view_.textview;
 
 import android.os.Bundle;
 import android.text.SpannableString;
-import android.text.style.DynamicDrawableSpan;
+import android.text.style.AbsoluteSizeSpan;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,10 +29,12 @@ public class TextAty extends AppCompatActivity {
 
     private void initUI() {
         setImageSpan();
+
+        AbsoluteSizeSpan absoluteSizeSpan;
     }
 
     private void setImageSpan() {
-        CenterImageSpan imageSpan = new CenterImageSpan(this, R.mipmap.lion, DynamicDrawableSpan.ALIGN_BASELINE);
+        CenterImageSpan imageSpan = new CenterImageSpan(this, R.mipmap.lion);
         String str = "  123";
         SpannableString spannableString = new SpannableString(str);
         spannableString.setSpan(imageSpan, 0, 1, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE);

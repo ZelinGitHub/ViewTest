@@ -13,8 +13,8 @@ public class CenterImageSpan extends ImageSpan {
 
     private WeakReference<Drawable> mDrawableRef;
 
-    public CenterImageSpan(Context context, int resourceId, int verticalAlignment) {
-        super(context, resourceId, verticalAlignment);
+    public CenterImageSpan(Context context, int resourceId) {
+        super(context, resourceId, 2);
     }
 
     @Override
@@ -58,12 +58,10 @@ public class CenterImageSpan extends ImageSpan {
         if (wr != null) {
             d = wr.get();
         }
-
         if (d == null) {
             d = getDrawable();
             mDrawableRef = new WeakReference<>(d);
         }
-
         return d;
     }
 }
