@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.net.okhttp;
+package com.fuck.viewtest.menu.net.okhttp.interceptor;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;

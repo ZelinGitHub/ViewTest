@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.net.okhttp;
+package com.fuck.viewtest.menu.net.okhttp.x509trustmgr;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -8,7 +8,7 @@ import javax.net.ssl.X509TrustManager;
 /**
  * 证书信任管理器
  */
-public class MyX509TrustMgr implements X509TrustManager {
+public class UnsafeX509TrustMgr implements X509TrustManager {
 
     //检查客户端的证书
     //客户端一般不需要证书，什么都不做

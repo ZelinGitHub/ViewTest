@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.net.okhttp;
+package com.fuck.viewtest.menu.net.okhttp.cookie;
 
 import org.jetbrains.annotations.NotNull;
 
