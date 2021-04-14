@@ -1,14 +1,18 @@
-package com.fuck.viewtest.menu.codeframe.mvvm.geng;
+package com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.geng;
 
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
-
+//测试MediatorLiveData
 public class GenGViewModel extends ViewModel {
+    //源LiveData
     private MutableLiveData<String> mMutableLiveData = new MutableLiveData<>();
+    //源LiveData
     private MutableLiveData<String> mMutableLiveData2 = new MutableLiveData<>();
+    //源LiveData
     private MutableLiveData<String> mMutableLiveData3 = new MutableLiveData<>();
+    //末LiveData
     public MediatorLiveData<String> mMediatorLiveData = new MediatorLiveData<>();
 
     GenGViewModel() {

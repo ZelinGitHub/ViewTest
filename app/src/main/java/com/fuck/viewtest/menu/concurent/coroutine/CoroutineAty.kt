@@ -1,8 +1,6 @@
 package com.fuck.viewtest.menu.concurent.coroutine
 
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.fuck.viewtest.R
@@ -11,8 +9,8 @@ import kotlin.coroutines.coroutineContext
 
 class CoroutineAty : AppCompatActivity() {
     var mCoroutineScope: CoroutineScope? = null
-    var btn_start_coroutine_global: Button? = null
-    var btn_start_coroutine_global2: Button? = null
+    private lateinit var btnStartCoroutineGlobal: Button
+    private lateinit var btnStartCoroutineGlobal2: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
@@ -21,16 +19,16 @@ class CoroutineAty : AppCompatActivity() {
     }
 
     private fun initViews() {
-        btn_start_coroutine_global = findViewById<Button>(R.id.btn_start_coroutine_global)
-        btn_start_coroutine_global2 = findViewById<Button>(R.id.btn_start_coroutine_global2)
+        btnStartCoroutineGlobal = findViewById<Button>(R.id.btn_start_coroutine_global)
+        btnStartCoroutineGlobal2 = findViewById<Button>(R.id.btn_start_coroutine_global2)
     }
 
 
     private fun initUI() {
-        btn_start_coroutine_global?.setOnClickListener {
+        btnStartCoroutineGlobal.setOnClickListener {
             startGlobalScopeCoroutine()
         }
-        btn_start_coroutine_global2?.setOnClickListener {
+        btnStartCoroutineGlobal2.setOnClickListener {
             startGlobalScopeCoroutine2()
         }
 

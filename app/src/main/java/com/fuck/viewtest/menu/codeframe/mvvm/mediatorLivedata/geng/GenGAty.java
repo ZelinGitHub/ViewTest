@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.codeframe.mvvm.geng;
+package com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.geng;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.fuck.viewtest.R;
-
+//测试MediatorLiveData
 public class GenGAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_name;
     private GenGViewModel mViewModel;

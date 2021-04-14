@@ -67,12 +67,12 @@
         <activity android:name=".menu.display.dialog.DialogAty" />
         <activity android:name=".menu.anno.AnnoAty" />
         <activity android:name=".menu.view_.rv.ui.RvSwipeAty" />
-        <activity android:name=".menu.codeframe.mvvm.dragonx.DragonXAty" />
+        <activity android:name=".menu.codeframe.mvvm.simplemvvm.SimpleMvvmAty" />
         <activity android:name=".menu.codeframe.mvvm.MvvmAty" />
-        <activity android:name=".menu.codeframe.mvvm.geng.GenGAty" />
-        <activity android:name=".menu.codeframe.mvvm.geng2.GenG2Aty" />
-        <activity android:name=".menu.codeframe.mvvm.rng.RngAty" />
-        <activity android:name=".menu.codeframe.mvvm.rng2.Rng2Aty" />
+        <activity android:name=".menu.codeframe.mvvm.mediatorLivedata.geng.GenGAty" />
+        <activity android:name=".menu.codeframe.mvvm.mediatorLivedata.geng2.GenG2Aty" />
+        <activity android:name=".menu.codeframe.mvvm.mediatorLivedata.rng.RngAty" />
+        <activity android:name=".menu.codeframe.mvvm.mediatorLivedata.rng2.Rng2Aty" />
         <activity android:name=".menu.concurent.rxjava2.dispose.DisposeTestAty" />
         <activity android:name=".menu.leak.LeakTestAty" />
         <activity android:name=".menu.leak.HandlerCtxAty" />

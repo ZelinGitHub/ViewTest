@@ -8,11 +8,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.R;
-import com.fuck.viewtest.menu.codeframe.mvvm.dragonx.DragonXAty;
-import com.fuck.viewtest.menu.codeframe.mvvm.geng2.GenG2Aty;
-import com.fuck.viewtest.menu.codeframe.mvvm.geng.GenGAty;
-import com.fuck.viewtest.menu.codeframe.mvvm.rng.RngAty;
-import com.fuck.viewtest.menu.codeframe.mvvm.rng2.Rng2Aty;
+import com.fuck.viewtest.menu.codeframe.mvvm.simplemvvm.SimpleMvvmAty;
+import com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.geng2.GenG2Aty;
+import com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.geng.GenGAty;
+import com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.rng.RngAty;
+import com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.rng2.Rng2Aty;
 
 public class MvvmAty extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,7 +53,7 @@ public class MvvmAty extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_to_dragon_x:{
-                Intent intent = new Intent(this, DragonXAty.class);
+                Intent intent = new Intent(this, SimpleMvvmAty.class);
                 startActivity(intent);
                 break;
             }

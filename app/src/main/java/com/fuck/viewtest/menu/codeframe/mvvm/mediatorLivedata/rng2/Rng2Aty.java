@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.codeframe.mvvm.rng;
+package com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.rng2;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,19 +10,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.fuck.viewtest.R;
-
-public class RngAty extends AppCompatActivity {
+//模拟MediatorLiveData
+public class Rng2Aty extends AppCompatActivity {
     private TextView tv_count;
     private EditText et;
-    private RngViewModel mViewModel;
+    private Rng2ViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rng);
+        setContentView(R.layout.activity_rng2);
         initView();
         initUI();
-
     }
 
     private void initView() {
@@ -35,29 +34,24 @@ public class RngAty extends AppCompatActivity {
         et.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence pCharSequence, int pI, int pI1, int pI2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence pCharSequence, int pI, int pI1, int pI2) {
-
             }
-
             @Override
             public void afterTextChanged(Editable pEditable) {
                 mViewModel.postValue(pEditable.toString());
             }
         });
-        mViewModel = new RngViewModel();
-        //为MediatorLiveData订阅观察者
-        mViewModel.mMediatorLiveData.observe(this, new Observer<Integer>() {
-            //更新UI
+        mViewModel = new Rng2ViewModel();
+
+        mViewModel.mMutableLiveData2.observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer pInteger) {
                 tv_count.setText(String.valueOf(pInteger));
             }
         });
     }
-
 
 }

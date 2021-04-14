@@ -1,9 +1,9 @@
-package com.fuck.viewtest.menu.codeframe.mvvm.rng2;
+package com.fuck.viewtest.menu.codeframe.mvvm.mediatorLivedata.rng2;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
-
+//模拟MediatorLiveData
 public class Rng2ViewModel extends ViewModel {
     public MutableLiveData<String> mMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<Integer> mMutableLiveData2 = new MutableLiveData<>();
