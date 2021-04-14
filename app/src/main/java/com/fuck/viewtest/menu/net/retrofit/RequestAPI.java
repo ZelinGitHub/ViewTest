@@ -13,12 +13,12 @@ import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface RequestAPI {
-    @GET("www.baidu.com")
+    @GET("baidu.com")
     Call<ResponseBody> getData(@Query("id") long id, @Query("name") String name);
 
 
     @FormUrlEncoded
-    @POST("www.qq.com")
+    @POST("qq.com")
     Call<ResponseBody> die(
             @Field("id") long id
             , @Field("name") String name
@@ -27,10 +27,18 @@ public interface RequestAPI {
 
 
     @Multipart
-    @POST("www.fuck.com")
+    @POST("fuck.com")
     Call<ResponseBody> fuck(
             @Part("girl") RequestBody girl
             , @Part MultipartBody.Part part
+    );
+
+
+    @Multipart
+    @POST("fuck.com")
+    Call<ResponseBody> fuckAll(
+            @Part("girl") RequestBody girl
+            , @Part MultipartBody.Part[] parts
     );
 
 
