@@ -23,7 +23,6 @@ class CoroutineAty : AppCompatActivity() {
 
     private fun initUI() {
         btn_test_coroutine.setOnClickListener {
-            startGlobalScopeCoroutine()
         }
     }
 

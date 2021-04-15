@@ -5,9 +5,9 @@ import kotlin.coroutines.coroutineContext
 
 var mCoroutineScope: CoroutineScope? = null
 
-private fun startScopeCoroutine() {
+private fun startScopeCoroutineInBlocking() {
     runBlocking {
-        launch {
+        this.launch {
             delay(1000L)
             println("World!")
         }
@@ -16,9 +16,9 @@ private fun startScopeCoroutine() {
 }
 
 
-private fun startScopeCoroutine2() {
+private fun startScopeCoroutineInBlockingByExtendFun() {
     runBlocking {
-        sick()
+        this.sick()
     }
 }
 
@@ -31,10 +31,7 @@ private fun CoroutineScope.sick() {
 }
 
 
-
-
-
-private fun startScopeCoroutine3() {
+private fun startScopeCoroutineInBlockingByNormalFun() {
     runBlocking {
         mCoroutineScope = this
         sick2()
@@ -49,13 +46,17 @@ private fun sick2() {
     println("Hello,")
 }
 
-private fun startScopeCoroutine4() {
+
+
+
+private fun startScopeCoroutineOnNewScope() {
     runBlocking {
         sick3()
     }
 }
 
 private suspend fun sick3() {
+    //创建一个新的CoroutineScope
     val coroutineScope = CoroutineScope(coroutineContext)
     coroutineScope.launch { // 在 runBlocking 作用域中启动一个新协程
         delay(1000L)
