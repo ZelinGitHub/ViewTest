@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.menu.aidl.AIDLAty;
+import com.fuck.viewtest.menu.concurent.coroutine.CoroutineTestKt;
 import com.fuck.viewtest.menu.view_.anim.AnimAty;
 import com.fuck.viewtest.menu.anno.AnnoAty;
 import com.fuck.viewtest.menu.display.aty.AtyAty;
@@ -138,6 +139,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_webview.setOnClickListener(this);
         btn_textview.setOnClickListener(this);
 
+        CoroutineTestKt.testCoroutine();
     }
 
     @Override
