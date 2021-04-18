@@ -5,6 +5,8 @@ import kotlin.coroutines.coroutineContext
 
 //线程先执行结束，协程后执行结束
 fun startGlobalScopeCoroutineInThread() {
+
+
     Thread {
         println("线程开始执行")
         //启动一个协程
