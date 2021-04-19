@@ -11,12 +11,12 @@ fun testJobJoin() {
         runBlocking {
             println("阻塞块开始执行")
             val job = GlobalScope.launch {
-                println("全局作用域协程开始执行")
+                println("全局作用域开启的协程开始执行")
                 delay(3000L)
-                println("全局作用域协程执行结束")
+                println("全局作用域开启的协程执行结束")
             }
             delay(1000L)
-            println("全局作用域协程加入阻塞块")
+            println("全局作用域开启的协程加入阻塞块")
             job.join()
             println("阻塞块执行结束")
         }

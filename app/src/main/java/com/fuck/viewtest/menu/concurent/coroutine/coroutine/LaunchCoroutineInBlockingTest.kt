@@ -1,7 +1,6 @@
-package com.fuck.viewtest.menu.concurent.coroutine
+package com.fuck.viewtest.menu.concurent.coroutine.coroutine
 
 import kotlinx.coroutines.*
-import kotlin.coroutines.coroutineContext
 
 
 fun startScopeCoroutineInBlocking() {
