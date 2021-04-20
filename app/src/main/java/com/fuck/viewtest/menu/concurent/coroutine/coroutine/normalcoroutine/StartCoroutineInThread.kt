@@ -1,10 +1,10 @@
-package com.fuck.viewtest.menu.concurent.coroutine
+package com.fuck.viewtest.menu.concurent.coroutine.coroutine.normalcoroutine
 
 import kotlinx.coroutines.*
 import kotlin.coroutines.coroutineContext
 
 //线程先执行结束，协程后执行结束
-fun startGlobalScopeCoroutineInThread() {
+fun startCoroutineInThreadOnGlobalScope() {
 
 
     Thread {
@@ -23,7 +23,7 @@ fun startGlobalScopeCoroutineInThread() {
 }
 
 //协程先执行结束，线程后执行结束
-fun startGlobalScopeCoroutineInThread2() {
+fun startCoroutineInThread2OnGlobalScope() {
     Thread {
         println("线程开始执行")
         //启动一个协程
@@ -39,23 +39,6 @@ fun startGlobalScopeCoroutineInThread2() {
     }.start()
 }
 
-
-fun startGlobalScopeCoroutineInBlocking() {
-    Thread {
-        println("线程开始执行")
-        runBlocking {
-            println("阻塞块开始执行")
-            GlobalScope.launch {
-                println("全局作用域开启的协程开始执行")
-                delay(3000L)
-                println("全局作用域开启的协程执行结束")
-            }
-            delay(1000L)
-            println("阻塞块执行结束")
-        }
-        println("线程执行结束")
-    }.start()
-}
 
 
 

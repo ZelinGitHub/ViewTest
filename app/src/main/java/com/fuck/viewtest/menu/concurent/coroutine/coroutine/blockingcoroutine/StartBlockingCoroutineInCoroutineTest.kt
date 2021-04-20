@@ -1,11 +1,11 @@
-package com.fuck.viewtest.menu.concurent.coroutine
+package com.fuck.viewtest.menu.concurent.coroutine.coroutine.blockingcoroutine
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-fun runBlockingInCoroutine(){
+fun startBlockingCoroutineInCoroutine(){
     Thread{
         println("线程开始")
         GlobalScope.launch {
