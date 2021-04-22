@@ -8,5 +8,5 @@ import com.fuck.viewtest.menu.concurent.coroutine.coroutine.normalcoroutine.test
 
 
 fun testCoroutine(){
-    testYieldCancelFinallyYield()
+    testDelayCancelFinallyDelayWithContext()
 }
