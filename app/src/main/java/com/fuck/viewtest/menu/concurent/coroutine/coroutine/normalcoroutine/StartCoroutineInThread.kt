@@ -40,24 +40,8 @@ fun startCoroutineInThreadOnGlobalScope2() {
 }
 
 //
-fun startDeferredCoroutineInThreadOnGlobalScope() {
-    Thread {
-        println("线程 开始执行")
-        runBlocking {
-            println("阻塞块线程 开始执行")
-            val deferred: Deferred<String> = GlobalScope.async {
-                println("异步协程 开始执行")
-                delay(3000L)
-                println("异步协程 执行结束")
-                "Death"
-            }
-            val result = deferred.await()
-            println("阻塞块协程 异步协程的执行结果是 $result")
-            println("阻塞块协程 执行结束")
-        }
-        println("线程 执行结束")
-    }.start()
-}
+
+
 
 
 

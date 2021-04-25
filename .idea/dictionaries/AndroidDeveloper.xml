@@ -3,9 +3,12 @@
     <words>
       <w>aidlserver</w>
       <w>bookserv</w>
+      <w>gson</w>
+      <w>itemdecor</w>
       <w>mvvm</w>
       <w>rxjava</w>
       <w>taskt</w>
+      <w>textview</w>
       <w>viewgroup</w>
     </words>
   </dictionary>
