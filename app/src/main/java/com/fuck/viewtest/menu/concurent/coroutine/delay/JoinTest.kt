@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.concurent.coroutine
+package com.fuck.viewtest.menu.concurent.coroutine.delay
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay

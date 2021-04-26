@@ -9,13 +9,13 @@ fun startBlockingCoroutineInCoroutine(){
     Thread{
         println("线程开始")
         GlobalScope.launch {
-            println("全局作用域开启的协程开始")
+            println("普通协程开始")
             runBlocking {
-                println("阻塞块开始")
+                println("阻塞块协程开始")
                 delay(3000)
-                println("阻塞块结束")
+                println("阻塞块协程结束")
             }
-            println("全局作用域开启的协程结束")
+            println("普通协程结束")
         }
         Thread.sleep(1000)
         println("线程结束")
