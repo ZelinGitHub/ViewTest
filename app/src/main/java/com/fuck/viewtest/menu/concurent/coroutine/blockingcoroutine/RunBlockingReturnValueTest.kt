@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.concurent.coroutine.coroutine.blockingcoroutine
+package com.fuck.viewtest.menu.concurent.coroutine.blockingcoroutine
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking

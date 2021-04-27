@@ -1,4 +1,4 @@
-package com.fuck.viewtest.menu.concurent.coroutine.coroutine.normalcoroutine
+package com.fuck.viewtest.menu.concurent.coroutine.scope.normalcoroutine
 
 import kotlinx.coroutines.*
 import kotlin.coroutines.coroutineContext
