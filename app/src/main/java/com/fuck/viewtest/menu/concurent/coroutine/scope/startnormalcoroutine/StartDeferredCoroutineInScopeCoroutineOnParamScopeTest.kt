@@ -1,8 +1,7 @@
-package com.fuck.viewtest.menu.concurent.coroutine.scope.normalcoroutine
+package com.fuck.viewtest.menu.concurent.coroutine.scope.startnormalcoroutine
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 

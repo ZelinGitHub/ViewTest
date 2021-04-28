@@ -1,7 +1,6 @@
-package com.fuck.viewtest.menu.concurent.coroutine.scope.normalcoroutine
+package com.fuck.viewtest.menu.concurent.coroutine.scope.startnormalcoroutine
 
 import kotlinx.coroutines.*
-import kotlin.coroutines.coroutineContext
 
 //线程先执行结束，协程后执行结束
 fun startCoroutineInThreadOnGlobalScope() {

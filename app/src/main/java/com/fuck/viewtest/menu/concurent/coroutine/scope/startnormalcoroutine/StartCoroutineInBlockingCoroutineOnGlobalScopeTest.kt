@@ -1,17 +1,18 @@
-package com.fuck.viewtest.menu.concurent.coroutine.scope.normalcoroutine
+package com.fuck.viewtest.menu.concurent.coroutine.scope.startnormalcoroutine
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
-fun startCoroutineInBlockingCoroutineOnNewScope() {
+
+
+
+
+
+fun startCoroutineInBlockingCoroutineOnGlobalScope() {
     Thread {
         println("线程开始执行")
         runBlocking {
             println("阻塞块协程开始执行")
-            val coroutineScope = CoroutineScope(kotlin.coroutines.coroutineContext)
-            coroutineScope.launch {
+            GlobalScope.launch {
                 println("普通协程开始执行")
                 delay(3000L)
                 println("普通协程执行结束")
@@ -22,3 +23,6 @@ fun startCoroutineInBlockingCoroutineOnNewScope() {
         println("线程执行结束")
     }.start()
 }
+
+
+
