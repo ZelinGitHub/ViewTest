@@ -16,11 +16,11 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btn_vp"
+                android:id="@+id/btn_img"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试ViewPager" />
+                android:text="测试图片" />
 
             <Button
                 android:id="@+id/btn_anim"
@@ -68,43 +68,6 @@
                 android:text="测试Socket" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_cusv"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试自定义控件" />
-
-            <Button
-                android:id="@+id/btn_img"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试图片" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_rv"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试RecyclerView" />
-
-            <Button
-                android:id="@+id/btn_sv"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试ScrollView" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -115,7 +78,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试View" />
+                android:text="测试控件" />
 
             <Button
                 android:id="@+id/btn_task"
@@ -205,12 +168,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+
+
             <Button
-                android:id="@+id/btn_scroll"
+                android:id="@+id/btn_res"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试滚动" />
+                android:text="测试资源" />
 
             <Button
                 android:id="@+id/btn_serial"
@@ -239,44 +204,5 @@
                 android:text="测试AIDL" />
         </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_surfaceview"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试SurfaceView" />
-
-            <Button
-                android:id="@+id/btn_res"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试资源" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_webview"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试WebView" />
-
-            <Button
-                android:id="@+id/btn_textview"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试TextView"
-                 />
-        </LinearLayout>
     </LinearLayout>
-
 </ScrollView>

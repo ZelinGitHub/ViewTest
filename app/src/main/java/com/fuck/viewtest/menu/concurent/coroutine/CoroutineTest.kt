@@ -5,5 +5,5 @@ import com.fuck.viewtest.menu.concurent.coroutine.exception.testExceptionOnParam
 
 
 fun testCoroutine(){
-    testExceptionOnParamScopeTwoCoroutine()
+//    testExceptionOnParamScopeTwoCoroutine()
 }

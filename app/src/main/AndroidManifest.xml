@@ -36,7 +36,9 @@
         <activity android:name=".menu.display.taskt.FourAty" />
         <activity android:name=".menu.view_.rv.RvAty" />
         <activity android:name=".menu.view_.vp.VpAty" />
+        <activity android:name=".menu.view_.ViewAty" />
         <activity android:name=".menu.view_.anim.AnimAty" />
+        <activity android:name=".menu.view_.framelayout.FrameLayoutAty" />
         <activity android:name=".menu.window.WinAty" />
         <activity android:name=".menu.window.WindowAty" />
         <activity android:name=".menu.window.PopupWindowAty" />

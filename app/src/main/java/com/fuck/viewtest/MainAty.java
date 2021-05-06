@@ -8,46 +8,36 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.menu.aidl.AIDLAty;
-import com.fuck.viewtest.menu.concurent.coroutine.CoroutineTestKt;
-import com.fuck.viewtest.menu.view_.anim.AnimAty;
 import com.fuck.viewtest.menu.anno.AnnoAty;
-import com.fuck.viewtest.menu.display.aty.AtyAty;
-import com.fuck.viewtest.menu.eventline.broadcast.BroadcastAty;
+import com.fuck.viewtest.menu.codeframe.mvp.MvpAty;
+import com.fuck.viewtest.menu.codeframe.mvvm.MvvmAty;
 import com.fuck.viewtest.menu.concurent.coroutine.CoroutineAty;
-import com.fuck.viewtest.menu.view_.cusview.ui.CusvAty;
+import com.fuck.viewtest.menu.concurent.coroutine.CoroutineTestKt;
+import com.fuck.viewtest.menu.concurent.rxjava2.dispose.DisposeTestAty;
+import com.fuck.viewtest.menu.datafile.res.ResAty;
+import com.fuck.viewtest.menu.datafile.seria.SerialAty;
+import com.fuck.viewtest.menu.display.aty.AtyAty;
 import com.fuck.viewtest.menu.display.dialog.DialogAty;
+import com.fuck.viewtest.menu.display.taskt.FirstAty;
+import com.fuck.viewtest.menu.eventline.broadcast.BroadcastAty;
 import com.fuck.viewtest.menu.eventline.eventbus.TomEventAty;
 import com.fuck.viewtest.menu.img.ImgAty;
 import com.fuck.viewtest.menu.leak.LeakTestAty;
-import com.fuck.viewtest.menu.codeframe.mvp.MvpAty;
-import com.fuck.viewtest.menu.codeframe.mvvm.MvvmAty;
-import com.fuck.viewtest.menu.datafile.res.ResAty;
-import com.fuck.viewtest.menu.view_.rv.RvAty;
-import com.fuck.viewtest.menu.concurent.rxjava2.dispose.DisposeTestAty;
-import com.fuck.viewtest.menu.view_.scroll.ScrollAty;
-import com.fuck.viewtest.menu.view_.scrollview.ScrollViewAty;
-import com.fuck.viewtest.menu.datafile.seria.SerialAty;
-import com.fuck.viewtest.menu.service.ServAty;
 import com.fuck.viewtest.menu.net.socket.client.SocketAty;
-import com.fuck.viewtest.menu.view_.surfaceview.SurfaceViewAty;
-import com.fuck.viewtest.menu.display.taskt.FirstAty;
-import com.fuck.viewtest.menu.view_.textview.TextAty;
-import com.fuck.viewtest.menu.view_.viewviewgroup.VAty;
-import com.fuck.viewtest.menu.view_.vp.VpAty;
+import com.fuck.viewtest.menu.service.ServAty;
+import com.fuck.viewtest.menu.view_.ViewAty;
+import com.fuck.viewtest.menu.view_.anim.AnimAty;
 import com.fuck.viewtest.menu.window.WinAty;
 
 //ABC
 public class MainAty extends AppCompatActivity implements View.OnClickListener {
-    private Button btn_vp;
+
     private Button btn_anim;
     private Button btn_win;
     private Button btn_serv;
     private Button btn_broadcast;
     private Button btn_socket;
-    private Button btn_cusv;
     private Button btn_img;
-    private Button btn_rv;
-    private Button btn_sv;
     private Button btn_v;
     private Button btn_task;
     private Button btn_event_bus;
@@ -58,14 +48,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_leak;
     private Button btn_coroutine;
     private Button btn_mvp;
-    private Button btn_scroll;
     private Button btn_serial;
     private Button btn_aty;
     private Button btn_aidl;
-    private Button btn_surfaceview;
     private Button btn_res;
-    private Button btn_webview;
-    private Button btn_textview;
+
 
 
     @Override
@@ -78,16 +65,12 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
 
 
     private void initViews() {
-        btn_vp = findViewById(R.id.btn_vp);
         btn_anim = findViewById(R.id.btn_anim);
         btn_win = findViewById(R.id.btn_win);
         btn_serv = findViewById(R.id.btn_serv);
         btn_broadcast = findViewById(R.id.btn_broadcast);
         btn_socket = findViewById(R.id.btn_socket);
-        btn_cusv = findViewById(R.id.btn_cusv);
         btn_img = findViewById(R.id.btn_img);
-        btn_rv = findViewById(R.id.btn_rv);
-        btn_sv = findViewById(R.id.btn_sv);
         btn_v = findViewById(R.id.btn_v);
         btn_task = findViewById(R.id.btn_task);
         btn_event_bus = findViewById(R.id.btn_event_bus);
@@ -98,28 +81,20 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_leak = findViewById(R.id.btn_leak);
         btn_coroutine = findViewById(R.id.btn_coroutine);
         btn_mvp = findViewById(R.id.btn_mvp);
-        btn_scroll = findViewById(R.id.btn_scroll);
         btn_serial = findViewById(R.id.btn_serial);
         btn_aty = findViewById(R.id.btn_aty);
         btn_aidl = findViewById(R.id.btn_aidl);
-        btn_surfaceview = findViewById(R.id.btn_surfaceview);
         btn_res = findViewById(R.id.btn_res);
-        btn_webview = findViewById(R.id.btn_webview);
-        btn_textview = findViewById(R.id.btn_textview);
     }
 
 
     private void initUI() {
-        btn_vp.setOnClickListener(this);
         btn_anim.setOnClickListener(this);
         btn_win.setOnClickListener(this);
         btn_serv.setOnClickListener(this);
         btn_broadcast.setOnClickListener(this);
         btn_socket.setOnClickListener(this);
-        btn_cusv.setOnClickListener(this);
         btn_img.setOnClickListener(this);
-        btn_rv.setOnClickListener(this);
-        btn_sv.setOnClickListener(this);
         btn_v.setOnClickListener(this);
         btn_task.setOnClickListener(this);
         btn_event_bus.setOnClickListener(this);
@@ -130,26 +105,17 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_leak.setOnClickListener(this);
         btn_coroutine.setOnClickListener(this);
         btn_mvp.setOnClickListener(this);
-        btn_scroll.setOnClickListener(this);
         btn_serial.setOnClickListener(this);
         btn_aty.setOnClickListener(this);
         btn_aidl.setOnClickListener(this);
-        btn_surfaceview.setOnClickListener(this);
         btn_res.setOnClickListener(this);
-        btn_webview.setOnClickListener(this);
-        btn_textview.setOnClickListener(this);
-
         CoroutineTestKt.testCoroutine();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_vp: {
-                Intent intent = new Intent(this, VpAty.class);
-                startActivity(intent);
-                break;
-            }
+
             case R.id.btn_anim: {
                 Intent intent = new Intent(this, AnimAty.class);
                 startActivity(intent);
@@ -175,28 +141,14 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_cusv: {
-                Intent intent = new Intent(this, CusvAty.class);
-                startActivity(intent);
-                break;
-            }
+
             case R.id.btn_img: {
                 Intent intent = new Intent(this, ImgAty.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_rv: {
-                Intent intent = new Intent(this, RvAty.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.btn_sv: {
-                Intent intent = new Intent(this, ScrollViewAty.class);
-                startActivity(intent);
-                break;
-            }
             case R.id.btn_v: {
-                Intent intent = new Intent(this, VAty.class);
+                Intent intent = new Intent(this, ViewAty.class);
                 startActivity(intent);
                 break;
             }
@@ -245,11 +197,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_scroll: {
-                Intent intent = new Intent(this, ScrollAty.class);
-                startActivity(intent);
-                break;
-            }
+
             case R.id.btn_serial: {
                 Intent intent = new Intent(this, SerialAty.class);
                 startActivity(intent);
@@ -265,23 +213,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_surfaceview: {
-                Intent intent = new Intent(this, SurfaceViewAty.class);
-                startActivity(intent);
-                break;
-            }
             case R.id.btn_res: {
                 Intent intent = new Intent(this, ResAty.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.btn_webview: {
-                Intent intent = new Intent(this, ResAty.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.btn_textview: {
-                Intent intent = new Intent(this, TextAty.class);
                 startActivity(intent);
                 break;
             }
