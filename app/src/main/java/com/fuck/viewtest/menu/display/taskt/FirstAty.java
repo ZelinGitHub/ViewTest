@@ -22,11 +22,14 @@ public class FirstAty extends BaseAty {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(FirstAty.this, SecondAty.class);
-                startActivity(intent);
+                toAnotherAppAty();
             }
         });
 
+    }
+
+    private void toAnotherAppAty() {
+        Intent intent=new Intent();
     }
 
     @Override

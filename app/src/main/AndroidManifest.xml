@@ -54,6 +54,7 @@
         <activity android:name=".menu.view_.cusview.ui.MyViewGroupAty" />
         <activity android:name=".menu.view_.cusview.ui.PaddingViewGroupAty" />
         <activity android:name=".menu.img.ImgAty" />
+        <activity android:name=".menu.codeframe.CodeFrameAty" />
         <activity android:name=".menu.view_.rv.ui.RvStaggerAty" />
         <activity android:name=".menu.view_.rv.ui.RvFlagAty" />
         <activity android:name=".menu.view_.rv.ui.RvTimeAxisAty" />

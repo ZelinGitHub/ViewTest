@@ -39,7 +39,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试Window" />
+                android:text="测试窗口" />
 
             <Button
                 android:id="@+id/btn_serv"
@@ -119,11 +119,11 @@
                 android:text="测试注解" />
 
             <Button
-                android:id="@+id/btn_aac"
+                android:id="@+id/btn_code_frame"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试MVVM" />
+                android:text="测试代码框架" />
         </LinearLayout>
 
         <LinearLayout
@@ -157,17 +157,17 @@
                 android:text="测试协程" />
 
             <Button
-                android:id="@+id/btn_mvp"
+                android:id="@+id/btn_aidl"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="测试MVP" />
+                android:text="测试AIDL" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
 
 
             <Button
@@ -196,12 +196,7 @@
                 android:layout_marginTop="16dp"
                 android:text="测试Activity" />
 
-            <Button
-                android:id="@+id/btn_aidl"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:text="测试AIDL" />
+
         </LinearLayout>
 
     </LinearLayout>

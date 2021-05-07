@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fuck.viewtest.menu.aidl.AIDLAty;
 import com.fuck.viewtest.menu.anno.AnnoAty;
-import com.fuck.viewtest.menu.codeframe.mvp.MvpAty;
-import com.fuck.viewtest.menu.codeframe.mvvm.MvvmAty;
+import com.fuck.viewtest.menu.codeframe.CodeFrameAty;
 import com.fuck.viewtest.menu.concurent.coroutine.CoroutineAty;
 import com.fuck.viewtest.menu.concurent.coroutine.CoroutineTestKt;
 import com.fuck.viewtest.menu.concurent.rxjava2.dispose.DisposeTestAty;
@@ -43,16 +42,15 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
     private Button btn_event_bus;
     private Button btn_dialog;
     private Button btn_anno;
-    private Button btn_aac;
+    private Button btn_code_frame;
     private Button btn_rxjava2;
     private Button btn_leak;
     private Button btn_coroutine;
-    private Button btn_mvp;
+
     private Button btn_serial;
     private Button btn_aty;
     private Button btn_aidl;
     private Button btn_res;
-
 
 
     @Override
@@ -76,11 +74,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_event_bus = findViewById(R.id.btn_event_bus);
         btn_dialog = findViewById(R.id.btn_dialog);
         btn_anno = findViewById(R.id.btn_anno);
-        btn_aac = findViewById(R.id.btn_aac);
+        btn_code_frame = findViewById(R.id.btn_code_frame);
         btn_rxjava2 = findViewById(R.id.btn_rxjava2);
         btn_leak = findViewById(R.id.btn_leak);
         btn_coroutine = findViewById(R.id.btn_coroutine);
-        btn_mvp = findViewById(R.id.btn_mvp);
+
         btn_serial = findViewById(R.id.btn_serial);
         btn_aty = findViewById(R.id.btn_aty);
         btn_aidl = findViewById(R.id.btn_aidl);
@@ -100,11 +98,11 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
         btn_event_bus.setOnClickListener(this);
         btn_dialog.setOnClickListener(this);
         btn_anno.setOnClickListener(this);
-        btn_aac.setOnClickListener(this);
+        btn_code_frame.setOnClickListener(this);
         btn_rxjava2.setOnClickListener(this);
         btn_leak.setOnClickListener(this);
         btn_coroutine.setOnClickListener(this);
-        btn_mvp.setOnClickListener(this);
+
         btn_serial.setOnClickListener(this);
         btn_aty.setOnClickListener(this);
         btn_aidl.setOnClickListener(this);
@@ -172,8 +170,8 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_aac: {
-                Intent intent = new Intent(this, MvvmAty.class);
+            case R.id.btn_code_frame: {
+                Intent intent = new Intent(this, CodeFrameAty.class);
                 startActivity(intent);
                 break;
             }
@@ -189,11 +187,6 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
             }
             case R.id.btn_coroutine: {
                 Intent intent = new Intent(this, CoroutineAty.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.btn_mvp: {
-                Intent intent = new Intent(this, MvpAty.class);
                 startActivity(intent);
                 break;
             }
