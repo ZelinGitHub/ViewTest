@@ -5,11 +5,11 @@ import android.app.Instrumentation;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fuck.viewtest.R;
 
 import java.lang.reflect.Field;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SuckActivity extends AppCompatActivity {
 
@@ -17,10 +17,14 @@ public class SuckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suck);
+    }
 
-//        replaceActivityInstrumentation(this);
-        //        startActivity(FuckActivity.newIntent(this));
+    private void startAtyFromAty(Activity pActivity) {
+        replaceActivityInstrumentation(pActivity);
+        startActivity(FuckActivity.newIntent(pActivity));
+    }
 
+    public void startAtyFromContext(){
         replaceContextInstrumentation();
         Intent intent=FuckActivity.newIntent(this);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -28,17 +32,15 @@ public class SuckActivity extends AppCompatActivity {
     }
 
     private void replaceActivityInstrumentation(Activity pActivity) {
-
         try {
             //通过反射得到Activity的mInstrumentation字段
             Field field = Activity.class.getDeclaredField("mInstrumentation");
             field.setAccessible(true);
-
-            //得到指定对象的字段值
+            //得到字段在指定对象中的值，也就是字段引用的被装饰类的实例
             Instrumentation instrumentation = (Instrumentation) field.get(pActivity);
-            //得到Instrumentation装饰类的对象
+            //创建装饰器
             Instrumentation decoInstrumentation = new DecoInstrumentation(instrumentation);
-            //替换mInstrumentation为装饰类对象
+            //改变字段值，使其引用装饰器实例，而非被装饰类的实例
             field.set(pActivity, decoInstrumentation);
         } catch (NoSuchFieldException pE) {
             pE.printStackTrace();
@@ -46,6 +48,7 @@ public class SuckActivity extends AppCompatActivity {
             pE.printStackTrace();
         }
     }
+
 
     private void replaceContextInstrumentation() {
         try {
