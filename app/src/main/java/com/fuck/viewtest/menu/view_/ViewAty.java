@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.fuck.viewtest.R;
 import com.fuck.viewtest.menu.datafile.res.ResAty;
 import com.fuck.viewtest.menu.display.aty.AtyAty;
-import com.fuck.viewtest.menu.view_.cusview.ui.CusvAty;
+import com.fuck.viewtest.menu.view_.cusview.CusvAty;
 import com.fuck.viewtest.menu.view_.framelayout.FrameLayoutAty;
 import com.fuck.viewtest.menu.view_.rv.RvAty;
 import com.fuck.viewtest.menu.view_.scroll.ScrollAty;
