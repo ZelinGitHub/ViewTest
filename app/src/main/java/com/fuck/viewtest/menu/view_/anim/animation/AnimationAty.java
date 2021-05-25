@@ -1,14 +1,16 @@
 package com.fuck.viewtest.menu.view_.anim.animation;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fuck.viewtest.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AnimationAty extends AppCompatActivity {
 
@@ -32,11 +34,14 @@ public class AnimationAty extends AppCompatActivity {
         );
 
         animation.setDuration(2000);
-        AccelerateDecelerateInterpolator interpolator=new AccelerateDecelerateInterpolator();
+        AccelerateDecelerateInterpolator interpolator = new AccelerateDecelerateInterpolator();
         animation.setInterpolator(interpolator);
         v.startAnimation(animation);
     }
 
 
+    private void loadAnimation(Context pContext) {
+        Animation animation = AnimationUtils.loadAnimation(pContext, R.anim.anim_w);
+    }
 
 }

@@ -1,20 +1,22 @@
 package com.fuck.viewtest.menu.view_.anim.animator;
 
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fuck.viewtest.R;
 import com.fuck.viewtest.menu.view_.anim.animator.evaluator.ColorEvaluator;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AnimatorAty extends AppCompatActivity {
 
@@ -137,5 +139,10 @@ public class AnimatorAty extends AppCompatActivity {
         );
         anim.setDuration(5000);
         anim.start();
+    }
+
+    private void loadAnimator(Context pContext){
+        Animator animator= AnimatorInflater.loadAnimator(pContext,R.animator.selector_scal_animator);
+
     }
 }
