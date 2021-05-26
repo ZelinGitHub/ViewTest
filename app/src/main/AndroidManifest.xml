@@ -49,10 +49,11 @@
         <activity android:name=".menu.eventline.broadcast.BroadcastAty" />
         <activity android:name=".menu.datafile.conprovider.ContentProviderAty" />
         <activity android:name=".menu.net.socket.client.SocketAty" />
-        <activity android:name=".menu.view_.cusview.ui.CusvAty" />
-        <activity android:name=".menu.view_.cusview.ui.ChildMarginViewGroupAty" />
-        <activity android:name=".menu.view_.cusview.ui.MyViewGroupAty" />
-        <activity android:name=".menu.view_.cusview.ui.PaddingViewGroupAty" />
+        <activity android:name=".menu.view_.cusview.CusvAty" />
+        <activity android:name=".menu.view_.cusview.event.MyViewAty" />
+        <activity android:name=".menu.view_.cusview.myviewgroup.ChildMarginViewGroupAty" />
+        <activity android:name=".menu.view_.cusview.myviewgroup.MyViewGroupAty" />
+        <activity android:name=".menu.view_.cusview.myviewgroup.PaddingViewGroupAty" />
         <activity android:name=".menu.img.ImgAty" />
         <activity android:name=".menu.codeframe.CodeFrameAty" />
         <activity android:name=".menu.view_.rv.ui.RvStaggerAty" />
