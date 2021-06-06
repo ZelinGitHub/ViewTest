@@ -26,7 +26,7 @@ import com.fuck.viewtest.menu.net.socket.client.SocketAty;
 import com.fuck.viewtest.menu.service.ServAty;
 import com.fuck.viewtest.menu.view_.ViewAty;
 import com.fuck.viewtest.menu.view_.anim.AnimAty;
-import com.fuck.viewtest.menu.window.WinAty;
+import com.fuck.viewtest.menu.window.WinTestAty;
 
 //ABC
 public class MainAty extends AppCompatActivity implements View.OnClickListener {
@@ -120,7 +120,7 @@ public class MainAty extends AppCompatActivity implements View.OnClickListener {
                 break;
             }
             case R.id.btn_win: {
-                Intent intent = new Intent(this, WinAty.class);
+                Intent intent = new Intent(this, WinTestAty.class);
                 startActivity(intent);
                 break;
             }

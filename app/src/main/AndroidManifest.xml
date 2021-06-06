@@ -39,8 +39,8 @@
         <activity android:name=".menu.view_.ViewAty" />
         <activity android:name=".menu.view_.anim.AnimAty" />
         <activity android:name=".menu.view_.framelayout.FrameLayoutAty" />
-        <activity android:name=".menu.window.WinAty" />
-        <activity android:name=".menu.window.WindowAty" />
+        <activity android:name=".menu.window.WinTestAty" />
+        <activity android:name=".menu.window.AddWindowAty" />
         <activity android:name=".menu.window.PopupWindowAty" />
         <activity android:name=".menu.service.client.MyClientAty" />
         <activity android:name=".menu.service.client.Client1Aty" />
